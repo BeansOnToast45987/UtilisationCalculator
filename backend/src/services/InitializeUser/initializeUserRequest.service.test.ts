@@ -2,16 +2,16 @@ import { initializeUserRequest } from './initializeUserRequest.service'
 import { prisma } from '../../utils/index'
 import { Country } from '../../types/index'
 
-jest.mock('../../utils/index', () => ({
-  prisma: {
-    user: {
-      findUnique: jest.fn(),
-      create: jest.fn(),
-    },
-  },
-}))
+jest.mock('../../utils/index')
 
-const mockPrisma = prisma as jest.Mocked<typeof prisma>
+const mockPrisma = {
+  user: {
+    findUnique: jest.fn(),
+    create: jest.fn(),
+  },
+} as any
+
+;(require('../../utils/index') as any).prisma = mockPrisma
 
 describe('initializeUserRequest', () => {
   const mockInput = {
@@ -39,7 +39,7 @@ describe('initializeUserRequest', () => {
 
   it('should create a new user when user does not exist', async () => {
     mockPrisma.user.findUnique.mockResolvedValue(null)
-    mockPrisma.user.create.mockResolvedValue(mockUser as any)
+    mockPrisma.user.create.mockResolvedValue(mockUser)
 
     const result = await initializeUserRequest(mockInput)
 
@@ -56,7 +56,7 @@ describe('initializeUserRequest', () => {
   })
 
   it('should return existing user when user already exists', async () => {
-    mockPrisma.user.findUnique.mockResolvedValue(mockUser as any)
+    mockPrisma.user.findUnique.mockResolvedValue(mockUser)
 
     const result = await initializeUserRequest(mockInput)
 
@@ -78,7 +78,7 @@ describe('initializeUserRequest', () => {
 
     mockPrisma.user.findUnique
       .mockResolvedValueOnce(null)
-      .mockResolvedValueOnce(mockUser as any)
+      .mockResolvedValueOnce(mockUser)
     mockPrisma.user.create.mockRejectedValue(uniqueConstraintError)
 
     const result = await initializeUserRequest(mockInput)
@@ -124,7 +124,7 @@ describe('initializeUserRequest', () => {
     const frenchUser = { ...mockUser, country: Country.FR }
 
     mockPrisma.user.findUnique.mockResolvedValue(null)
-    mockPrisma.user.create.mockResolvedValue(frenchUser as any)
+    mockPrisma.user.create.mockResolvedValue(frenchUser)
 
     const result = await initializeUserRequest(frenchInput)
 

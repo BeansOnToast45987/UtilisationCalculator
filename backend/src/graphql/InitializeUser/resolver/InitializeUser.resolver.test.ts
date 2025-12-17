@@ -36,7 +36,9 @@ describe('InitializeUserResolver', () => {
     firstName: 'John',
     lastName: 'Doe',
     name: 'John Doe',
-    country: Country.GB
+    country: Country.GB,
+    createdAt: new Date(),
+    utilisationCalculations: []
   }
 
   const mockContext = {

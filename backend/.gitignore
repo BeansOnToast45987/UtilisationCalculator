@@ -10,6 +10,7 @@ dist
 dist-ssr
 *.local
 package-lock.json
+coverage
 .env
 .vscode/*
 !.vscode/extensions.json

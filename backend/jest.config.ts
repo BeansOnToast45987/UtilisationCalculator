@@ -18,6 +18,7 @@ const config: Config = {
     '!**/*.spec.ts',
     '!types/**',
     '!server.ts',
+    '!**/*.schema.ts',
   ],
   coverageDirectory: '../coverage',
   coverageReporters: [

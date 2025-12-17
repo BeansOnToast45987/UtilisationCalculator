@@ -1,8 +1,8 @@
 ---
-Name: Bug (Utilisation Calculator)
-About: Report a defect in the Utilisation Calculator
-Title: "Bug/UC-: "
-Labels: ["bug"]
+name: Bug (Utilisation Calculator)
+about: Report a defect in the Utilisation Calculator
+title: "Bug/UC-: "
+labels: ["bug"]
 ---
 
 ## Bug ID

@@ -1,8 +1,8 @@
 ---
-Name: Feature (Utilisation Calculator)
-About: A new feature for the Utilisation Calculator
-Title: "Feature/UC-: "
-Labels: ["feature"]
+name: Feature (Utilisation Calculator)
+about: A new feature for the Utilisation Calculator
+title: "Feature/UC-: "
+labels: ["feature"]
 ---
 
 ## Requirement ID

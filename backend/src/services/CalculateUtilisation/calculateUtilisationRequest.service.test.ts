@@ -1,5 +1,4 @@
 import { calculateUtilisationRequest } from './calculateUtilisationRequest.service'
-import { prisma } from '../../utils/index'
 
 jest.mock('../../utils/index')
 
@@ -12,7 +11,7 @@ const mockPrisma = {
   },
 } as any
 
-;(require('../../utils/index') as any).prisma = mockPrisma
+(require('../../utils/index') as any).prisma = mockPrisma
 
 describe('calculateUtilisationRequest', () => {
   const mockInput = {
@@ -181,7 +180,6 @@ describe('calculateUtilisationRequest', () => {
   })
 
   it('should throw error for infinite calculation result', async () => {
-    // Mock a scenario that would produce Infinity
     const mockRound = jest.spyOn(Math, 'round').mockReturnValue(Infinity)
     mockPrisma.user.findUnique.mockResolvedValue(mockUser)
 

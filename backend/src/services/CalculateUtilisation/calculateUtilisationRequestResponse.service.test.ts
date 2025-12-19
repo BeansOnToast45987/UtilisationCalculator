@@ -103,7 +103,7 @@ describe('calculateUtilisationRequestResponse', () => {
     expect(result.billableHours).toBe(25.25)
     expect(result.calculatedUtilisation).toBe(67.33)
     expect(result.targetUtilisation).toBe(70.5)
-    expect(result.meetsTarget).toBe(false) // 67.33 < 70.5
+    expect(result.meetsTarget).toBe(false)
   })
 
   it('should handle zero utilisation', () => {

@@ -1,5 +1,18 @@
 # TECHNOTES
 
+## 18-12-2025 - UC-3: Calculate Utilisation Mutation Implementation
+
+- Created CalculateUtilisation GraphQL mutation with schema definition and resolver
+- Implemented utilisation calculation logic with precision rounding (billableHours / totalHours * 100)
+- Built comprehensive validation framework for calculation inputs (date range, hours, target utilisation)
+- Added CalculateUtilisation service layer with database operations and business logic validation
+- Created TypeScript interfaces for CalculateUtilisationInput and CalculateUtilisationResponse
+- Implemented database model for storing utilisation calculations with user relations
+- Added validation functions: date range validation, total hours validation (0.01-8760), billable hours validation, target utilisation validation (0-100%)
+- Integrated user lookup and authentication with Clerk ID verification
+- Added calculation persistence to database with proper date handling and result formatting
+- Implemented error handling for edge cases (zero division, invalid numbers, user not found)
+
 ## 17-12-2025 - UC-2: Initialize User Mutation Implementation
 
 - Created InitializeUser GraphQL mutation with full schema definition

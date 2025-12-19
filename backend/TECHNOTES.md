@@ -1,5 +1,18 @@
 # TECHNOTES
 
+## 19-12-2025 - UC-5: Delete Utilisation Mutation Implementation
+
+- Created DeleteUtilisation GraphQL mutation with schema definition and resolver
+- Implemented deleteUtilisationRequest service with secure calculation deletion
+- Added comprehensive authorization checks: user verification and ownership validation
+- Built deleteUtilisationRequestResponse service for consistent response formatting
+- Created TypeScript interfaces for DeleteUtilisationInput and DeleteUtilisationResponse
+- Integrated Clerk authentication for secure access control
+- Added three-tier security validation: user existence, calculation existence, and ownership verification
+- Implemented proper database deletion with Prisma ORM
+- Added detailed error handling for not found and unauthorized scenarios
+- Updated GraphQL schema and service exports for DeleteUtilisation integration
+
 ## 19-12-2025 - UC-4: Get Utilisation Query Implementation
 
 - Created GetUtilisation GraphQL query with schema definition and resolver

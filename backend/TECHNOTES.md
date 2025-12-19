@@ -1,5 +1,11 @@
 # TECHNOTES
 
+## 19-12-2025 - UC-6: Backend Code Formatting with Prettier Integration
+
+- Added Prettier dependency to package.json for consistent code formatting across the backend
+- Created format:backend npm script command using "prettier --write ." for automated code formatting
+- Executed format:backend command to standardize code formatting across all backend files
+
 ## 19-12-2025 - UC-5: Delete Utilisation Mutation Implementation
 
 - Created DeleteUtilisation GraphQL mutation with schema definition and resolver

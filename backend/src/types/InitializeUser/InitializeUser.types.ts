@@ -1,7 +1,7 @@
-import { User } from '../shared/user.types'
+import { User } from "../shared/user.types";
 
 export interface InitializeUserResponse {
-  user: User
-  created: boolean
-  message: string
+  user: User;
+  created: boolean;
+  message: string;
 }

@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag'
+import { gql } from "graphql-tag";
 
 export const GetUtilisationTypeDefs = gql`
   type GetUtilisationResponse {
@@ -16,4 +16,4 @@ export const GetUtilisationTypeDefs = gql`
   extend type Query {
     getUtilisation: [GetUtilisationResponse!]!
   }
-`
+`;

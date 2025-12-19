@@ -2,16 +2,16 @@ import {
   ensureAuthHeaderIsProvided,
   ensureSecretKeyIsConfigured,
   ensureTokenIsValid,
-} from './validations/index'
+} from "./validations/index";
 
 const validateAuthRequest = (
   authHeader: string | undefined,
   token: string,
-  secretKey: string | undefined
+  secretKey: string | undefined,
 ): void => {
-  ensureAuthHeaderIsProvided(authHeader)
-  ensureTokenIsValid(token)
-  ensureSecretKeyIsConfigured(secretKey)
-}
+  ensureAuthHeaderIsProvided(authHeader);
+  ensureTokenIsValid(token);
+  ensureSecretKeyIsConfigured(secretKey);
+};
 
-export { validateAuthRequest }
+export { validateAuthRequest };

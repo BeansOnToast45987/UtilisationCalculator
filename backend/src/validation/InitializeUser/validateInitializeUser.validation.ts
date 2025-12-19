@@ -1,4 +1,4 @@
-import { InitializeUserInput } from '../../types/index'
+import { InitializeUserInput } from "../../types/index";
 import {
   ensureClerkIdIsProvided,
   ensureClerkIdMatches,
@@ -7,19 +7,19 @@ import {
   ensureFirstNameIsProvided,
   ensureFullNameIsProvided,
   ensureLastNameIsProvided,
-} from './validations/index'
+} from "./validations/index";
 
 const validateInitializeUserInput = (
   input: InitializeUserInput,
-  authenticatedClerkId: string
+  authenticatedClerkId: string,
 ): void => {
-  ensureClerkIdIsProvided(input.clerkId)
-  ensureClerkIdMatches(authenticatedClerkId, input.clerkId)
-  ensureFirstNameIsProvided(input.firstName)
-  ensureLastNameIsProvided(input.lastName)
-  ensureFullNameIsProvided(input.name)
-  ensureCountryIsProvided(input.country)
-  ensureCountryIsValidEnum(input.country)
-}
+  ensureClerkIdIsProvided(input.clerkId);
+  ensureClerkIdMatches(authenticatedClerkId, input.clerkId);
+  ensureFirstNameIsProvided(input.firstName);
+  ensureLastNameIsProvided(input.lastName);
+  ensureFullNameIsProvided(input.name);
+  ensureCountryIsProvided(input.country);
+  ensureCountryIsValidEnum(input.country);
+};
 
-export { validateInitializeUserInput }
+export { validateInitializeUserInput };

@@ -1,12 +1,12 @@
 import {
   CalculateUtilisation,
   CalculateUtilisationResponse,
-} from '../../types/index'
+} from "../../types/index";
 
 const calculateUtilisationRequestResponse = (
-  result: CalculateUtilisation
+  result: CalculateUtilisation,
 ): CalculateUtilisationResponse => {
-  const meetsTarget = result.calculatedUtilisation >= result.targetUtilisation
+  const meetsTarget = result.calculatedUtilisation >= result.targetUtilisation;
 
   return {
     id: result.id,
@@ -18,7 +18,7 @@ const calculateUtilisationRequestResponse = (
     calculatedUtilisation: result.calculatedUtilisation,
     meetsTarget,
     calculatedAt: result.createdAt.toISOString(),
-  }
-}
+  };
+};
 
-export { calculateUtilisationRequestResponse }
+export { calculateUtilisationRequestResponse };

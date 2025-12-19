@@ -1,4 +1,4 @@
 export interface DeleteUtilisationResponse {
-  id: string
-  message: string
+  id: string;
+  message: string;
 }

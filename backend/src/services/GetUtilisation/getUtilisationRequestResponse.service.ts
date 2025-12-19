@@ -1,7 +1,7 @@
-import { GetUtilisation, GetUtilisationResponse } from '../../types/index'
+import { GetUtilisation, GetUtilisationResponse } from "../../types/index";
 
 const getUtilisationRequestResponse = (
-  results: GetUtilisation[]
+  results: GetUtilisation[],
 ): GetUtilisationResponse[] => {
   return results.map((result) => ({
     id: result.id,
@@ -13,7 +13,7 @@ const getUtilisationRequestResponse = (
     calculatedUtilisation: result.calculatedUtilisation,
     meetsTarget: result.meetsTarget,
     calculatedAt: result.createdAt.toISOString(),
-  }))
-}
+  }));
+};
 
-export { getUtilisationRequestResponse }
+export { getUtilisationRequestResponse };

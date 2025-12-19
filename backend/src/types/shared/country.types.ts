@@ -1,4 +1,4 @@
 export enum Country {
-  GB = 'GB',
-  FR = 'FR',
+  GB = "GB",
+  FR = "FR",
 }

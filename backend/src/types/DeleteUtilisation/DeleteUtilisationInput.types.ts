@@ -1,3 +1,3 @@
 export interface DeleteUtilisationInput {
-  id: string
+  id: string;
 }

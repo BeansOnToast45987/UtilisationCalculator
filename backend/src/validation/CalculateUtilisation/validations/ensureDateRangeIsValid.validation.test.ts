@@ -44,7 +44,6 @@ describe('ensureDateRangeIsValid', () => {
   })
 
   it('should handle edge cases correctly', () => {
-    // Leap year and month boundaries
     expect(() => ensureDateRangeIsValid('2024-02-28', '2024-02-29')).not.toThrow()
     expect(() => ensureDateRangeIsValid('2025-01-31', '2025-02-01')).not.toThrow()
     expect(() => ensureDateRangeIsValid('2024-12-31', '2025-01-01')).not.toThrow()

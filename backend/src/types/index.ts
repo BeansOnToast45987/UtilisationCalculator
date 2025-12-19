@@ -5,6 +5,10 @@ import type {
   CalculateUtilisationResponse,
 } from './CalculateUtilisation/CalculateUtilisation.types'
 import type { CalculateUtilisationInput } from './CalculateUtilisation/CalculateUtilisationInput.types'
+import type {
+  GetUtilisation,
+  GetUtilisationResponse,
+} from './GetUtilisation/GetUtilisation.types'
 import type { InitializeUserResponse } from './InitializeUser/InitializeUser.types'
 import type { InitializeUserInput } from './InitializeUser/InitializeUserInput.types'
 
@@ -14,6 +18,8 @@ export {
   CalculateUtilisation,
   CalculateUtilisationResponse,
   CalculateUtilisationInput,
+  GetUtilisation,
+  GetUtilisationResponse,
   InitializeUserResponse,
   InitializeUserInput,
 }

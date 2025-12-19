@@ -1,5 +1,4 @@
 import { initializeUserRequest } from './initializeUserRequest.service'
-import { prisma } from '../../utils/index'
 import { Country } from '../../types/index'
 
 jest.mock('../../utils/index')
@@ -11,7 +10,7 @@ const mockPrisma = {
   },
 } as any
 
-;(require('../../utils/index') as any).prisma = mockPrisma
+(require('../../utils/index') as any).prisma = mockPrisma
 
 describe('initializeUserRequest', () => {
   const mockInput = {

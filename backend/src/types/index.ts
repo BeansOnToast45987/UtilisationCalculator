@@ -9,6 +9,8 @@ import type {
   GetUtilisation,
   GetUtilisationResponse,
 } from './GetUtilisation/GetUtilisation.types'
+import type { DeleteUtilisationResponse } from './DeleteUtilisation/DeleteUtilisation.types'
+import type { DeleteUtilisationInput } from './DeleteUtilisation/DeleteUtilisationInput.types'
 import type { InitializeUserResponse } from './InitializeUser/InitializeUser.types'
 import type { InitializeUserInput } from './InitializeUser/InitializeUserInput.types'
 
@@ -20,6 +22,8 @@ export {
   CalculateUtilisationInput,
   GetUtilisation,
   GetUtilisationResponse,
+  DeleteUtilisationResponse,
+  DeleteUtilisationInput,
   InitializeUserResponse,
   InitializeUserInput,
 }

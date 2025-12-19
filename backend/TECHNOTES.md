@@ -1,5 +1,18 @@
 # TECHNOTES
 
+## 19-12-2025 - UC-4: Get Utilisation Query Implementation
+
+- Created GetUtilisation GraphQL query with schema definition and resolver
+- Implemented getUtilisationRequest service to fetch user's utilisation calculations from database
+- Added database query with user lookup and ordered results (most recent first)
+- Built getUtilisationRequestResponse service for data transformation and ISO date formatting
+- Created TypeScript interfaces for GetUtilisation and GetUtilisationResponse
+- Integrated Clerk authentication for secure data access with user verification
+- Added proper error handling for user not found scenarios
+- Implemented array mapping for multiple calculation records with consistent response format
+- Updated GraphQL schema and service exports for GetUtilisation integration
+- Added support for fetching historical utilisation calculations sorted by creation date
+
 ## 18-12-2025 - UC-3: Calculate Utilisation Mutation Implementation
 
 - Created CalculateUtilisation GraphQL mutation with schema definition and resolver

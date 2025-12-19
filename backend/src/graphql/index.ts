@@ -2,13 +2,17 @@ import { InitializeUserResolver } from './InitializeUser/resolver/InitializeUser
 import { InitializeUserTypeDefs } from './InitializeUser/schema/InitializeUser.schema'
 import { CalculateUtilisationResolver } from './CalculateUtilisation/resolver/CalculateUtilisation.resolver'
 import { CalculateUtilisationTypeDefs } from './CalculateUtilisation/schema/CalculateUtilisation.schema'
+import { GetUtilisationResolver } from './GetUtilisation/resolver/GetUtilisation.resolver'
+import { GetUtilisationTypeDefs } from './GetUtilisation/schema/GetUtilisation.schema'
 
 export const AllResolvers = [
   InitializeUserResolver,
   CalculateUtilisationResolver,
+  GetUtilisationResolver,
 ]
 
 export const AllTypeDefs = [
   InitializeUserTypeDefs,
   CalculateUtilisationTypeDefs,
+  GetUtilisationTypeDefs,
 ]

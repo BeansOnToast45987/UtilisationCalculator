@@ -1,12 +1,12 @@
-import { DeleteUtilisationResponse } from '../../types/index'
+import { DeleteUtilisationResponse } from "../../types/index";
 
 const deleteUtilisationRequestResponse = (result: {
-  id: string
+  id: string;
 }): DeleteUtilisationResponse => {
   return {
     id: result.id,
-    message: 'Calculation successfully deleted',
-  }
-}
+    message: "Calculation successfully deleted",
+  };
+};
 
-export { deleteUtilisationRequestResponse }
+export { deleteUtilisationRequestResponse };

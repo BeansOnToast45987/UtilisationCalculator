@@ -1,5 +1,11 @@
 # TECHNOTES
 
+## 19-12-2025 - UC-6: Backend Code Formatting with Prettier Integration
+
+- Added Prettier dependency to package.json for consistent code formatting across the backend
+- Created format:backend npm script command using "prettier --write ." for automated code formatting
+- Executed format:backend command to standardize code formatting across all backend files
+
 ## 19-12-2025 - UC-5: Delete Utilisation Mutation Implementation
 
 - Created DeleteUtilisation GraphQL mutation with schema definition and resolver
@@ -29,7 +35,7 @@
 ## 18-12-2025 - UC-3: Calculate Utilisation Mutation Implementation
 
 - Created CalculateUtilisation GraphQL mutation with schema definition and resolver
-- Implemented utilisation calculation logic with precision rounding (billableHours / totalHours * 100)
+- Implemented utilisation calculation logic with precision rounding (billableHours / totalHours \* 100)
 - Built comprehensive validation framework for calculation inputs (date range, hours, target utilisation)
 - Added CalculateUtilisation service layer with database operations and business logic validation
 - Created TypeScript interfaces for CalculateUtilisationInput and CalculateUtilisationResponse
@@ -52,7 +58,7 @@
 ## 17-12-2025 - UC-1: Backend Infrastructure Setup and Initialization
 
 - Created Express server with Apollo GraphQL integration
-- Configured Prisma database schema with User and UtilisationCalculation models for MongoDB  
+- Configured Prisma database schema with User and UtilisationCalculation models for MongoDB
 - Implemented Clerk authentication utilities with token verification
 - Established modular validation framework for auth requests
 - Set up shared type definitions for User and Country entities

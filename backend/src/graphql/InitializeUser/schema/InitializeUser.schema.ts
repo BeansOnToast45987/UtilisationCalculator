@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag'
+import { gql } from "graphql-tag";
 
 export const InitializeUserTypeDefs = gql`
   enum Country {
@@ -36,4 +36,4 @@ export const InitializeUserTypeDefs = gql`
   type Query {
     _empty: String
   }
-`
+`;

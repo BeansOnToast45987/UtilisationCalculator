@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag'
+import { gql } from "graphql-tag";
 
 export const CalculateUtilisationTypeDefs = gql`
   input CalculateUtilisationInput {
@@ -26,4 +26,4 @@ export const CalculateUtilisationTypeDefs = gql`
       input: CalculateUtilisationInput!
     ): CalculateUtilisationResponse!
   }
-`
+`;

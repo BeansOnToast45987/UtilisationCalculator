@@ -1,21 +1,21 @@
-import { prisma } from '../../utils/index'
-import { GetUtilisation } from '../../types/index'
+import { prisma } from "../../utils/index";
+import { GetUtilisation } from "../../types/index";
 
 const getUtilisationRequest = async (
-  clerkId: string
+  clerkId: string,
 ): Promise<GetUtilisation[]> => {
   const user = await prisma.user.findUnique({
     where: { clerkId },
-  })
+  });
 
   if (!user) {
-    throw new Error('User Not Found')
+    throw new Error("User Not Found");
   }
 
   const calculations = await prisma.utilisationCalculation.findMany({
     where: { userId: user.id },
-    orderBy: { createdAt: 'desc' },
-  })
+    orderBy: { createdAt: "desc" },
+  });
 
   const results: GetUtilisation[] = calculations.map((calculation) => ({
     id: calculation.id,
@@ -28,9 +28,9 @@ const getUtilisationRequest = async (
     startDate: calculation.startDate,
     endDate: calculation.endDate,
     createdAt: calculation.createdAt,
-  }))
+  }));
 
-  return results
-}
+  return results;
+};
 
-export { getUtilisationRequest }
+export { getUtilisationRequest };

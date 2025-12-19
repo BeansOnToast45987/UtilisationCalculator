@@ -1,18 +1,18 @@
-import { CalculateUtilisationInput } from '../../types/index'
+import { CalculateUtilisationInput } from "../../types/index";
 import {
   ensureBillableHoursIsValid,
   ensureDateRangeIsValid,
   ensureTargetUtilisationIsValid,
   ensureTotalHoursIsValid,
-} from './validations/index'
+} from "./validations/index";
 
 const validateCalculateUtilisationInput = (
-  input: CalculateUtilisationInput
+  input: CalculateUtilisationInput,
 ): void => {
-  ensureDateRangeIsValid(input.startDate, input.endDate)
-  ensureTotalHoursIsValid(input.totalHours)
-  ensureBillableHoursIsValid(input.billableHours, input.totalHours)
-  ensureTargetUtilisationIsValid(input.targetUtilisation)
-}
+  ensureDateRangeIsValid(input.startDate, input.endDate);
+  ensureTotalHoursIsValid(input.totalHours);
+  ensureBillableHoursIsValid(input.billableHours, input.totalHours);
+  ensureTargetUtilisationIsValid(input.targetUtilisation);
+};
 
-export { validateCalculateUtilisationInput }
+export { validateCalculateUtilisationInput };

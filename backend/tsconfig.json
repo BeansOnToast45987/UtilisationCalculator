@@ -41,9 +41,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true
   },
-  "exclude": [
-    "jest.config.ts",
-    "dist",
-    "node_modules"
-  ]
+  "exclude": ["jest.config.ts", "dist", "node_modules"]
 }

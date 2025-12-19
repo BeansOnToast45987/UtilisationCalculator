@@ -1,7 +1,7 @@
 const ensureCountryIsProvided = (country: any): void => {
   if (!country) {
-    throw new Error('Country is Required')
+    throw new Error("Country is Required");
   }
-}
+};
 
-export { ensureCountryIsProvided }
+export { ensureCountryIsProvided };

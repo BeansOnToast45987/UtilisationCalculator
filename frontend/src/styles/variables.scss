@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+:root {
+  /* ===== TYPOGRAPHY ===== */
+  --font-family-primary: "Roboto", Arial, Helvetica, sans-serif;
+
+  /* ===== FONT SIZES ===== */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+
+  /* ===== FONT WEIGHTS ===== */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* ===== PRIMARY COLORS ===== */
+  --color-error: #d32f2f;
+  --color-success: #2e7d32;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #dddddd;
+  --color-dark-grey: #bbbbbb;
+  --color-light-grey: #eeeeee;
+
+  /* ===== BLUE COLORS ===== */
+  --color-blue-darkest: #00008b;
+  --color-blue-dark: #0e3386;
+  --color-blue-medium-dark: #004687;
+  --color-blue-medium: #005a9c;
+  --color-blue-medium-light: #0000cd;
+  --color-blue-light: #0000ff;
+  --color-blue-royal: #4169e1;
+  --color-blue-lightest: #1e90ff;
+  --color-info-light: #e5f6fd;
+
+  /* ===== SPACING ===== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* ===== MARGINS ===== */
+  --margin-0: 0;
+  --margin-xs: 4px;
+  --margin-sm: 8px;
+  --margin-md: 16px;
+  --margin-lg: 24px;
+  --margin-xl: 32px;
+  --margin-2xl: 48px;
+
+  /* ===== BORDER RADIUS ===== */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+
+  /* ===== BORDER WIDTH ===== */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --border-width-xl: 6px;
+
+  /* ===== HEIGHTS ===== */
+  --height-xxs: 8px;
+  --height-xs: 16px;
+  --height-sm: 24px;
+  --height-md: 32px;
+  --height-lg: 48px;
+  --height-xl: 64px;
+  --height-2xl: 80px;
+  --height-3xl: 96px;
+
+  /* ===== MIN HEIGHTS ===== */
+  --min-height-viewport: 100vh;
+
+  /* ===== FLEXBOX ===== */
+  --flex-1: 1;
+
+  /* ===== DISPLAY ===== */
+  --display-flex: flex;
+
+  /* ===== FLEX DIRECTION ===== */
+  --flex-direction-row: row;
+  --flex-direction-column: column;
+
+  /* ===== ALIGNMENT ===== */
+  --align-items-center: center;
+  --align-items-flex-end: flex-end;
+  --justify-content-center: center;
+  --justify-content-space-between: space-between;
+  --justify-content-flex-end: flex-end;
+  --justify-content-right: right;
+  --text-align-right: right;
+
+  /* ===== POSITIONING ===== */
+  --position-fixed: fixed;
+
+  /* ===== DIMENSIONS ===== */
+  --width-full: 100%;
+  --height-full: 100%;
+
+  /* ===== VISUAL EFFECTS ===== */
+  --opacity-disabled: 0.5;
+
+  /* ===== INTERACTION ===== */
+  --cursor-pointer: pointer;
+  --cursor-not-allowed: not-allowed;
+
+  /* ===== LAYOUT ===== */
+  --box-sizing-border-box: border-box;
+  --overflow-y-auto: auto;
+
+  /* ===== CALCULATED VALUES ===== */
+  --height-viewport-minus-nav: calc(100vh - var(--height-xl));
+  --min-height-viewport: 100vh;
+}

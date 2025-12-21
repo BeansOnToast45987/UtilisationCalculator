@@ -1,5 +1,21 @@
 # TECHNOTES
 
+## 21-12-2025 - UC-9: Frontend Atoms Implementation
+
+- Added Material-UI dependencies
+- Implemented atomic components with custom styling and TypeScript interfaces:
+  - CustomButton - Multiple button variants with icons (primary, secondary, cancel, delete)
+  - CustomDatePicker - Date selection with validation and custom theming
+  - CustomTextField - Text input with error handling and consistent styling
+  - CustomLoader - Circular progress indicator
+  - CustomTypography - Text rendering with theme color integration
+  - CustomDivider - Section dividers with flexible layout
+  - CustomProgressBar - Linear progress indicators for utilisation display
+  - CustomTooltip - Information tooltips with custom styling
+  - CustomPagination - Page navigation controls
+- Created comprehensive SCSS styling using CSS custom properties for theming
+- Established atomic design system foundation for component composition
+
 ## 21-12-2025 - UC-8: Frontend GraphQL Client and Hooks Implementation
 
 - Added Apollo Client and GraphQL dependencies

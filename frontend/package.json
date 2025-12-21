@@ -8,10 +8,17 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "format:frontend": "prettier --write ."
   },
   "dependencies": {
     "@apollo/client": "^3.13.9",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.9.2",
     "graphql": "^16.11.0",
     "prettier": "^3.7.4",
     "react": "^19.2.0",
@@ -19,17 +26,24 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "babel-plugin-react-compiler": "^1.0.0",
+    "@vitest/coverage-istanbul": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
+    "date-fns": "^4.1.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "jsdom": "^25.0.1",
+    "sass-embedded": "^1.97.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vitest": "^4.0.16"
   }
 }

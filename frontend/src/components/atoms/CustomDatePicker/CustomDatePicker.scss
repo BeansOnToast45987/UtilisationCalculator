@@ -1,0 +1,68 @@
+.custom-date-picker {
+  width: var(--width-full);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root
+  .custom-date-picker-input-notched {
+  border-color: var(--color-blue-darkest);
+  border-width: var(--border-width-md);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root:hover
+  .custom-date-picker-input-notched {
+  border-color: var(--color-blue-medium);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root.Mui-focused
+  .custom-date-picker-input-notched {
+  border-color: var(--color-blue-lightest);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root.Mui-error
+  .custom-date-picker-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root.Mui-error:hover
+  .custom-date-picker-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-date-picker
+  .custom-date-picker-input-root.Mui-error.Mui-focused
+  .custom-date-picker-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-date-picker .custom-date-picker-input-root .MuiInputBase-input {
+  color: var(--color-black);
+}
+
+.custom-date-picker .MuiInputLabel-root {
+  color: var(--color-black);
+}
+
+.custom-date-picker .MuiInputLabel-root.Mui-focused {
+  color: var(--color-blue-lightest);
+}
+
+.custom-date-picker .MuiInputLabel-root.Mui-error {
+  color: var(--color-error);
+}
+
+.custom-date-picker .MuiInputLabel-root.Mui-error.Mui-focused {
+  color: var(--color-error);
+}
+
+.MuiPickersDay-root.Mui-selected {
+  background-color: var(--color-blue-darkest);
+}
+
+.MuiYearCalendar-button.Mui-selected {
+  background-color: var(--color-blue-darkest);
+}

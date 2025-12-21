@@ -1,10 +1,10 @@
-import { useCallback } from 'react'
-import { useMutation } from '@apollo/client'
-import { gql } from '@apollo/client'
+import { useCallback } from "react";
+import { useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
 import {
   CalculateUtilisationInput,
   CalculateUtilisationResponse,
-} from '../../types/index'
+} from "../../types/index";
 
 const CALCULATE_UTILISATION_MUTATION = gql`
   mutation CalculateUtilisation($input: CalculateUtilisationInput!) {
@@ -20,7 +20,7 @@ const CALCULATE_UTILISATION_MUTATION = gql`
       calculatedAt
     }
   }
-`
+`;
 
 export const useCalculateUtilisation = () => {
   const [
@@ -34,17 +34,17 @@ export const useCalculateUtilisation = () => {
   ] = useMutation<
     { calculateUtilisation: CalculateUtilisationResponse },
     { input: CalculateUtilisationInput }
-  >(CALCULATE_UTILISATION_MUTATION)
+  >(CALCULATE_UTILISATION_MUTATION);
 
   const calculateUtilisation = useCallback(
     async (calculateUtilisationInput: CalculateUtilisationInput) => {
       const { data } = await calculateUtilisationMutation({
         variables: { input: calculateUtilisationInput },
-      })
-      return data
+      });
+      return data;
     },
-    [calculateUtilisationMutation]
-  )
+    [calculateUtilisationMutation],
+  );
 
   return {
     calculateUtilisation,
@@ -52,5 +52,5 @@ export const useCalculateUtilisation = () => {
     calculateUtilisationLoading,
     calculateUtilisationError,
     resetCalculateUtilisation,
-  }
-}
+  };
+};

@@ -6,7 +6,7 @@
 - Created GraphQL client with Clerk authentication integration
 - Implemented custom hooks for all backend mutations and queries:
   - useInitializeUser - User creation mutation
-  - useCalculateUtilisation - Utilisation calculation mutation  
+  - useCalculateUtilisation - Utilisation calculation mutation
   - useGetUtilisation - Fetch user utilisation data query
   - useDeleteUtilisation - Delete utilisation record mutation
 - Created TypeScript interfaces matching backend GraphQL schema

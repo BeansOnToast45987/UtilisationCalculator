@@ -1,7 +1,7 @@
-import { useCallback } from 'react'
-import { useQuery } from '@apollo/client'
-import { gql } from '@apollo/client'
-import { GetUtilisationResponse } from '../../types/index'
+import { useCallback } from "react";
+import { useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { GetUtilisationResponse } from "../../types/index";
 
 const GET_UTILISATION_QUERY = gql`
   query GetUtilisation {
@@ -17,7 +17,7 @@ const GET_UTILISATION_QUERY = gql`
       calculatedAt
     }
   }
-`
+`;
 
 export const useGetUtilisation = () => {
   const {
@@ -26,13 +26,13 @@ export const useGetUtilisation = () => {
     error: getUtilisationError,
     refetch: refetchGetUtilisation,
   } = useQuery<{ getUtilisation: GetUtilisationResponse[] }>(
-    GET_UTILISATION_QUERY
-  )
+    GET_UTILISATION_QUERY,
+  );
 
   const getUtilisation = useCallback(async () => {
-    const { data } = await refetchGetUtilisation()
-    return data
-  }, [refetchGetUtilisation])
+    const { data } = await refetchGetUtilisation();
+    return data;
+  }, [refetchGetUtilisation]);
 
   return {
     getUtilisation,
@@ -40,5 +40,5 @@ export const useGetUtilisation = () => {
     getUtilisationLoading,
     getUtilisationError,
     refetchGetUtilisation,
-  }
-}
+  };
+};

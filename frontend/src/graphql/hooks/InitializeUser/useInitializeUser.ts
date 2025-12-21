@@ -1,7 +1,7 @@
-import { useCallback } from 'react'
-import { useMutation } from '@apollo/client'
-import { gql } from '@apollo/client'
-import { InitializeUserInput, InitializeUserResponse } from '../../types/index'
+import { useCallback } from "react";
+import { useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { InitializeUserInput, InitializeUserResponse } from "../../types/index";
 
 const INITIALIZE_USER_MUTATION = gql`
   mutation InitializeUser($input: InitializeUserInput!) {
@@ -18,7 +18,7 @@ const INITIALIZE_USER_MUTATION = gql`
       message
     }
   }
-`
+`;
 
 export const useInitializeUser = () => {
   const [
@@ -31,22 +31,22 @@ export const useInitializeUser = () => {
   ] = useMutation<
     { initializeUser: InitializeUserResponse },
     { input: InitializeUserInput }
-  >(INITIALIZE_USER_MUTATION)
+  >(INITIALIZE_USER_MUTATION);
 
   const initializeUser = useCallback(
     async (initializeUserInput: InitializeUserInput) => {
       const { data } = await initializeUserMutation({
         variables: { input: initializeUserInput },
-      })
-      return data
+      });
+      return data;
     },
-    [initializeUserMutation]
-  )
+    [initializeUserMutation],
+  );
 
   return {
     initializeUser,
     initializeUserData: initializeUserData?.initializeUser,
     initializeUserLoading,
     initializeUserError,
-  }
-}
+  };
+};

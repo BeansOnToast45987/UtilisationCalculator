@@ -1,10 +1,10 @@
-import { useCallback } from 'react'
-import { useMutation } from '@apollo/client'
-import { gql } from '@apollo/client'
+import { useCallback } from "react";
+import { useMutation } from "@apollo/client";
+import { gql } from "@apollo/client";
 import {
   DeleteUtilisationInput,
   DeleteUtilisationResponse,
-} from '../../types/index'
+} from "../../types/index";
 
 const DELETE_UTILISATION_MUTATION = gql`
   mutation DeleteUtilisation($input: DeleteUtilisationInput!) {
@@ -13,7 +13,7 @@ const DELETE_UTILISATION_MUTATION = gql`
       message
     }
   }
-`
+`;
 
 export const useDeleteUtilisation = () => {
   const [
@@ -27,17 +27,17 @@ export const useDeleteUtilisation = () => {
   ] = useMutation<
     { deleteUtilisation: DeleteUtilisationResponse },
     { input: DeleteUtilisationInput }
-  >(DELETE_UTILISATION_MUTATION)
+  >(DELETE_UTILISATION_MUTATION);
 
   const deleteUtilisation = useCallback(
     async (deleteUtilisationInput: DeleteUtilisationInput) => {
       const { data } = await deleteUtilisationMutation({
         variables: { input: deleteUtilisationInput },
-      })
-      return data
+      });
+      return data;
     },
-    [deleteUtilisationMutation]
-  )
+    [deleteUtilisationMutation],
+  );
 
   return {
     deleteUtilisation,
@@ -45,5 +45,5 @@ export const useDeleteUtilisation = () => {
     deleteUtilisationLoading,
     deleteUtilisationError,
     resetDeleteUtilisation,
-  }
-}
+  };
+};

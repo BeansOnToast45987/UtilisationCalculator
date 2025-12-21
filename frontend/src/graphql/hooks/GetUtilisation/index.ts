@@ -1,1 +1,1 @@
-export { useGetUtilisation } from './useGetUtilisation'
+export { useGetUtilisation } from "./useGetUtilisation";

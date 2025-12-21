@@ -1,1 +1,1 @@
-export { useDeleteUtilisation } from './useDeleteUtilisation'
+export { useDeleteUtilisation } from "./useDeleteUtilisation";

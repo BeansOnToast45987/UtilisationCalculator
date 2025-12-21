@@ -1,1 +1,1 @@
-export { useInitializeUser } from './useInitializeUser'
+export { useInitializeUser } from "./useInitializeUser";

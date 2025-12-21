@@ -1,6 +1,6 @@
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { CustomDatePickerProps } from './CustomDatePicker.types'
-import './CustomDatePicker.scss'
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { CustomDatePickerProps } from "./CustomDatePicker.types";
+import "./CustomDatePicker.scss";
 
 export default function CustomDatePicker({
   value,
@@ -31,19 +31,19 @@ export default function CustomDatePicker({
       label={error ? helperText : label}
       slotProps={{
         textField: {
-          variant: 'outlined',
+          variant: "outlined",
           name: name,
           onBlur: onBlur,
           error: error,
           InputProps: {
             classes: {
-              root: 'custom-date-picker-input-root',
-              notchedOutline: 'custom-date-picker-input-notched',
-              input: 'custom-date-picker-input',
+              root: "custom-date-picker-input-root",
+              notchedOutline: "custom-date-picker-input-notched",
+              input: "custom-date-picker-input",
             },
           },
         },
       }}
     />
-  )
+  );
 }

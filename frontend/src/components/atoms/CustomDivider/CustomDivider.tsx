@@ -1,6 +1,6 @@
-import { Divider } from '@mui/material'
-import { CustomDividerProps } from './CustomDivider.types'
-import './CustomDivider.scss'
+import { Divider } from "@mui/material";
+import { CustomDividerProps } from "./CustomDivider.types";
+import "./CustomDivider.scss";
 
 export default function CustomDivider({
   flexItem,
@@ -14,5 +14,5 @@ export default function CustomDivider({
     >
       {children}
     </Divider>
-  )
+  );
 }

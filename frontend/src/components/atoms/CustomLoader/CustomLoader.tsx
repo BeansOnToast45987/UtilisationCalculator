@@ -1,6 +1,6 @@
-import { CircularProgress } from '@mui/material'
-import { CustomLoaderProps } from './CustomLoader.types'
-import './CustomLoader.scss'
+import { CircularProgress } from "@mui/material";
+import { CustomLoaderProps } from "./CustomLoader.types";
+import "./CustomLoader.scss";
 
 export default function CustomLoader({
   size,
@@ -14,8 +14,8 @@ export default function CustomLoader({
       size={size}
       color={color}
       thickness={thickness}
-      className={`custom-loader ${className || ''}`}
+      className={`custom-loader ${className || ""}`}
       id={id}
     />
-  )
+  );
 }

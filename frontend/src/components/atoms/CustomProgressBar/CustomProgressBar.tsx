@@ -1,6 +1,6 @@
-import { LinearProgress } from '@mui/material'
-import { CustomProgressBarProps } from './CustomProgressBar.types'
-import './CustomProgressBar.scss'
+import { LinearProgress } from "@mui/material";
+import { CustomProgressBarProps } from "./CustomProgressBar.types";
+import "./CustomProgressBar.scss";
 
 export default function CustomProgressBar({
   value,
@@ -14,5 +14,5 @@ export default function CustomProgressBar({
       color={color}
       className="custom-progress-bar"
     />
-  )
+  );
 }

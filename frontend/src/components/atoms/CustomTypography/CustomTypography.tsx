@@ -1,6 +1,6 @@
-import { Typography } from '@mui/material'
-import { CustomTypographyProps } from './CustomTypography.types'
-import './CustomTypography.scss'
+import { Typography } from "@mui/material";
+import { CustomTypographyProps } from "./CustomTypography.types";
+import "./CustomTypography.scss";
 
 export default function CustomTypography({
   children,
@@ -16,7 +16,7 @@ export default function CustomTypography({
   return (
     <Typography
       variant={variant}
-      className={`custom-typography ${className || ''}`}
+      className={`custom-typography ${className || ""}`}
       style={{ color: `var(--color-${color})` }}
       align={align}
       gutterBottom={gutterBottom}
@@ -26,5 +26,5 @@ export default function CustomTypography({
     >
       {children}
     </Typography>
-  )
+  );
 }

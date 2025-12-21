@@ -1,7 +1,7 @@
-import { Button, IconButton } from '@mui/material'
-import { AutoFixHigh, Cancel, Delete } from '@mui/icons-material'
-import { CustomButtonProps } from './CustomButton.types'
-import './CustomButton.scss'
+import { Button, IconButton } from "@mui/material";
+import { AutoFixHigh, Cancel, Delete } from "@mui/icons-material";
+import { CustomButtonProps } from "./CustomButton.types";
+import "./CustomButton.scss";
 
 export default function CustomButton({
   label,
@@ -13,10 +13,10 @@ export default function CustomButton({
   buttonType,
   color,
 }: CustomButtonProps) {
-  const isButtonOne = buttonType === 'one'
-  const isButtonTwo = buttonType === 'two'
-  const isButtonThree = buttonType === 'three'
-  const isButtonFour = buttonType === 'four'
+  const isButtonOne = buttonType === "one";
+  const isButtonTwo = buttonType === "two";
+  const isButtonThree = buttonType === "three";
+  const isButtonFour = buttonType === "four";
 
   if (isButtonThree) {
     return (
@@ -27,7 +27,7 @@ export default function CustomButton({
       >
         <Cancel fontSize="medium" />
       </IconButton>
-    )
+    );
   }
 
   if (isButtonFour) {
@@ -39,12 +39,12 @@ export default function CustomButton({
       >
         <Delete fontSize="small" />
       </IconButton>
-    )
+    );
   }
 
   const className = isButtonOne
     ? `custom-button-one custom-button-one--${color}`
-    : 'custom-button-two'
+    : "custom-button-two";
 
   const buttonProps = {
     className,
@@ -53,13 +53,13 @@ export default function CustomButton({
     variant,
     disabled,
     fullWidth: true,
-    'aria-label': ariaLabel,
+    "aria-label": ariaLabel,
     ...(isButtonTwo && { startIcon: <AutoFixHigh /> }),
-  }
+  };
 
   return (
     <Button {...buttonProps}>
       <span>{label}</span>
     </Button>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { Pagination } from '@mui/material'
-import { CustomPaginationProps } from './CustomPagination.types'
-import './CustomPagination.scss'
+import { Pagination } from "@mui/material";
+import { CustomPaginationProps } from "./CustomPagination.types";
+import "./CustomPagination.scss";
 
 export default function CustomPagination({
   count,
@@ -19,5 +19,5 @@ export default function CustomPagination({
       showFirstButton={showFirstButton}
       showLastButton={showLastButton}
     />
-  )
+  );
 }

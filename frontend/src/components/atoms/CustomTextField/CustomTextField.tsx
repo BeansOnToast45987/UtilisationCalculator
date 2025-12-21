@@ -1,6 +1,6 @@
-import { TextField } from '@mui/material'
-import { CustomTextFieldProps } from './CustomTextField.types'
-import './CustomTextField.scss'
+import { TextField } from "@mui/material";
+import { CustomTextFieldProps } from "./CustomTextField.types";
+import "./CustomTextField.scss";
 
 export default function CustomTextField({
   value,
@@ -38,12 +38,12 @@ export default function CustomTextField({
       fullWidth={fullWidth}
       InputProps={{
         classes: {
-          root: 'custom-textfield-input-root',
-          notchedOutline: 'custom-textfield-input-notched',
-          input: 'custom-textfield-input',
+          root: "custom-textfield-input-root",
+          notchedOutline: "custom-textfield-input-notched",
+          input: "custom-textfield-input",
         },
       }}
       inputProps={inputProps}
     />
-  )
+  );
 }

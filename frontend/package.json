@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.9",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.9.2",
+    "@mui/icons-material": "^7.1.0",
     "graphql": "^16.11.0",
     "prettier": "^3.7.4",
     "react": "^19.2.0",

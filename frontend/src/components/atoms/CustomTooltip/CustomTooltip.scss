@@ -1,0 +1,26 @@
+.custom-tooltip-container {
+  display: var(--display-flex);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-xs);
+}
+
+.custom-tooltip-icon {
+  cursor: var(--cursor-pointer);
+
+  svg {
+    color: var(--color-blue-darkest);
+  }
+}
+
+.MuiTooltip-tooltip.custom-tooltip {
+  background-color: var(--color-info-light);
+  color: var(--color-blue-darkest);
+  border: var(--border-width-md) solid var(--color-blue-darkest);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  padding: var(--spacing-sm);
+
+  .MuiTooltip-arrow {
+    color: var(--color-blue-darkest);
+  }
+}

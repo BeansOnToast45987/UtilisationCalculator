@@ -1,8 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
 import CustomPagination from "./CustomPagination";
+import { CustomPaginationProps } from "./CustomPagination.types";
 
 describe("CustomPagination", () => {
-  const defaultProps = {
+  const defaultProps: CustomPaginationProps = {
     count: 10,
     page: 1,
     onChange: vi.fn(),
@@ -15,22 +17,25 @@ describe("CustomPagination", () => {
   it("renders with required props and custom className", () => {
     render(<CustomPagination {...defaultProps} />);
 
+    const pageButtons = screen.getAllByRole("button");
+    expect(pageButtons.length).toBeGreaterThan(0);
+
     const pagination = document.querySelector(".custom-pagination");
     expect(pagination).toBeInTheDocument();
     expect(pagination).toHaveClass("custom-pagination");
-
-    const pageButtons = screen.getAllByRole("button");
-    expect(pageButtons.length).toBeGreaterThan(0);
   });
 
-  it("renders with current page selected", () => {
+  it("renders with current page selected and proper navigation", () => {
     render(<CustomPagination {...defaultProps} page={3} />);
 
     const currentPageButton = screen.getByRole("button", { name: "page 3" });
     expect(currentPageButton).toHaveAttribute("aria-current", "page");
+
+    const page2Button = screen.getByRole("button", { name: "Go to page 2" });
+    expect(page2Button).toBeInTheDocument();
   });
 
-  it("handles page change events", () => {
+  it("handles page change events correctly", () => {
     const onChangeMock = vi.fn();
     render(<CustomPagination {...defaultProps} onChange={onChangeMock} />);
 
@@ -45,6 +50,8 @@ describe("CustomPagination", () => {
     render(
       <CustomPagination
         {...defaultProps}
+        count={20}
+        page={10}
         showFirstButton={true}
         showLastButton={true}
       />,
@@ -59,8 +66,26 @@ describe("CustomPagination", () => {
     expect(lastButton).toBeInTheDocument();
   });
 
-  it("does not show first and last buttons by default", () => {
-    render(<CustomPagination {...defaultProps} />);
+  it("handles edge cases with different page counts and positions", () => {
+    const { rerender } = render(
+      <CustomPagination {...defaultProps} count={1} page={1} />,
+    );
+
+    let pagination = document.querySelector(".custom-pagination");
+    expect(pagination).toBeInTheDocument();
+
+    rerender(
+      <CustomPagination
+        {...defaultProps}
+        count={100}
+        page={50}
+        showFirstButton={false}
+        showLastButton={false}
+      />,
+    );
+
+    pagination = document.querySelector(".custom-pagination");
+    expect(pagination).toBeInTheDocument();
 
     const firstButton = screen.queryByRole("button", {
       name: "Go to first page",

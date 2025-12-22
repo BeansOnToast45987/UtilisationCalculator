@@ -1,15 +1,25 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
 import CustomButton from "./CustomButton";
+import { CustomButtonProps } from "./CustomButton.types";
 
 describe("CustomButton", () => {
-  it("renders button type one with label and color classes", () => {
+  const defaultProps: CustomButtonProps = {
+    ariaLabel: "Test button",
+    buttonType: "one",
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("renders button type one with color variants", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
-        ariaLabel="Test button"
-        buttonType="one"
+        {...defaultProps}
         color="primary"
-        label="Click me"
+        label="Primary Button"
         onClick={mockClick}
         type="submit"
         disabled={false}
@@ -24,79 +34,111 @@ describe("CustomButton", () => {
     );
     expect(button).toHaveAttribute("type", "submit");
     expect(button).not.toBeDisabled();
-    expect(screen.getByText("Click me")).toBeInTheDocument();
+    expect(screen.getByText("Primary Button")).toBeInTheDocument();
 
     fireEvent.click(button);
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("renders button type one with secondary color and disabled state", () => {
-    render(
-      <CustomButton
-        ariaLabel="Disabled button"
-        buttonType="one"
-        color="secondary"
-        label="Disabled"
-        disabled={true}
-      />,
-    );
-
-    const button = screen.getByRole("button");
-    expect(button).toHaveClass(
-      "custom-button-one",
-      "custom-button-one--secondary",
-    );
-    expect(button).toBeDisabled();
-  });
-
-  it("renders button type two with icon", () => {
-    render(
-      <CustomButton
-        ariaLabel="Icon button"
-        buttonType="two"
-        label="With Icon"
-      />,
-    );
-
-    const button = screen.getByRole("button");
-    expect(button).toHaveClass("custom-button-two");
-    expect(button.querySelector("svg")).toBeInTheDocument();
-    expect(screen.getByText("With Icon")).toBeInTheDocument();
-  });
-
-  it("renders button type three as cancel icon button", () => {
+  it("renders button type two with start icon", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
-        ariaLabel="Cancel action"
+        {...defaultProps}
+        buttonType="two"
+        label="Calculate Button"
+        onClick={mockClick}
+        variant="contained"
+      />,
+    );
+
+    const button = screen.getByRole("button", { name: "Test button" });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass("custom-button-two");
+    expect(screen.getByText("Calculate Button")).toBeInTheDocument();
+
+    const icon = button.querySelector("svg");
+    expect(icon).toBeInTheDocument();
+
+    fireEvent.click(button);
+    expect(mockClick).toHaveBeenCalledTimes(1);
+  });
+
+  it("renders button type three as icon button with cancel icon", () => {
+    const mockClick = vi.fn();
+    render(
+      <CustomButton
+        {...defaultProps}
         buttonType="three"
+        ariaLabel="Cancel action"
         onClick={mockClick}
       />,
     );
 
     const button = screen.getByRole("button", { name: "Cancel action" });
+    expect(button).toBeInTheDocument();
     expect(button).toHaveClass("custom-button-three");
-    expect(button.querySelector("svg")).toBeInTheDocument();
+
+    const cancelIcon = button.querySelector("svg");
+    expect(cancelIcon).toBeInTheDocument();
+
+    expect(screen.queryByText("Cancel action")).not.toBeInTheDocument();
 
     fireEvent.click(button);
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("renders button type four as delete icon button", () => {
+  it("renders button type four as icon button with delete icon", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
-        ariaLabel="Delete item"
+        {...defaultProps}
         buttonType="four"
+        ariaLabel="Delete item"
         onClick={mockClick}
       />,
     );
 
     const button = screen.getByRole("button", { name: "Delete item" });
+    expect(button).toBeInTheDocument();
     expect(button).toHaveClass("custom-button-four");
-    expect(button.querySelector("svg")).toBeInTheDocument();
+
+    const deleteIcon = button.querySelector("svg");
+    expect(deleteIcon).toBeInTheDocument();
+
+    expect(screen.queryByText("Delete item")).not.toBeInTheDocument();
 
     fireEvent.click(button);
     expect(mockClick).toHaveBeenCalledTimes(1);
+  });
+
+  it("handles props and edge cases", () => {
+    const { rerender } = render(
+      <CustomButton
+        {...defaultProps}
+        color="secondary"
+        label="Secondary Button"
+        disabled={true}
+      />,
+    );
+
+    let button = screen.getByRole("button", { name: "Test button" });
+    expect(button).toBeDisabled();
+    expect(button).toHaveClass("custom-button-one--secondary");
+
+    rerender(
+      <CustomButton {...defaultProps} type="reset" variant="outlined" />,
+    );
+
+    button = screen.getByRole("button", { name: "Test button" });
+    expect(button).toHaveAttribute("type", "reset");
+    expect(button).not.toBeDisabled();
+
+    rerender(
+      <CustomButton ariaLabel="Button without label" buttonType="one" />,
+    );
+
+    button = screen.getByRole("button", { name: "Button without label" });
+    expect(button).toBeInTheDocument();
   });
 });

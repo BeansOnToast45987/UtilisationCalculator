@@ -14,7 +14,7 @@ describe("CustomPagination", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with required props and custom className", () => {
+  it("should render with required props and custom className when initialized", () => {
     render(<CustomPagination {...defaultProps} />);
 
     const pageButtons = screen.getAllByRole("button");
@@ -25,7 +25,7 @@ describe("CustomPagination", () => {
     expect(pagination).toHaveClass("custom-pagination");
   });
 
-  it("renders with current page selected and proper navigation", () => {
+  it("should render with current page selected and proper navigation when specific page is active", () => {
     render(<CustomPagination {...defaultProps} page={3} />);
 
     const currentPageButton = screen.getByRole("button", { name: "page 3" });
@@ -35,7 +35,7 @@ describe("CustomPagination", () => {
     expect(page2Button).toBeInTheDocument();
   });
 
-  it("handles page change events correctly", () => {
+  it("should handle page change events correctly when user navigates between pages", () => {
     const onChangeMock = vi.fn();
     render(<CustomPagination {...defaultProps} onChange={onChangeMock} />);
 
@@ -46,7 +46,7 @@ describe("CustomPagination", () => {
     expect(onChangeMock).toHaveBeenCalledWith(expect.any(Object), 2);
   });
 
-  it("shows first and last buttons when enabled", () => {
+  it("should show first and last buttons when navigation options are enabled", () => {
     render(
       <CustomPagination
         {...defaultProps}
@@ -66,7 +66,7 @@ describe("CustomPagination", () => {
     expect(lastButton).toBeInTheDocument();
   });
 
-  it("handles edge cases with different page counts and positions", () => {
+  it("should handle edge cases with different page counts and positions when various configurations are applied", () => {
     const { rerender } = render(
       <CustomPagination {...defaultProps} count={1} page={1} />,
     );

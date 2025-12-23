@@ -10,7 +10,7 @@ describe("CustomLoader", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with default props and custom className", () => {
+  it("should render with default props and custom className when initialized", () => {
     render(<CustomLoader {...defaultProps} />);
 
     const loader = screen.getByRole("progressbar");
@@ -18,7 +18,7 @@ describe("CustomLoader", () => {
     expect(loader).toHaveClass("custom-loader");
   });
 
-  it("applies size prop with custom dimensions", () => {
+  it("should apply size prop with custom dimensions when specific size is provided", () => {
     const { container } = render(<CustomLoader {...defaultProps} size={60} />);
 
     const loader = container.querySelector(".custom-loader");
@@ -26,7 +26,7 @@ describe("CustomLoader", () => {
     expect(loader).toHaveStyle("height: 60px");
   });
 
-  it("applies color prop variations", () => {
+  it("should apply color prop variations when different color themes are specified", () => {
     const { rerender } = render(
       <CustomLoader {...defaultProps} color="primary" />,
     );
@@ -43,7 +43,7 @@ describe("CustomLoader", () => {
     expect(loader).toBeInTheDocument();
   });
 
-  it("applies thickness prop to svg circle", () => {
+  it("should apply thickness prop to svg circle when custom thickness is specified", () => {
     render(<CustomLoader {...defaultProps} thickness={2.5} />);
 
     const loader = screen.getByRole("progressbar");
@@ -53,7 +53,7 @@ describe("CustomLoader", () => {
     expect(svgCircle).toBeInTheDocument();
   });
 
-  it("handles custom className and id props", () => {
+  it("should handle custom className and id props when additional styling is needed", () => {
     render(
       <CustomLoader
         {...defaultProps}

@@ -12,7 +12,7 @@ describe("CustomTooltip", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with custom container class and icon button", () => {
+  it("should render with custom container class and icon button when initialized", () => {
     render(<CustomTooltip {...defaultProps} />);
 
     const iconButton = screen.getByRole("button");
@@ -27,7 +27,7 @@ describe("CustomTooltip", () => {
     expect(container).toBeInTheDocument();
   });
 
-  it("displays tooltip text on hover interaction", async () => {
+  it("should display tooltip text on hover interaction when user hovers over the icon", async () => {
     render(
       <CustomTooltip {...defaultProps} text="Helpful tooltip information" />,
     );
@@ -42,7 +42,7 @@ describe("CustomTooltip", () => {
     expect(tooltip).toHaveClass("MuiTooltip-popper");
   });
 
-  it("hides tooltip on mouse leave interaction", async () => {
+  it("should hide tooltip on mouse leave interaction when user stops hovering", async () => {
     render(<CustomTooltip {...defaultProps} text="Interactive tooltip" />);
 
     const iconButton = screen.getByRole("button");
@@ -57,7 +57,7 @@ describe("CustomTooltip", () => {
     });
   });
 
-  it("displays tooltip on focus for keyboard accessibility", async () => {
+  it("should display tooltip on focus for keyboard accessibility when navigating with keyboard", async () => {
     render(
       <CustomTooltip {...defaultProps} text="Accessible tooltip content" />,
     );
@@ -70,7 +70,7 @@ describe("CustomTooltip", () => {
     expect(tooltip).toHaveTextContent("Accessible tooltip content");
   });
 
-  it("handles different text lengths and special characters", async () => {
+  it("should handle different text lengths and special characters when various content types are provided", async () => {
     const { rerender } = render(
       <CustomTooltip {...defaultProps} text="Short" />,
     );

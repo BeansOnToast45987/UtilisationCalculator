@@ -14,7 +14,7 @@ describe("CustomTextField", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with required props and custom classes", () => {
+  it("should render with required props and custom classes when initialized", () => {
     render(<CustomTextField {...defaultProps} />);
 
     const input = screen.getByLabelText("Test Field");
@@ -26,7 +26,7 @@ describe("CustomTextField", () => {
     expect(textField).toHaveClass("custom-textfield");
   });
 
-  it("handles value and onChange events", () => {
+  it("should handle value and onChange events when user inputs text", () => {
     const onChangeMock = vi.fn();
     render(
       <CustomTextField
@@ -44,7 +44,7 @@ describe("CustomTextField", () => {
     expect(onChangeMock).toHaveBeenCalled();
   });
 
-  it("displays error state with helper text as label", () => {
+  it("should display error state with helper text as label when validation fails", () => {
     render(
       <CustomTextField
         {...defaultProps}
@@ -59,7 +59,7 @@ describe("CustomTextField", () => {
     expect(input).toHaveAttribute("aria-invalid", "true");
   });
 
-  it("handles input types and form integration props", () => {
+  it("should handle input types and form integration props when configured for different input scenarios", () => {
     const onBlurMock = vi.fn();
     render(
       <CustomTextField
@@ -87,7 +87,7 @@ describe("CustomTextField", () => {
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });
 
-  it("handles disabled state and additional input configurations", () => {
+  it("should handle disabled state and additional input configurations when restrictions are applied", () => {
     const inputProps = { maxLength: 50, "data-testid": "custom-input" };
 
     const { rerender } = render(

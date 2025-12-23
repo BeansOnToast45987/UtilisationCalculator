@@ -13,7 +13,7 @@ describe("CustomButton", () => {
     vi.clearAllMocks();
   });
 
-  it("renders button type one with color variants", () => {
+  it("should render button type one with color variants when provided with primary color", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
@@ -40,7 +40,7 @@ describe("CustomButton", () => {
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("renders button type two with start icon", () => {
+  it("should render button type two with start icon when using contained variant", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
@@ -64,7 +64,7 @@ describe("CustomButton", () => {
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("renders button type three as icon button with cancel icon", () => {
+  it("should render button type three as icon button with cancel icon when no label is provided", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
@@ -88,7 +88,7 @@ describe("CustomButton", () => {
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("renders button type four as icon button with delete icon", () => {
+  it("should render button type four as icon button with delete icon when configured for deletion", () => {
     const mockClick = vi.fn();
     render(
       <CustomButton
@@ -112,7 +112,7 @@ describe("CustomButton", () => {
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 
-  it("handles props and edge cases", () => {
+  it("should handle different props and edge cases correctly when configuration changes", () => {
     const { rerender } = render(
       <CustomButton
         {...defaultProps}

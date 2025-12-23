@@ -10,7 +10,7 @@ describe("CustomDivider", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with default props and custom className", () => {
+  it("should render with default props and custom className when no additional props are provided", () => {
     const { container } = render(<CustomDivider {...defaultProps} />);
 
     const divider = container.querySelector(".custom-divider");
@@ -19,7 +19,7 @@ describe("CustomDivider", () => {
     expect(divider).toHaveClass("MuiDivider-root");
   });
 
-  it("renders without children as empty element", () => {
+  it("should render without children as empty element when no content is provided", () => {
     const { container } = render(<CustomDivider {...defaultProps} />);
 
     const divider = container.querySelector(".custom-divider");
@@ -27,7 +27,7 @@ describe("CustomDivider", () => {
     expect(divider).toBeEmptyDOMElement();
   });
 
-  it("renders with children content", () => {
+  it("should render with children content when text content is provided", () => {
     const { container } = render(
       <CustomDivider {...defaultProps}>Section Break</CustomDivider>,
     );
@@ -39,7 +39,7 @@ describe("CustomDivider", () => {
     expect(divider).toHaveTextContent("Section Break");
   });
 
-  it("renders with complex children elements", () => {
+  it("should render with complex children elements when JSX elements are provided", () => {
     const { container } = render(
       <CustomDivider {...defaultProps}>
         <span>Complex Content</span>
@@ -54,7 +54,7 @@ describe("CustomDivider", () => {
     expect(divider).toHaveTextContent("Complex Content");
   });
 
-  it("handles flexItem prop variations", () => {
+  it("should handle flexItem prop variations when different flex configurations are applied", () => {
     const { rerender } = render(
       <CustomDivider {...defaultProps} flexItem={true} />,
     );

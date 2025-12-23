@@ -12,7 +12,7 @@ describe("CustomTypography", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with custom className and children", () => {
+  it("should render with custom className and children when content is provided", () => {
     render(<CustomTypography {...defaultProps}>Hello World</CustomTypography>);
 
     const helloText = screen.getByText("Hello World");
@@ -23,7 +23,7 @@ describe("CustomTypography", () => {
     expect(typography).toHaveClass("custom-typography");
   });
 
-  it("applies variant prop with semantic HTML elements", () => {
+  it("should apply variant prop with semantic HTML elements when different typography variants are specified", () => {
     const { rerender } = render(
       <CustomTypography {...defaultProps} variant="h1">
         Main Heading
@@ -44,7 +44,7 @@ describe("CustomTypography", () => {
     expect(typography).toBeInTheDocument();
   });
 
-  it("applies color prop with CSS variable styling", () => {
+  it("should apply color prop with CSS variable styling when different color themes are specified", () => {
     const { rerender } = render(
       <CustomTypography {...defaultProps} color="primary">
         Primary Text
@@ -64,7 +64,7 @@ describe("CustomTypography", () => {
     expect(typography).toHaveStyle("color: var(--color-error)");
   });
 
-  it("handles layout and styling props", () => {
+  it("should handle layout and styling props when additional configuration is provided", () => {
     render(
       <CustomTypography
         {...defaultProps}
@@ -83,7 +83,7 @@ describe("CustomTypography", () => {
     expect(typography).toHaveClass("custom-typography", "additional-class");
   });
 
-  it("renders with custom component and complex children", () => {
+  it("should render with custom component and complex children when JSX elements are provided", () => {
     const { rerender } = render(
       <CustomTypography
         {...defaultProps}

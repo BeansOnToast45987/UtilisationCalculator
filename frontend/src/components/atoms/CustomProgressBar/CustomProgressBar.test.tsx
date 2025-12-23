@@ -13,7 +13,7 @@ describe("CustomProgressBar", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with required props and custom className", () => {
+  it("should render with required props and custom className when initialized", () => {
     render(<CustomProgressBar {...defaultProps} />);
 
     const progressBar = screen.getByRole("progressbar");
@@ -21,7 +21,7 @@ describe("CustomProgressBar", () => {
     expect(progressBar).toHaveClass("custom-progress-bar");
   });
 
-  it("applies success color theme", () => {
+  it("should apply success color theme when success color is specified", () => {
     render(<CustomProgressBar {...defaultProps} value={75} color="success" />);
 
     const progressBar = screen.getByRole("progressbar");
@@ -29,7 +29,7 @@ describe("CustomProgressBar", () => {
     expect(progressBar).toHaveClass("MuiLinearProgress-colorSuccess");
   });
 
-  it("applies error color theme", () => {
+  it("should apply error color theme when error color is specified", () => {
     render(<CustomProgressBar {...defaultProps} value={25} color="error" />);
 
     const progressBar = screen.getByRole("progressbar");
@@ -37,7 +37,7 @@ describe("CustomProgressBar", () => {
     expect(progressBar).toHaveClass("MuiLinearProgress-colorError");
   });
 
-  it("handles determinate variant with specific value", () => {
+  it("should handle determinate variant with specific value when progress percentage is known", () => {
     render(
       <CustomProgressBar {...defaultProps} value={80} variant="determinate" />,
     );
@@ -49,7 +49,7 @@ describe("CustomProgressBar", () => {
     expect(progressBar).toHaveAttribute("aria-valuemin", "0");
   });
 
-  it("handles different variant types and value ranges", () => {
+  it("should handle different variant types and value ranges when various configurations are applied", () => {
     const { rerender } = render(
       <CustomProgressBar {...defaultProps} value={0} variant="indeterminate" />,
     );

@@ -30,7 +30,7 @@ describe("CustomDatePicker", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with required props and custom classes", () => {
+  it("should render with required props and custom classes when initialized", () => {
     renderWithProvider(defaultProps);
 
     const datePickerGroup = screen.getByRole("group", { name: "Select Date" });
@@ -43,7 +43,7 @@ describe("CustomDatePicker", () => {
     expect(inputRoot).toBeInTheDocument();
   });
 
-  it("handles value and onChange events", () => {
+  it("should handle value and onChange events when user interacts with the picker", () => {
     const testDate = new Date("2025-01-15");
     const onChangeMock = vi.fn();
 
@@ -60,7 +60,7 @@ describe("CustomDatePicker", () => {
     expect(onChangeMock).toHaveBeenCalled();
   });
 
-  it("displays error state with helper text as label", () => {
+  it("should display error state with helper text as label when validation fails", () => {
     renderWithProvider({
       ...defaultProps,
       error: true,
@@ -81,7 +81,7 @@ describe("CustomDatePicker", () => {
     expect(inputRoot).toHaveClass("Mui-error");
   });
 
-  it("handles disabled state and date constraints", () => {
+  it("should handle disabled state and date constraints when restrictions are applied", () => {
     const minDate = new Date("2025-01-01");
     const maxDate = new Date("2025-12-31");
 
@@ -98,7 +98,7 @@ describe("CustomDatePicker", () => {
     expect(input).toBeDisabled();
   });
 
-  it("handles form integration props and custom formatting", () => {
+  it("should handle form integration props and custom formatting when configured for forms", () => {
     const onBlurMock = vi.fn();
 
     renderWithProvider({

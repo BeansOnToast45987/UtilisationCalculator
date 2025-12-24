@@ -1,0 +1,17 @@
+.utilisation-calculator-molecule-step4-labeled-progress-bar-wrapper {
+  width: var(--width-full);
+}
+
+.utilisation-calculator-molecule-step4-labeled-progress-bar-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.utilisation-calculator-molecule-step4-labeled-progress-bar-labels {
+  display: var(--display-flex);
+  justify-content: var(--justify-content-space-between);
+  margin-top: var(--spacing-xs);
+}

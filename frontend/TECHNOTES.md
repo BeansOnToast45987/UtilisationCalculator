@@ -1,5 +1,23 @@
 # TECHNOTES
 
+## 22-12-2025 - UC-10: Frontend Molecules Implementation
+
+- Added Clerk authentication and react-i18next dependencies
+- Implemented molecular components composing atoms into functional UI units:
+  - CustomToolbar - Navigation toolbar with app title and Clerk UserButton
+  - UtilisationCalculatorMoleculeStep1Header - Calculator title with info tooltip
+  - UtilisationCalculatorMoleculeStep1BillableHours/TotalHours/TargetUtilisation - Form input molecules
+  - UtilisationCalculatorMoleculeStep1StartDate/EndDate - Date picker molecules
+  - UtilisationCalculatorMoleculeStep1Buttons - Calculate and Clear action buttons
+  - UtilisationCalculatorMoleculeStep2Loader - Loading state with progress indicator
+  - UtilisationCalculatorMoleculeStep3Error - Error handling with close button
+  - UtilisationCalculatorMoleculeStep4Header/LabeledProgressBar/UtilisationSummaryCard - Results display
+  - UtilisationHistoryMoleculeStep1Header/HistoryCardLeft/HistoryCardRight/Pagination - History management
+  - UtilisationHistoryMoleculeStep2Loader/Step3Error/Step4NoData - History state management
+- Created date formatting utilities with internationalization support
+- Established 4-step wizard pattern for calculator and history workflows
+- Integrated TypeScript interfaces and CSS custom properties for consistent theming
+
 ## 21-12-2025 - UC-9: Frontend Atoms Implementation
 
 - Added Material-UI dependencies

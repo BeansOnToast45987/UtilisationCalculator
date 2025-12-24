@@ -1,42 +1,72 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import { vi } from "vitest";
 import CustomDivider from "./CustomDivider";
+import { CustomDividerProps } from "./CustomDivider.types";
 
 describe("CustomDivider", () => {
-  it("renders with custom className", () => {
-    render(<CustomDivider />);
+  const defaultProps: CustomDividerProps = {};
 
-    const divider = document.querySelector(".custom-divider");
-    expect(divider).toBeInTheDocument();
-    expect(divider).toHaveClass("custom-divider");
+  beforeEach(() => {
+    vi.clearAllMocks();
   });
 
-  it("renders without children", () => {
-    render(<CustomDivider />);
+  it("should render with default props and custom className when no additional props are provided", () => {
+    const { container } = render(<CustomDivider {...defaultProps} />);
 
-    const divider = document.querySelector(".custom-divider");
+    const divider = container.querySelector(".custom-divider");
+    expect(divider).toBeInTheDocument();
+    expect(divider).toHaveClass("custom-divider");
+    expect(divider).toHaveClass("MuiDivider-root");
+  });
+
+  it("should render without children as empty element when no content is provided", () => {
+    const { container } = render(<CustomDivider {...defaultProps} />);
+
+    const divider = container.querySelector(".custom-divider");
+    expect(divider).toBeInTheDocument();
     expect(divider).toBeEmptyDOMElement();
   });
 
-  it("renders with children content", () => {
-    render(<CustomDivider>Section Break</CustomDivider>);
+  it("should render with children content when text content is provided", () => {
+    const { container } = render(
+      <CustomDivider {...defaultProps}>Section Break</CustomDivider>,
+    );
 
-    const divider = document.querySelector(".custom-divider");
+    const sectionText = screen.getByText("Section Break");
+    expect(sectionText).toBeInTheDocument();
+
+    const divider = container.querySelector(".custom-divider");
     expect(divider).toHaveTextContent("Section Break");
   });
 
-  it("applies flexItem prop when true", () => {
-    render(<CustomDivider flexItem={true} />);
+  it("should render with complex children elements when JSX elements are provided", () => {
+    const { container } = render(
+      <CustomDivider {...defaultProps}>
+        <span>Complex Content</span>
+      </CustomDivider>,
+    );
 
-    const divider = document.querySelector(".custom-divider");
-    expect(divider).toBeInTheDocument();
+    const complexText = screen.getByText("Complex Content");
+    expect(complexText).toBeInTheDocument();
+
+    const divider = container.querySelector(".custom-divider");
+    expect(divider).toContainElement(complexText);
+    expect(divider).toHaveTextContent("Complex Content");
   });
 
-  it("does not apply flexItem when false or undefined", () => {
-    const { rerender } = render(<CustomDivider flexItem={false} />);
+  it("should handle flexItem prop variations when different flex configurations are applied", () => {
+    const { rerender } = render(
+      <CustomDivider {...defaultProps} flexItem={true} />,
+    );
+
     let divider = document.querySelector(".custom-divider");
     expect(divider).toBeInTheDocument();
 
-    rerender(<CustomDivider />);
+    rerender(<CustomDivider {...defaultProps} flexItem={false} />);
+    divider = document.querySelector(".custom-divider");
+    expect(divider).toBeInTheDocument();
+
+    rerender(<CustomDivider {...defaultProps} />);
     divider = document.querySelector(".custom-divider");
     expect(divider).toBeInTheDocument();
   });

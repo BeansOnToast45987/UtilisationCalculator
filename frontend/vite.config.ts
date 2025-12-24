@@ -11,18 +11,20 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./vitest.setup.ts",
+    exclude: ["src/graphql/**", "node_modules/**"],
     coverage: {
       provider: "istanbul",
       reporter: ["text", "json", "html", "lcov"],
       reportsDirectory: "./coverage",
       exclude: [
-        "node_modules/",
+        "node_modules/**",
         "__tests__/",
         "cypress/",
         "**/*.test.{ts,tsx}",
         "**/*.spec.{ts,tsx}",
         "**/dist/**",
         "**/*.d.ts",
+        "src/graphql/**",
       ],
       include: [
         "src/**/*.{ts,tsx}",

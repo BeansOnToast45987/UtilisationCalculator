@@ -1,0 +1,20 @@
+.utilisation-history-molecule-step4-no-data-container {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  width: var(--width-full);
+  height: var(--height-full);
+}
+
+.utilisation-history-molecule-step4-no-data-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-row);
+  align-items: var(--align-items-center);
+}
+
+.utilisation-history-molecule-step4-no-data-content {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  justify-content: var(--justify-content-center);
+  align-items: var(--align-items-center);
+  flex: var(--flex-1);
+}

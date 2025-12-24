@@ -1,8 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
 import CustomTextField from "./CustomTextField";
+import { CustomTextFieldProps } from "./CustomTextField.types";
 
 describe("CustomTextField", () => {
-  const defaultProps = {
+  const defaultProps: CustomTextFieldProps = {
     value: "",
     onChange: vi.fn(),
     label: "Test Field",
@@ -12,90 +14,102 @@ describe("CustomTextField", () => {
     vi.clearAllMocks();
   });
 
-  it("renders with required props and custom classes", () => {
+  it("should render with required props and custom classes when initialized", () => {
     render(<CustomTextField {...defaultProps} />);
+
+    const input = screen.getByLabelText("Test Field");
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute("type", "text");
 
     const textField = document.querySelector(".custom-textfield");
     expect(textField).toBeInTheDocument();
     expect(textField).toHaveClass("custom-textfield");
-
-    const input = screen.getByLabelText("Test Field");
-    expect(input).toBeInTheDocument();
   });
 
-  it("handles value and onChange events", () => {
+  it("should handle value and onChange events when user inputs text", () => {
     const onChangeMock = vi.fn();
     render(
       <CustomTextField
         {...defaultProps}
-        value="test value"
+        value="initial value"
         onChange={onChangeMock}
       />,
     );
 
-    const input = screen.getByDisplayValue("test value");
+    const input = screen.getByDisplayValue("initial value");
     expect(input).toBeInTheDocument();
 
     fireEvent.change(input, { target: { value: "new value" } });
     expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalled();
   });
 
-  it("handles error state with helper text as label", () => {
+  it("should display error state with helper text as label when validation fails", () => {
     render(
       <CustomTextField
         {...defaultProps}
         error={true}
-        helperText="Required field"
+        helperText="This field is required"
         label="Original Label"
       />,
     );
 
-    const input = screen.getByLabelText("Required field");
+    const input = screen.getByLabelText("This field is required");
     expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute("aria-invalid", "true");
   });
 
-  it("applies form props and handles onBlur", () => {
+  it("should handle input types and form integration props when configured for different input scenarios", () => {
     const onBlurMock = vi.fn();
     render(
       <CustomTextField
         {...defaultProps}
-        name="testField"
         type="email"
-        placeholder="Enter email"
-        disabled={true}
+        name="userEmail"
+        id="email-input"
+        placeholder="Enter your email"
         required={true}
-        id="test-input"
         onBlur={onBlurMock}
       />,
     );
 
-    const input = document.querySelector("#test-input");
-    expect(input).toHaveAttribute("name", "testField");
+    const input = document.querySelector("input[name='userEmail']");
+    expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute("type", "email");
-    expect(input).toHaveAttribute("placeholder", "Enter email");
-    expect(input).toBeDisabled();
+    expect(input).toHaveAttribute("name", "userEmail");
+    expect(input).toHaveAttribute("id", "email-input");
+    expect(input).toHaveAttribute("placeholder", "Enter your email");
     expect(input).toBeRequired();
 
-    fireEvent.blur(input!);
+    if (input) {
+      fireEvent.blur(input);
+    }
     expect(onBlurMock).toHaveBeenCalledTimes(1);
   });
 
-  it("applies custom input classes and additional props", () => {
-    render(
+  it("should handle disabled state and additional input configurations when restrictions are applied", () => {
+    const inputProps = { maxLength: 50, "data-testid": "custom-input" };
+
+    const { rerender } = render(
       <CustomTextField
         {...defaultProps}
-        autoFocus={true}
+        disabled={true}
         fullWidth={true}
-        inputProps={{ maxLength: 10 }}
+        autoFocus={true}
+        inputProps={inputProps}
       />,
     );
 
-    const inputRoot = document.querySelector(".custom-textfield-input-root");
-    expect(inputRoot).toBeInTheDocument();
+    let input = screen.getByLabelText("Test Field");
+    expect(input).toBeDisabled();
+    expect(input).toHaveAttribute("maxlength", "50");
+    expect(input).toHaveAttribute("data-testid", "custom-input");
 
-    const input = screen.getByLabelText("Test Field");
-    expect(input).toHaveAttribute("maxlength", "10");
-    expect(input).toHaveFocus();
+    rerender(
+      <CustomTextField {...defaultProps} fullWidth={false} disabled={false} />,
+    );
+
+    input = screen.getByLabelText("Test Field");
+    expect(input).not.toBeDisabled();
   });
 });

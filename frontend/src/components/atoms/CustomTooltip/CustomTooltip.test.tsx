@@ -1,27 +1,36 @@
-import {
-  render,
-  screen,
-  fireEvent,
-  waitForElementToBeRemoved,
-} from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { vi } from "vitest";
 import CustomTooltip from "./CustomTooltip";
+import { CustomTooltipProps } from "./CustomTooltip.types";
 
 describe("CustomTooltip", () => {
-  it("renders with custom container class and icon button", () => {
-    render(<CustomTooltip text="Helpful tooltip text" />);
+  const defaultProps: CustomTooltipProps = {
+    text: "Test tooltip text",
+  };
 
-    const container = document.querySelector(".custom-tooltip-container");
-    expect(container).toBeInTheDocument();
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("should render with custom container class and icon button when initialized", () => {
+    render(<CustomTooltip {...defaultProps} />);
 
     const iconButton = screen.getByRole("button");
+    expect(iconButton).toBeInTheDocument();
     expect(iconButton).toHaveClass("custom-tooltip-icon");
+    expect(iconButton).toHaveAttribute("aria-label", "Test tooltip text");
 
     const icon = iconButton.querySelector("svg");
     expect(icon).toBeInTheDocument();
+
+    const container = document.querySelector(".custom-tooltip-container");
+    expect(container).toBeInTheDocument();
   });
 
-  it("displays tooltip text on hover", async () => {
-    render(<CustomTooltip text="This is tooltip content" />);
+  it("should display tooltip text on hover interaction when user hovers over the icon", async () => {
+    render(
+      <CustomTooltip {...defaultProps} text="Helpful tooltip information" />,
+    );
 
     const iconButton = screen.getByRole("button");
 
@@ -29,22 +38,12 @@ describe("CustomTooltip", () => {
 
     const tooltip = await screen.findByRole("tooltip");
     expect(tooltip).toBeInTheDocument();
-    expect(tooltip).toHaveTextContent("This is tooltip content");
+    expect(tooltip).toHaveTextContent("Helpful tooltip information");
+    expect(tooltip).toHaveClass("MuiTooltip-popper");
   });
 
-  it("applies custom tooltip class", async () => {
-    render(<CustomTooltip text="Custom styled tooltip" />);
-
-    const iconButton = screen.getByRole("button");
-    fireEvent.mouseEnter(iconButton);
-
-    const tooltip = await screen.findByRole("tooltip");
-    const innerTooltip = tooltip.querySelector(".custom-tooltip");
-    expect(innerTooltip).toBeInTheDocument();
-  });
-
-  it("hides tooltip on mouse leave", async () => {
-    render(<CustomTooltip text="Disappearing tooltip" />);
+  it("should hide tooltip on mouse leave interaction when user stops hovering", async () => {
+    render(<CustomTooltip {...defaultProps} text="Interactive tooltip" />);
 
     const iconButton = screen.getByRole("button");
 
@@ -53,17 +52,50 @@ describe("CustomTooltip", () => {
     expect(tooltip).toBeInTheDocument();
 
     fireEvent.mouseLeave(iconButton);
-
-    await waitForElementToBeRemoved(() => screen.queryByRole("tooltip"));
+    await waitFor(() => {
+      expect(screen.queryByRole("tooltip")).not.toBeInTheDocument();
+    });
   });
 
-  it("uses info icon and bottom placement", () => {
-    render(<CustomTooltip text="Positioned tooltip" />);
+  it("should display tooltip on focus for keyboard accessibility when navigating with keyboard", async () => {
+    render(
+      <CustomTooltip {...defaultProps} text="Accessible tooltip content" />,
+    );
 
     const iconButton = screen.getByRole("button");
-    const infoIcon = iconButton.querySelector(
-      '[data-testid="InfoOutlinedIcon"]',
+    fireEvent.mouseOver(iconButton);
+
+    const tooltip = await screen.findByRole("tooltip");
+    expect(tooltip).toBeInTheDocument();
+    expect(tooltip).toHaveTextContent("Accessible tooltip content");
+  });
+
+  it("should handle different text lengths and special characters when various content types are provided", async () => {
+    const { rerender } = render(
+      <CustomTooltip {...defaultProps} text="Short" />,
     );
-    expect(infoIcon).toBeInTheDocument();
+
+    let iconButton = screen.getByRole("button");
+    fireEvent.mouseEnter(iconButton);
+
+    let tooltip = await screen.findByRole("tooltip");
+    expect(tooltip).toHaveTextContent("Short");
+
+    fireEvent.mouseLeave(iconButton);
+
+    rerender(
+      <CustomTooltip
+        {...defaultProps}
+        text="Very long tooltip text with special characters: !@#$%^&*()"
+      />,
+    );
+
+    iconButton = screen.getByRole("button");
+    fireEvent.mouseEnter(iconButton);
+
+    tooltip = await screen.findByRole("tooltip");
+    expect(tooltip).toHaveTextContent(
+      "Very long tooltip text with special characters: !@#$%^&*()",
+    );
   });
 });

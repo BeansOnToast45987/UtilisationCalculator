@@ -1,0 +1,28 @@
+.utilisation-history-molecule-step2-loader-container {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  width: var(--width-full);
+  height: var(--height-full);
+}
+
+.utilisation-history-molecule-step2-loader-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  margin-bottom: var(--spacing-sm);
+}
+
+.utilisation-history-molecule-step2-loader {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  justify-content: var(--justify-content-center);
+  align-items: var(--align-items-center);
+  height: var(--height-full);
+  gap: var(--spacing-md);
+}
+
+.utilisation-history-molecule-step2-loader-content {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-sm);
+}

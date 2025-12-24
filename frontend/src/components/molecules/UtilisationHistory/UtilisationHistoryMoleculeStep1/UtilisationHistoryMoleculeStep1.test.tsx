@@ -9,18 +9,30 @@ import {
 
 vi.mock("react-i18next", () => ({
   useTranslation: vi.fn(() => ({
-    t: vi.fn((key: string, options?: { target?: number; billable?: number; total?: number; start?: string; end?: string }) => {
-      const translations: Record<string, string> = {
-        "utilisationHistory.title": "Utilisation History",
-        "utilisationHistory.information": "View all your previously calculated utilisation records. Delete entries to manage your history",
-        "utilisationHistory.noData": "No utilisation history",
-        "utilisationHistory.target": `Target: ${options?.target || 0}%`,
-        "utilisationHistory.billableHours": `Billable Hours: ${options?.billable || 0} / ${options?.total || 0}`,
-        "utilisationHistory.period": `Period: ${options?.start || 'start'} - ${options?.end || 'end'}`,
-        "utilisationHistory.errors.title": "Utilisation History Error",
-      };
-      return translations[key] || key;
-    }),
+    t: vi.fn(
+      (
+        key: string,
+        options?: {
+          target?: number;
+          billable?: number;
+          total?: number;
+          start?: string;
+          end?: string;
+        },
+      ) => {
+        const translations: Record<string, string> = {
+          "utilisationHistory.title": "Utilisation History",
+          "utilisationHistory.information":
+            "View all your previously calculated utilisation records. Delete entries to manage your history",
+          "utilisationHistory.noData": "No utilisation history",
+          "utilisationHistory.target": `Target: ${options?.target || 0}%`,
+          "utilisationHistory.billableHours": `Billable Hours: ${options?.billable || 0} / ${options?.total || 0}`,
+          "utilisationHistory.period": `Period: ${options?.start || "start"} - ${options?.end || "end"}`,
+          "utilisationHistory.errors.title": "Utilisation History Error",
+        };
+        return translations[key] || key;
+      },
+    ),
     i18n: {
       language: "en",
     },
@@ -43,17 +55,19 @@ vi.mock("../../../atoms/index", () => ({
       Tooltip
     </div>
   )),
-  CustomButton: vi.fn(({ onClick, ariaLabel, buttonType, disabled, ...props }) => (
-    <button
-      data-testid={ariaLabel}
-      onClick={onClick}
-      disabled={disabled}
-      data-button-type={buttonType}
-      {...props}
-    >
-      Delete
-    </button>
-  )),
+  CustomButton: vi.fn(
+    ({ onClick, ariaLabel, buttonType, disabled, ...props }) => (
+      <button
+        data-testid={ariaLabel}
+        onClick={onClick}
+        disabled={disabled}
+        data-button-type={buttonType}
+        {...props}
+      >
+        Delete
+      </button>
+    ),
+  ),
   CustomProgressBar: vi.fn(({ value, variant, color, ...props }) => (
     <div
       data-testid="custom-progress-bar"
@@ -76,7 +90,9 @@ vi.mock("../../../atoms/index", () => ({
       <button onClick={(e) => onChange(e, page - 1)} disabled={page === 1}>
         Previous
       </button>
-      <span>Page {page} of {count}</span>
+      <span>
+        Page {page} of {count}
+      </span>
       <button onClick={(e) => onChange(e, page + 1)} disabled={page === count}>
         Next
       </button>
@@ -97,11 +113,14 @@ describe("UtilisationHistoryMoleculeStep1", () => {
 
     const tooltip = screen.getByTestId("custom-tooltip");
     expect(tooltip).toBeInTheDocument();
-    expect(tooltip).toHaveAttribute("data-text", "View all your previously calculated utilisation records. Delete entries to manage your history");
+    expect(tooltip).toHaveAttribute(
+      "data-text",
+      "View all your previously calculated utilisation records. Delete entries to manage your history",
+    );
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const titleElement = typographyElements.find(el => 
-      el.textContent === "Utilisation History"
+    const titleElement = typographyElements.find(
+      (el) => el.textContent === "Utilisation History",
     );
 
     expect(titleElement).toHaveAttribute("data-variant", "h6");
@@ -116,7 +135,9 @@ describe("UtilisationHistoryMoleculeStep1", () => {
       meetsTarget: true,
     };
 
-    const { rerender } = render(<UtilisationHistoryMoleculeStep1HistoryCardLeft {...successProps} />);
+    const { rerender } = render(
+      <UtilisationHistoryMoleculeStep1HistoryCardLeft {...successProps} />,
+    );
 
     const percentage = screen.getByText("85%");
     expect(percentage).toBeInTheDocument();
@@ -128,8 +149,12 @@ describe("UtilisationHistoryMoleculeStep1", () => {
     expect(calculatedAt).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const percentageElement = typographyElements.find(el => el.textContent === "85%");
-    const targetElement = typographyElements.find(el => el.textContent === "Target: 80%");
+    const percentageElement = typographyElements.find(
+      (el) => el.textContent === "85%",
+    );
+    const targetElement = typographyElements.find(
+      (el) => el.textContent === "Target: 80%",
+    );
 
     expect(percentageElement).toHaveAttribute("data-variant", "h6");
     expect(percentageElement).toHaveAttribute("data-color", "success");
@@ -143,7 +168,9 @@ describe("UtilisationHistoryMoleculeStep1", () => {
       meetsTarget: false,
     };
 
-    rerender(<UtilisationHistoryMoleculeStep1HistoryCardLeft {...errorProps} />);
+    rerender(
+      <UtilisationHistoryMoleculeStep1HistoryCardLeft {...errorProps} />,
+    );
 
     const errorPercentage = screen.getByText("65%");
     expect(errorPercentage).toBeInTheDocument();
@@ -152,7 +179,9 @@ describe("UtilisationHistoryMoleculeStep1", () => {
     expect(errorTargetInfo).toBeInTheDocument();
 
     const errorTypographyElements = screen.getAllByTestId("custom-typography");
-    const errorPercentageElement = errorTypographyElements.find(el => el.textContent === "65%");
+    const errorPercentageElement = errorTypographyElements.find(
+      (el) => el.textContent === "65%",
+    );
 
     expect(errorPercentageElement).toHaveAttribute("data-variant", "h6");
     expect(errorPercentageElement).toHaveAttribute("data-color", "error");
@@ -177,7 +206,9 @@ describe("UtilisationHistoryMoleculeStep1", () => {
     const periodText = screen.getByText("Period: 01/12/2025 - 07/12/2025");
     expect(periodText).toBeInTheDocument();
 
-    const deleteButton = screen.getByTestId("utilisation-history-molecule-step1-history-card-right-delete-button");
+    const deleteButton = screen.getByTestId(
+      "utilisation-history-molecule-step1-history-card-right-delete-button",
+    );
     expect(deleteButton).toBeInTheDocument();
     expect(deleteButton).toHaveAttribute("data-button-type", "four");
 
@@ -248,38 +279,62 @@ describe("UtilisationHistoryMoleculeStep1", () => {
         </div>
         <div className="utilisation-history-molecule-step1-cards">
           <div className="utilisation-history-molecule-step1-card-left">
-            <UtilisationHistoryMoleculeStep1HistoryCardLeft {...leftCardProps} />
+            <UtilisationHistoryMoleculeStep1HistoryCardLeft
+              {...leftCardProps}
+            />
           </div>
           <div className="utilisation-history-molecule-step1-card-right">
-            <UtilisationHistoryMoleculeStep1HistoryCardRight {...rightCardProps} />
+            <UtilisationHistoryMoleculeStep1HistoryCardRight
+              {...rightCardProps}
+            />
           </div>
         </div>
         <div className="utilisation-history-molecule-step1-pagination">
           <UtilisationHistoryMoleculeStep1Pagination {...paginationProps} />
         </div>
-      </div>
+      </div>,
     );
 
-    const headerContainer = container.querySelector(".utilisation-history-molecule-step1-header");
-    const cardsContainer = container.querySelector(".utilisation-history-molecule-step1-cards");
-    const cardLeftContainer = container.querySelector(".utilisation-history-molecule-step1-card-left");
-    const cardRightContainer = container.querySelector(".utilisation-history-molecule-step1-card-right");
-    const paginationContainer = container.querySelector(".utilisation-history-molecule-step1-pagination");
+    const headerContainer = container.querySelector(
+      ".utilisation-history-molecule-step1-header",
+    );
+    const cardsContainer = container.querySelector(
+      ".utilisation-history-molecule-step1-cards",
+    );
+    const cardLeftContainer = container.querySelector(
+      ".utilisation-history-molecule-step1-card-left",
+    );
+    const cardRightContainer = container.querySelector(
+      ".utilisation-history-molecule-step1-card-right",
+    );
+    const paginationContainer = container.querySelector(
+      ".utilisation-history-molecule-step1-pagination",
+    );
 
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-history-molecule-step1-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-history-molecule-step1-header",
+    );
 
     expect(cardsContainer).toBeInTheDocument();
-    expect(cardsContainer).toHaveClass("utilisation-history-molecule-step1-cards");
+    expect(cardsContainer).toHaveClass(
+      "utilisation-history-molecule-step1-cards",
+    );
 
     expect(cardLeftContainer).toBeInTheDocument();
-    expect(cardLeftContainer).toHaveClass("utilisation-history-molecule-step1-card-left");
+    expect(cardLeftContainer).toHaveClass(
+      "utilisation-history-molecule-step1-card-left",
+    );
 
     expect(cardRightContainer).toBeInTheDocument();
-    expect(cardRightContainer).toHaveClass("utilisation-history-molecule-step1-card-right");
+    expect(cardRightContainer).toHaveClass(
+      "utilisation-history-molecule-step1-card-right",
+    );
 
     expect(paginationContainer).toBeInTheDocument();
-    expect(paginationContainer).toHaveClass("utilisation-history-molecule-step1-pagination");
+    expect(paginationContainer).toHaveClass(
+      "utilisation-history-molecule-step1-pagination",
+    );
 
     expect(screen.getByText("Utilisation History")).toBeInTheDocument();
     expect(screen.getByText("75%")).toBeInTheDocument();

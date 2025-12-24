@@ -57,11 +57,7 @@ vi.mock("../../../atoms/index", () => ({
     </div>
   )),
   CustomDivider: vi.fn(({ flexItem, ...props }) => (
-    <div
-      data-testid="custom-divider"
-      data-flex-item={flexItem}
-      {...props}
-    >
+    <div data-testid="custom-divider" data-flex-item={flexItem} {...props}>
       Divider
     </div>
   )),
@@ -84,7 +80,9 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
     expect(titleElement).toHaveAttribute("data-variant", "h6");
     expect(titleElement).toHaveAttribute("data-color", "black");
 
-    const closeButton = screen.getByTestId("utilisation-calculator-molecule-step4-header-close-button");
+    const closeButton = screen.getByTestId(
+      "utilisation-calculator-molecule-step4-header-close-button",
+    );
     expect(closeButton).toBeInTheDocument();
     expect(closeButton).toHaveAttribute("data-button-type", "three");
 
@@ -101,7 +99,11 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
       color: "success" as const,
     };
 
-    render(<UtilisationCalculatorMoleculeStep4LabeledProgressBar {...successProps} />);
+    render(
+      <UtilisationCalculatorMoleculeStep4LabeledProgressBar
+        {...successProps}
+      />,
+    );
 
     const percentage = screen.getByText("85%");
     expect(percentage).toBeInTheDocument();
@@ -127,7 +129,9 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
       color: "error" as const,
     };
 
-    render(<UtilisationCalculatorMoleculeStep4LabeledProgressBar {...errorProps} />);
+    render(
+      <UtilisationCalculatorMoleculeStep4LabeledProgressBar {...errorProps} />,
+    );
 
     const percentage = screen.getByText("65%");
     expect(percentage).toBeInTheDocument();
@@ -139,8 +143,12 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
     expect(progressBar).toHaveAttribute("data-color", "error");
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const percentageElement = typographyElements.find(el => el.textContent === "65%");
-    const statusElement = typographyElements.find(el => el.textContent === "Below target");
+    const percentageElement = typographyElements.find(
+      (el) => el.textContent === "65%",
+    );
+    const statusElement = typographyElements.find(
+      (el) => el.textContent === "Below target",
+    );
 
     expect(percentageElement).toHaveAttribute("data-color", "error");
     expect(statusElement).toHaveAttribute("data-color", "error");
@@ -148,16 +156,23 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
 
   it("should render summary card with utilisation details when calculation data is provided", () => {
     const summaryProps = {
-      message: "Excellent work! You're meeting or exceeding your utilisation target",
+      message:
+        "Excellent work! You're meeting or exceeding your utilisation target",
       messageColor: "success" as const,
       totalHours: 40,
       billableHours: 32,
       target: 80,
     };
 
-    render(<UtilisationCalculatorMoleculeStep4UtilisationSummaryCard {...summaryProps} />);
+    render(
+      <UtilisationCalculatorMoleculeStep4UtilisationSummaryCard
+        {...summaryProps}
+      />,
+    );
 
-    const message = screen.getByText("Excellent work! You're meeting or exceeding your utilisation target");
+    const message = screen.getByText(
+      "Excellent work! You're meeting or exceeding your utilisation target",
+    );
     expect(message).toBeInTheDocument();
 
     const totalHoursLabel = screen.getByText("Total Hours");
@@ -200,46 +215,68 @@ describe("UtilisationCalculatorMoleculeStep4", () => {
     const { container } = render(
       <>
         <UtilisationCalculatorMoleculeStep4Header onClose={mockOnClose} />
-        <UtilisationCalculatorMoleculeStep4LabeledProgressBar {...progressProps} />
-        <UtilisationCalculatorMoleculeStep4UtilisationSummaryCard {...summaryProps} />
-      </>
+        <UtilisationCalculatorMoleculeStep4LabeledProgressBar
+          {...progressProps}
+        />
+        <UtilisationCalculatorMoleculeStep4UtilisationSummaryCard
+          {...summaryProps}
+        />
+      </>,
     );
 
-    const headerContainer = container.querySelector(".utilisation-calculator-molecule-step4-header");
+    const headerContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step4-header",
+    );
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-calculator-molecule-step4-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-calculator-molecule-step4-header",
+    );
 
-    const progressContainer = container.querySelector(".utilisation-calculator-molecule-step4-labeled-progress-bar-wrapper");
+    const progressContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step4-labeled-progress-bar-wrapper",
+    );
     expect(progressContainer).toBeInTheDocument();
-    expect(progressContainer).toHaveClass("utilisation-calculator-molecule-step4-labeled-progress-bar-wrapper");
+    expect(progressContainer).toHaveClass(
+      "utilisation-calculator-molecule-step4-labeled-progress-bar-wrapper",
+    );
 
-    const summaryContainer = container.querySelector(".utilisation-calculator-molecule-step4-utilisation-summary-card");
+    const summaryContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step4-utilisation-summary-card",
+    );
     expect(summaryContainer).toBeInTheDocument();
-    expect(summaryContainer).toHaveClass("utilisation-calculator-molecule-step4-utilisation-summary-card");
+    expect(summaryContainer).toHaveClass(
+      "utilisation-calculator-molecule-step4-utilisation-summary-card",
+    );
 
     expect(screen.getByText("Result")).toBeInTheDocument();
-    
+
     const percentageTexts = screen.getAllByText("75%");
     expect(percentageTexts).toHaveLength(2);
-    
-    const progressPercentage = percentageTexts.find(el => 
-      el.getAttribute("data-variant") === "h3" && 
-      el.getAttribute("data-color") === "success"
+
+    const progressPercentage = percentageTexts.find(
+      (el) =>
+        el.getAttribute("data-variant") === "h3" &&
+        el.getAttribute("data-color") === "success",
     );
     expect(progressPercentage).toBeInTheDocument();
-    
-    const targetPercentage = percentageTexts.find(el => 
-      el.getAttribute("data-variant") === "h6" && 
-      el.getAttribute("data-color") === "black"
+
+    const targetPercentage = percentageTexts.find(
+      (el) =>
+        el.getAttribute("data-variant") === "h6" &&
+        el.getAttribute("data-color") === "black",
     );
     expect(targetPercentage).toBeInTheDocument();
-    
+
     expect(screen.getByText("Target met")).toBeInTheDocument();
-    expect(screen.getByText("Great job! Your utilisation rate is on target")).toBeInTheDocument();
+    expect(
+      screen.getByText("Great job! Your utilisation rate is on target"),
+    ).toBeInTheDocument();
     expect(screen.getByText("26")).toBeInTheDocument();
     expect(screen.getByText("35")).toBeInTheDocument();
 
-    const closeButton = screen.getByTestId("utilisation-calculator-molecule-step4-header-close-button");
+    const closeButton = screen.getByTestId(
+      "utilisation-calculator-molecule-step4-header-close-button",
+    );
     fireEvent.click(closeButton);
     expect(mockOnClose).toHaveBeenCalledTimes(1);
   });

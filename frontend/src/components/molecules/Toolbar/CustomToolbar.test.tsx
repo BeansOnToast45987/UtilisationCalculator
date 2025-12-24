@@ -80,7 +80,9 @@ describe("CustomToolbar", () => {
     expect(toolbarChildren).toHaveLength(3);
 
     const typography = screen.getByTestId("custom-typography");
-    const spacer = container.querySelector(".custom-toolbar-spacer") as HTMLElement;
+    const spacer = container.querySelector(
+      ".custom-toolbar-spacer",
+    ) as HTMLElement;
     const userButton = screen.getByTestId("user-button");
 
     expect(toolbar).toContainElement(typography);

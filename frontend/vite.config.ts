@@ -11,10 +11,7 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./vitest.setup.ts",
-    exclude: [
-      "src/graphql/**",
-      "node_modules/**",
-    ],
+    exclude: ["src/graphql/**", "node_modules/**"],
     coverage: {
       provider: "istanbul",
       reporter: ["text", "json", "html", "lcov"],

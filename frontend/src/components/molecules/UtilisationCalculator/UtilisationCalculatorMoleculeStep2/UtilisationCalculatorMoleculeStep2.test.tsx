@@ -49,8 +49,8 @@ describe("UtilisationCalculatorMoleculeStep2", () => {
     expect(header).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const headerElement = typographyElements.find(el => 
-      el.textContent === "Calculate Utilisation"
+    const headerElement = typographyElements.find(
+      (el) => el.textContent === "Calculate Utilisation",
     );
     expect(headerElement).toHaveAttribute("data-variant", "h6");
     expect(headerElement).toHaveAttribute("data-color", "black");
@@ -72,8 +72,8 @@ describe("UtilisationCalculatorMoleculeStep2", () => {
     expect(loadingMessage).toBeInTheDocument();
 
     const messageElements = screen.getAllByTestId("custom-typography");
-    const loadingMessageElement = messageElements.find(el => 
-      el.textContent === "Loading ..."
+    const loadingMessageElement = messageElements.find(
+      (el) => el.textContent === "Loading ...",
     );
     expect(loadingMessageElement).toHaveAttribute("data-variant", "body1");
     expect(loadingMessageElement).toHaveAttribute("data-color", "black");
@@ -82,30 +82,48 @@ describe("UtilisationCalculatorMoleculeStep2", () => {
   it("should have proper CSS classes applied for styling when component is rendered", () => {
     const { container } = render(<UtilisationCalculatorMoleculeStep2Loader />);
 
-    const headerContainer = container.querySelector(".utilisation-calculator-molecule-step2-header");
+    const headerContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step2-header",
+    );
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-calculator-molecule-step2-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-calculator-molecule-step2-header",
+    );
 
-    const loaderContainer = container.querySelector(".utilisation-calculator-molecule-step2-loader");
+    const loaderContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step2-loader",
+    );
     expect(loaderContainer).toBeInTheDocument();
-    expect(loaderContainer).toHaveClass("utilisation-calculator-molecule-step2-loader");
+    expect(loaderContainer).toHaveClass(
+      "utilisation-calculator-molecule-step2-loader",
+    );
   });
 
   it("should maintain consistent layout structure when all loading elements are present", () => {
     const { container } = render(<UtilisationCalculatorMoleculeStep2Loader />);
 
-    const headerContainer = container.querySelector(".utilisation-calculator-molecule-step2-header");
-    const loaderContainer = container.querySelector(".utilisation-calculator-molecule-step2-loader");
+    const headerContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step2-header",
+    );
+    const loaderContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step2-loader",
+    );
 
     expect(headerContainer).toBeInTheDocument();
     expect(loaderContainer).toBeInTheDocument();
 
-    const headerTitle = headerContainer?.querySelector('[data-testid="custom-typography"]');
+    const headerTitle = headerContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
     expect(headerTitle).toHaveTextContent("Calculate Utilisation");
 
-    const loader = loaderContainer?.querySelector('[data-testid="custom-loader"]');
-    const message = loaderContainer?.querySelector('[data-testid="custom-typography"]');
-    
+    const loader = loaderContainer?.querySelector(
+      '[data-testid="custom-loader"]',
+    );
+    const message = loaderContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+
     expect(loader).toBeInTheDocument();
     expect(message).toBeInTheDocument();
     expect(message).toHaveTextContent("Loading ...");

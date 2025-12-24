@@ -1,4 +1,9 @@
-import { formatDate, formatDateWithTime, getDateFnsLocale, formatDateWithLocale } from "./dateFormatters";
+import {
+  formatDate,
+  formatDateWithTime,
+  getDateFnsLocale,
+  formatDateWithLocale,
+} from "./dateFormatters";
 import { enGB, fr } from "date-fns/locale";
 
 describe("dateFormatters", () => {
@@ -17,7 +22,9 @@ describe("dateFormatters", () => {
   it("should return 'Invalid date' when provided with invalid date inputs", () => {
     expect(formatDate("invalid-date", "en")).toBe("Invalid date");
     expect(formatDateWithTime(new Date("invalid"), "en")).toBe("Invalid date");
-    expect(formatDateWithLocale(new Date("invalid"), "MMM dd, yyyy", "en")).toBe("Invalid date");
+    expect(
+      formatDateWithLocale(new Date("invalid"), "MMM dd, yyyy", "en"),
+    ).toBe("Invalid date");
   });
 
   it("should return correct locale when different language codes are specified", () => {

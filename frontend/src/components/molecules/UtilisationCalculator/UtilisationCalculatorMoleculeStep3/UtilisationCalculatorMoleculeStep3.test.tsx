@@ -47,18 +47,19 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
     render(
       <UtilisationCalculatorMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while calculating utilisation.",
+          message:
+            "An unexpected error occurred while calculating utilisation.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
     const errorTitle = screen.getByText("Calculate Utilisation Error");
     expect(errorTitle).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const titleElement = typographyElements.find(el => 
-      el.textContent === "Calculate Utilisation Error"
+    const titleElement = typographyElements.find(
+      (el) => el.textContent === "Calculate Utilisation Error",
     );
     expect(titleElement).toHaveAttribute("data-variant", "h6");
     expect(titleElement).toHaveAttribute("data-color", "error");
@@ -66,7 +67,8 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
 
   it("should display error message with proper styling when error information is provided", () => {
     const customError = {
-      message: "Invalid input: Total hours must be greater than billable hours.",
+      message:
+        "Invalid input: Total hours must be greater than billable hours.",
     };
 
     const mockOnClose = vi.fn();
@@ -75,15 +77,19 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
       <UtilisationCalculatorMoleculeStep3Error
         error={customError}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorMessage = screen.getByText("Invalid input: Total hours must be greater than billable hours.");
+    const errorMessage = screen.getByText(
+      "Invalid input: Total hours must be greater than billable hours.",
+    );
     expect(errorMessage).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const messageElement = typographyElements.find(el => 
-      el.textContent === "Invalid input: Total hours must be greater than billable hours."
+    const messageElement = typographyElements.find(
+      (el) =>
+        el.textContent ===
+        "Invalid input: Total hours must be greater than billable hours.",
     );
     expect(messageElement).toHaveAttribute("data-variant", "body1");
     expect(messageElement).toHaveAttribute("data-color", "error");
@@ -95,13 +101,16 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
     render(
       <UtilisationCalculatorMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while calculating utilisation.",
+          message:
+            "An unexpected error occurred while calculating utilisation.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const closeButton = screen.getByTestId("utilisation-calculator-molecule-step3-error-close-button");
+    const closeButton = screen.getByTestId(
+      "utilisation-calculator-molecule-step3-error-close-button",
+    );
     expect(closeButton).toBeInTheDocument();
     expect(closeButton).toHaveAttribute("data-button-type", "three");
 
@@ -115,23 +124,36 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
     const { container } = render(
       <UtilisationCalculatorMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while calculating utilisation.",
+          message:
+            "An unexpected error occurred while calculating utilisation.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorContainer = container.querySelector(".utilisation-calculator-molecule-step3-error");
+    const errorContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error",
+    );
     expect(errorContainer).toBeInTheDocument();
-    expect(errorContainer).toHaveClass("utilisation-calculator-molecule-step3-error");
+    expect(errorContainer).toHaveClass(
+      "utilisation-calculator-molecule-step3-error",
+    );
 
-    const headerContainer = container.querySelector(".utilisation-calculator-molecule-step3-error-header");
+    const headerContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error-header",
+    );
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-calculator-molecule-step3-error-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-calculator-molecule-step3-error-header",
+    );
 
-    const contentContainer = container.querySelector(".utilisation-calculator-molecule-step3-error-content");
+    const contentContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error-content",
+    );
     expect(contentContainer).toBeInTheDocument();
-    expect(contentContainer).toHaveClass("utilisation-calculator-molecule-step3-error-content");
+    expect(contentContainer).toHaveClass(
+      "utilisation-calculator-molecule-step3-error-content",
+    );
   });
 
   it("should maintain consistent layout structure when all error elements are present", () => {
@@ -144,25 +166,39 @@ describe("UtilisationCalculatorMoleculeStep3", () => {
       <UtilisationCalculatorMoleculeStep3Error
         error={testError}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorContainer = container.querySelector(".utilisation-calculator-molecule-step3-error");
-    const headerContainer = container.querySelector(".utilisation-calculator-molecule-step3-error-header");
-    const contentContainer = container.querySelector(".utilisation-calculator-molecule-step3-error-content");
+    const errorContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error",
+    );
+    const headerContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error-header",
+    );
+    const contentContainer = container.querySelector(
+      ".utilisation-calculator-molecule-step3-error-content",
+    );
 
     expect(errorContainer).toBeInTheDocument();
     expect(headerContainer).toBeInTheDocument();
     expect(contentContainer).toBeInTheDocument();
 
-    const headerTitle = headerContainer?.querySelector('[data-testid="custom-typography"]');
-    const closeButton = headerContainer?.querySelector('[data-testid="utilisation-calculator-molecule-step3-error-close-button"]');
-    
+    const headerTitle = headerContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+    const closeButton = headerContainer?.querySelector(
+      '[data-testid="utilisation-calculator-molecule-step3-error-close-button"]',
+    );
+
     expect(headerTitle).toHaveTextContent("Calculate Utilisation Error");
     expect(closeButton).toBeInTheDocument();
 
-    const errorMessage = contentContainer?.querySelector('[data-testid="custom-typography"]');
-    expect(errorMessage).toHaveTextContent("Network error: Unable to connect to the calculation service.");
+    const errorMessage = contentContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+    expect(errorMessage).toHaveTextContent(
+      "Network error: Unable to connect to the calculation service.",
+    );
 
     if (closeButton) {
       fireEvent.click(closeButton);

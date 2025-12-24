@@ -39,8 +39,8 @@ describe("UtilisationHistoryMoleculeStep4", () => {
     expect(header).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const headerElement = typographyElements.find(el => 
-      el.textContent === "Utilisation History"
+    const headerElement = typographyElements.find(
+      (el) => el.textContent === "Utilisation History",
     );
     expect(headerElement).toHaveAttribute("data-variant", "h6");
     expect(headerElement).toHaveAttribute("data-color", "black");
@@ -49,12 +49,14 @@ describe("UtilisationHistoryMoleculeStep4", () => {
   it("should display no data message with proper styling when no history is available", () => {
     render(<UtilisationHistoryMoleculeStep4NoData />);
 
-    const noDataMessage = screen.getByText("No utilisation history data available");
+    const noDataMessage = screen.getByText(
+      "No utilisation history data available",
+    );
     expect(noDataMessage).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const messageElement = typographyElements.find(el => 
-      el.textContent === "No utilisation history data available"
+    const messageElement = typographyElements.find(
+      (el) => el.textContent === "No utilisation history data available",
     );
     expect(messageElement).toHaveAttribute("data-variant", "body1");
     expect(messageElement).toHaveAttribute("data-color", "black");
@@ -64,7 +66,9 @@ describe("UtilisationHistoryMoleculeStep4", () => {
     render(<UtilisationHistoryMoleculeStep4NoData />);
 
     const titleElement = screen.getByText("Utilisation History");
-    const messageElement = screen.getByText("No utilisation history data available");
+    const messageElement = screen.getByText(
+      "No utilisation history data available",
+    );
 
     expect(titleElement).toBeInTheDocument();
     expect(messageElement).toBeInTheDocument();
@@ -76,37 +80,61 @@ describe("UtilisationHistoryMoleculeStep4", () => {
   it("should have proper CSS classes applied for styling when component is rendered", () => {
     const { container } = render(<UtilisationHistoryMoleculeStep4NoData />);
 
-    const noDataContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-container");
+    const noDataContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-container",
+    );
     expect(noDataContainer).toBeInTheDocument();
-    expect(noDataContainer).toHaveClass("utilisation-history-molecule-step4-no-data-container");
+    expect(noDataContainer).toHaveClass(
+      "utilisation-history-molecule-step4-no-data-container",
+    );
 
-    const headerContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-header");
+    const headerContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-header",
+    );
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-history-molecule-step4-no-data-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-history-molecule-step4-no-data-header",
+    );
 
-    const contentContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-content");
+    const contentContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-content",
+    );
     expect(contentContainer).toBeInTheDocument();
-    expect(contentContainer).toHaveClass("utilisation-history-molecule-step4-no-data-content");
+    expect(contentContainer).toHaveClass(
+      "utilisation-history-molecule-step4-no-data-content",
+    );
   });
 
   it("should maintain consistent layout structure when all no data elements are present", () => {
     const { container } = render(<UtilisationHistoryMoleculeStep4NoData />);
 
-    const noDataContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-container");
-    const headerContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-header");
-    const contentContainer = container.querySelector(".utilisation-history-molecule-step4-no-data-content");
+    const noDataContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-container",
+    );
+    const headerContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-header",
+    );
+    const contentContainer = container.querySelector(
+      ".utilisation-history-molecule-step4-no-data-content",
+    );
 
     expect(noDataContainer).toBeInTheDocument();
     expect(headerContainer).toBeInTheDocument();
     expect(contentContainer).toBeInTheDocument();
 
-    const headerTitle = headerContainer?.querySelector('[data-testid="custom-typography"]');
+    const headerTitle = headerContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
     expect(headerTitle).toHaveTextContent("Utilisation History");
     expect(headerTitle).toHaveAttribute("data-variant", "h6");
     expect(headerTitle).toHaveAttribute("data-color", "black");
 
-    const contentMessage = contentContainer?.querySelector('[data-testid="custom-typography"]');
-    expect(contentMessage).toHaveTextContent("No utilisation history data available");
+    const contentMessage = contentContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+    expect(contentMessage).toHaveTextContent(
+      "No utilisation history data available",
+    );
     expect(contentMessage).toHaveAttribute("data-variant", "body1");
     expect(contentMessage).toHaveAttribute("data-color", "black");
   });

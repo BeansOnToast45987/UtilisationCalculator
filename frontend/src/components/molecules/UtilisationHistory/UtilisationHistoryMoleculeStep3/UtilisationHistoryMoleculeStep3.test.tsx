@@ -47,18 +47,19 @@ describe("UtilisationHistoryMoleculeStep3", () => {
     render(
       <UtilisationHistoryMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while fetching utilisation history.",
+          message:
+            "An unexpected error occurred while fetching utilisation history.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
     const errorTitle = screen.getByText("Utilisation History Error");
     expect(errorTitle).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const titleElement = typographyElements.find(el => 
-      el.textContent === "Utilisation History Error"
+    const titleElement = typographyElements.find(
+      (el) => el.textContent === "Utilisation History Error",
     );
     expect(titleElement).toHaveAttribute("data-variant", "h6");
     expect(titleElement).toHaveAttribute("data-color", "error");
@@ -66,7 +67,8 @@ describe("UtilisationHistoryMoleculeStep3", () => {
 
   it("should display error message with proper styling when error information is provided", () => {
     const customError = {
-      message: "Failed to load utilisation history: Database connection timeout.",
+      message:
+        "Failed to load utilisation history: Database connection timeout.",
     };
 
     const mockOnClose = vi.fn();
@@ -75,15 +77,19 @@ describe("UtilisationHistoryMoleculeStep3", () => {
       <UtilisationHistoryMoleculeStep3Error
         error={customError}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorMessage = screen.getByText("Failed to load utilisation history: Database connection timeout.");
+    const errorMessage = screen.getByText(
+      "Failed to load utilisation history: Database connection timeout.",
+    );
     expect(errorMessage).toBeInTheDocument();
 
     const typographyElements = screen.getAllByTestId("custom-typography");
-    const messageElement = typographyElements.find(el => 
-      el.textContent === "Failed to load utilisation history: Database connection timeout."
+    const messageElement = typographyElements.find(
+      (el) =>
+        el.textContent ===
+        "Failed to load utilisation history: Database connection timeout.",
     );
     expect(messageElement).toHaveAttribute("data-variant", "body1");
     expect(messageElement).toHaveAttribute("data-color", "error");
@@ -95,13 +101,16 @@ describe("UtilisationHistoryMoleculeStep3", () => {
     render(
       <UtilisationHistoryMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while fetching utilisation history.",
+          message:
+            "An unexpected error occurred while fetching utilisation history.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const closeButton = screen.getByTestId("utilisation-history-molecule-step3-error-close-button");
+    const closeButton = screen.getByTestId(
+      "utilisation-history-molecule-step3-error-close-button",
+    );
     expect(closeButton).toBeInTheDocument();
     expect(closeButton).toHaveAttribute("data-button-type", "three");
 
@@ -115,28 +124,42 @@ describe("UtilisationHistoryMoleculeStep3", () => {
     const { container } = render(
       <UtilisationHistoryMoleculeStep3Error
         error={{
-          message: "An unexpected error occurred while fetching utilisation history.",
+          message:
+            "An unexpected error occurred while fetching utilisation history.",
         }}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorContainer = container.querySelector(".utilisation-history-molecule-step3-error");
+    const errorContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error",
+    );
     expect(errorContainer).toBeInTheDocument();
-    expect(errorContainer).toHaveClass("utilisation-history-molecule-step3-error");
+    expect(errorContainer).toHaveClass(
+      "utilisation-history-molecule-step3-error",
+    );
 
-    const headerContainer = container.querySelector(".utilisation-history-molecule-step3-error-header");
+    const headerContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error-header",
+    );
     expect(headerContainer).toBeInTheDocument();
-    expect(headerContainer).toHaveClass("utilisation-history-molecule-step3-error-header");
+    expect(headerContainer).toHaveClass(
+      "utilisation-history-molecule-step3-error-header",
+    );
 
-    const contentContainer = container.querySelector(".utilisation-history-molecule-step3-error-content");
+    const contentContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error-content",
+    );
     expect(contentContainer).toBeInTheDocument();
-    expect(contentContainer).toHaveClass("utilisation-history-molecule-step3-error-content");
+    expect(contentContainer).toHaveClass(
+      "utilisation-history-molecule-step3-error-content",
+    );
   });
 
   it("should maintain consistent layout structure when all error elements are present", () => {
     const testError = {
-      message: "Network error: Unable to connect to the utilisation history service.",
+      message:
+        "Network error: Unable to connect to the utilisation history service.",
     };
     const mockOnClose = vi.fn();
 
@@ -144,25 +167,39 @@ describe("UtilisationHistoryMoleculeStep3", () => {
       <UtilisationHistoryMoleculeStep3Error
         error={testError}
         onClose={mockOnClose}
-      />
+      />,
     );
 
-    const errorContainer = container.querySelector(".utilisation-history-molecule-step3-error");
-    const headerContainer = container.querySelector(".utilisation-history-molecule-step3-error-header");
-    const contentContainer = container.querySelector(".utilisation-history-molecule-step3-error-content");
+    const errorContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error",
+    );
+    const headerContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error-header",
+    );
+    const contentContainer = container.querySelector(
+      ".utilisation-history-molecule-step3-error-content",
+    );
 
     expect(errorContainer).toBeInTheDocument();
     expect(headerContainer).toBeInTheDocument();
     expect(contentContainer).toBeInTheDocument();
 
-    const headerTitle = headerContainer?.querySelector('[data-testid="custom-typography"]');
-    const closeButton = headerContainer?.querySelector('[data-testid="utilisation-history-molecule-step3-error-close-button"]');
-    
+    const headerTitle = headerContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+    const closeButton = headerContainer?.querySelector(
+      '[data-testid="utilisation-history-molecule-step3-error-close-button"]',
+    );
+
     expect(headerTitle).toHaveTextContent("Utilisation History Error");
     expect(closeButton).toBeInTheDocument();
 
-    const errorMessage = contentContainer?.querySelector('[data-testid="custom-typography"]');
-    expect(errorMessage).toHaveTextContent("Network error: Unable to connect to the utilisation history service.");
+    const errorMessage = contentContainer?.querySelector(
+      '[data-testid="custom-typography"]',
+    );
+    expect(errorMessage).toHaveTextContent(
+      "Network error: Unable to connect to the utilisation history service.",
+    );
 
     if (closeButton) {
       fireEvent.click(closeButton);

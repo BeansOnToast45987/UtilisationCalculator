@@ -1,0 +1,15 @@
+.custom-app-bar .MuiToolbar-root {
+  background: var(--color-blue-darkest);
+  min-height: var(--height-xl);
+  height: var(--height-xl);
+}
+
+.custom-app-bar.MuiAppBar-root {
+  position: var(--position-fixed);
+  box-shadow: var(--box-shadow-none);
+}
+
+.toolbar-spacer.MuiToolbar-root {
+  min-height: var(--height-xl);
+  height: var(--height-xl);
+}

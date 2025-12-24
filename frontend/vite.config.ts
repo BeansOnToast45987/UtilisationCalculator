@@ -25,6 +25,7 @@ export default defineConfig({
         "**/dist/**",
         "**/*.d.ts",
         "src/graphql/**",
+        "**/validation.schema.ts",
       ],
       include: [
         "src/**/*.{ts,tsx}",

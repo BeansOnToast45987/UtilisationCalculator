@@ -1,5 +1,22 @@
 # TECHNOTES
 
+## 24-12-2025 - UC-11: Frontend Organism Implementation
+
+- Added Formik and Yup dependencies for form management and validation
+- Implemented organism-level components combining molecules into complete functional units:
+  - CustomAppBar - Top-level navigation with fixed positioning and toolbar spacer
+  - UtilisationCalculatorOrganism - Complete calculator form with Formik integration, validation, and step management
+  - UtilisationCalculatorResultOrganism - Results display organism for calculation outcomes
+  - UtilisationHistoryOrganism - Full history management with pagination, card layout, and CRUD operations
+- Created comprehensive form validation schema using Yup with internationalization support:
+  - Date validation with range constraints (max 365 days)
+  - Numeric validation with business rule enforcement (billable ≤ total hours)
+  - Cross-field validation and error handling
+- Established multi-step state management pattern for calculator and history workflows:
+  - Calculator: Form → Loading → Error/Results
+  - History: Loading → Error/No Data/Results with delete operations
+- Integrated organisms with existing molecular and atomic components
+
 ## 22-12-2025 - UC-10: Frontend Molecules Implementation
 
 - Added Clerk authentication and react-i18next dependencies

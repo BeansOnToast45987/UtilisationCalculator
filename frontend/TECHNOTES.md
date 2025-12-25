@@ -1,5 +1,30 @@
 # TECHNOTES
 
+## 25-12-2025 - UC-12: Frontend Templates and Pages Implementation
+
+- Implemented template layer components following atomic design pattern:
+  - HomeTemplate - Main application template with responsive layout handling
+  - SignInTemplate - Authentication template with Clerk SignIn integration
+  - SignUpTemplate - Registration template with Clerk SignUp integration
+- Created page components as thin wrappers around templates:
+  - HomePage - Home page component consuming HomeTemplate
+  - SignInPage - Sign-in page component consuming SignInTemplate
+  - SignUpPage - Sign-up page component consuming SignUpTemplate
+- Established responsive layout system with device-specific breakpoints:
+  - Desktop (1024px+): Side-by-side card layout for calculator and history
+  - Laptop (768px-1023px): Side-by-side card layout optimized for smaller screens
+  - Tablet (500px-767px): Side-by-side card layout optimized for smaller screens
+  - Mobile (<500px): Stacked card layout for mobile devices
+- Added comprehensive SCSS styling with CSS custom properties for consistent theming
+- Integrated GraphQL hooks for state management in HomeTemplate:
+  - Calculator state: Form submission, loading, error handling, and results display
+  - History state: Data fetching, pagination, deletion operations with error handling
+  - Form lifecycle: Submit → Loading → Results/Error → Close → Refresh history
+- Created device media query utility hook for responsive behavior detection
+- Implemented conditional rendering based on calculation results vs. history view
+- Added fullscreen layout management with viewport-minus-nav height calculations
+- Integrated Clerk authentication components with custom routing configuration
+
 ## 24-12-2025 - UC-11: Frontend Organism Implementation
 
 - Added Formik and Yup dependencies for form management and validation

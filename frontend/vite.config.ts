@@ -11,7 +11,6 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./vitest.setup.ts",
-    exclude: ["src/graphql/**", "node_modules/**"],
     coverage: {
       provider: "istanbul",
       reporter: ["text", "json", "html", "lcov"],
@@ -26,6 +25,9 @@ export default defineConfig({
         "**/*.d.ts",
         "src/graphql/**",
         "**/validation.schema.ts",
+        "src/components/pages/**",
+        "src/components/templates/SignInTemplate/**",
+        "src/components/templates/SignUpTemplate/**",
       ],
       include: [
         "src/**/*.{ts,tsx}",

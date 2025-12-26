@@ -1,0 +1,26 @@
+{
+  "name": "utilisationcalculator",
+  "version": "1.0.0",
+  "description": "Initial commit into main",
+  "main": "index.js",
+  "scripts": {
+    "start:all": "concurrently --names \"BACKEND,FRONTEND\" --prefix-colors \"bgBlue.bold,bgGreen.bold\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm run backend",
+    "start:frontend": "cd frontend && npm run frontend",
+    "test:all": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "build:all": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "format:all": "npm run format:backend && npm run format:frontend",
+    "format:backend": "cd backend && npm run format:backend",
+    "format:frontend": "cd frontend && npm run format:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

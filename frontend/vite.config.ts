@@ -28,6 +28,9 @@ export default defineConfig({
         "src/components/pages/**",
         "src/components/templates/SignInTemplate/**",
         "src/components/templates/SignUpTemplate/**",
+        "src/app/i18n.ts",
+        "src/app/App.tsx",
+        "src/main.tsx",
       ],
       include: [
         "src/**/*.{ts,tsx}",

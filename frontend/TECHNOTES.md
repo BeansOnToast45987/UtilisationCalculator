@@ -3,11 +3,11 @@
 ## 26-12-2025 - UC-13: App Structure Set Up with Internationalisation and User Initialization
 
 - Added i18next dependencies and configured internationalization with English/French support
-- Created complete App structure with React Router DOM and authentication-based routing  
+- Created complete App structure with React Router DOM and authentication-based routing
 - Integrated Clerk authentication with localization support using @clerk/localizations
 - Implemented InitializeUser component for automatic user onboarding with country detection
 - Set up Material-UI LocalizationProvider with date-fns adapter for locale-specific formatting
-- Updated main.tsx with provider hierarchy (Clerk → Apollo → MUI Localization) 
+- Updated main.tsx with provider hierarchy (Clerk → Apollo → MUI Localization)
 - Added comprehensive English translation keys and prepared French translation structure
 - Created utility functions for country mapping and Clerk localizations
 - Removed default Vite boilerplate and established application foundation

@@ -26,7 +26,7 @@ const DELETE_HISTORY_STEPS = {
 
 const ITEMS_PER_PAGE = {
   LARGE_SCREEN: 4,
-  SMALL_SCREEN: 3
+  SMALL_SCREEN: 3,
 } as const;
 
 export default function UtilisationHistoryOrganism({
@@ -45,7 +45,9 @@ export default function UtilisationHistoryOrganism({
 
   const itemsPerPage = useMemo(() => {
     const isLargeScreen = isDesktopDevice || isLaptopDevice || isTabletDevice;
-    return isLargeScreen ? ITEMS_PER_PAGE.LARGE_SCREEN : ITEMS_PER_PAGE.SMALL_SCREEN;
+    return isLargeScreen
+      ? ITEMS_PER_PAGE.LARGE_SCREEN
+      : ITEMS_PER_PAGE.SMALL_SCREEN;
   }, [isDesktopDevice, isLaptopDevice, isTabletDevice]);
 
   const calculations = getUtilisationData || [];

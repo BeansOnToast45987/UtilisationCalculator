@@ -21,7 +21,7 @@
         "maxDuration": "Date range cannot exceed 365 days"
       },
       "totalHours": {
-        "label": "Total Hours Worked This Week",
+        "label": "Total Hours Worked",
         "placeholder": "e.g. 40",
         "required": "Total Hours is required",
         "mustBeNumber": "Total Hours must be a number",

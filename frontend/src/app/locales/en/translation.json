@@ -1,0 +1,81 @@
+{
+  "appName": "Utilisation Calculator",
+  "app": {
+    "loading": "Loading ..."
+  },
+  "utilisationCalculator": {
+    "title": "Calculate Utilisation",
+    "subtitle": "Enter your hours for the period to calculate your utilisation rate",
+    "information": "Utilisation rate is the percentage of total working hours that are billable. Industry best practice targets 70% - 80% to allow time for professional development, administrative tasks, and strategic work",
+    "fields": {
+      "startDate": {
+        "label": "Start Date",
+        "required": "Start Date is required",
+        "invalid": "Invalid Start Date"
+      },
+      "endDate": {
+        "label": "End Date",
+        "required": "End Date is required",
+        "invalid": "Invalid End Date",
+        "mustBeAfterStart": "End Date must be after Start Date",
+        "maxDuration": "Date range cannot exceed 365 days"
+      },
+      "totalHours": {
+        "label": "Total Hours Worked This Week",
+        "placeholder": "e.g. 40",
+        "required": "Total Hours is required",
+        "mustBeNumber": "Total Hours must be a number",
+        "minValue": "Total Hours must be at least 0.01",
+        "maxValue": "Total Hours cannot exceed 8760 (hours in a year)"
+      },
+      "billableHours": {
+        "label": "Billable Hours",
+        "placeholder": "e.g. 32",
+        "required": "Billable Hours is required",
+        "mustBeNumber": "Billable Hours must be a number",
+        "minValue": "Billable Hours cannot be negative",
+        "minNonZero": "Billable Hours must be 0 or at least 0.01",
+        "exceedsTotal": "Billable Hours cannot exceed Total Hours"
+      },
+      "targetUtilisation": {
+        "label": "Target Utilisation (%)",
+        "placeholder": "e.g. 80",
+        "required": "Target Utilisation is required",
+        "mustBeNumber": "Target Utilisation must be a number",
+        "minValue": "Target Utilisation must be at least 1%",
+        "maxValue": "Target Utilisation cannot exceed 100%"
+      }
+    },
+    "buttons": {
+      "calculate": "Calculate",
+      "clear": "Clear"
+    },
+    "errors": {
+      "title": "Calculate Utilisation Error"
+    },
+    "results": {
+      "title": "Result",
+      "statusTargetMet": "Target met",
+      "statusBelowTarget": "Below target",
+      "messageSuccess": "Excellent work! You're meeting or exceeding your utilisation target",
+      "messageWarning": "Consider reviewing your workload allocation and billable opportunities",
+      "progressMin": "0%",
+      "progressMax": "100%",
+      "progressTarget": "Target: {{target}}%",
+      "totalHours": "Total Hours",
+      "billableHours": "Billable Hours",
+      "target": "Target"
+    }
+  },
+  "utilisationHistory": {
+    "title": "Utilisation History",
+    "information": "View all your previously calculated utilisation records. Delete entries to manage your history",
+    "noData": "No utilisation history",
+    "target": "Target: {{target}}%",
+    "billableHours": "Billable Hours: {{billable}} / {{total}}",
+    "period": "Period: {{start}} - {{end}}",
+    "errors": {
+      "title": "Utilisation History Error"
+    }
+  }
+}

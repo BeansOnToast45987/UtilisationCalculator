@@ -10,6 +10,7 @@ import {
 } from "../../../molecules/index";
 import { UtilisationHistoryOrganismProps } from "./UtilisationHistoryOrganism.types";
 import "./UtilisationHistoryOrganism.scss";
+import { useDeviceMediaQuery } from "../../../../utils/useDeviceMediaQuery";
 
 const GET_HISTORY_STEPS = {
   LOADING: "loading",
@@ -23,6 +24,11 @@ const DELETE_HISTORY_STEPS = {
   ERROR: "error",
 } as const;
 
+const ITEMS_PER_PAGE = {
+  LARGE_SCREEN: 4,
+  SMALL_SCREEN: 3
+} as const;
+
 export default function UtilisationHistoryOrganism({
   getUtilisationData,
   getUtilisationLoading,
@@ -34,7 +40,13 @@ export default function UtilisationHistoryOrganism({
   resetDeleteUtilisation,
 }: UtilisationHistoryOrganismProps) {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const { isDesktopDevice, isLaptopDevice, isTabletDevice } =
+    useDeviceMediaQuery();
+
+  const itemsPerPage = useMemo(() => {
+    const isLargeScreen = isDesktopDevice || isLaptopDevice || isTabletDevice;
+    return isLargeScreen ? ITEMS_PER_PAGE.LARGE_SCREEN : ITEMS_PER_PAGE.SMALL_SCREEN;
+  }, [isDesktopDevice, isLaptopDevice, isTabletDevice]);
 
   const calculations = getUtilisationData || [];
 

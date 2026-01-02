@@ -10,9 +10,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
   GCP_REGION: europe-west2
-  ARTIFACT_REGISTRY: ${{ secrets.GCP_PROJECT_ID }}-docker.pkg.dev
+  ARTIFACT_REGISTRY: ${{ vars.GCP_PROJECT_ID }}-docker.pkg.dev
   IMAGE_NAME: utilisation-calculator-backend
 
 jobs:
@@ -30,8 +30,8 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
-          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
 
       - name: Configure Docker for Artifact Registry
         run: gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev

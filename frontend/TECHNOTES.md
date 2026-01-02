@@ -1,5 +1,9 @@
 # TECHNOTES
 
+## 02-01-2026 - UC-17: Removing default FE README to trigger Workflow Run
+
+- Doing what it says on the Tin. Removing default Frontend README to trigger Workflow Run once develop is merged into main
+
 ## 02-01-2026 - UC-16: Remove "package-lock.json" from .gitignore
 
 - Removed "package-lock.json" from .gitignore

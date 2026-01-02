@@ -1,0 +1,1 @@
+export { useDeleteUtilisation } from "./useDeleteUtilisation";

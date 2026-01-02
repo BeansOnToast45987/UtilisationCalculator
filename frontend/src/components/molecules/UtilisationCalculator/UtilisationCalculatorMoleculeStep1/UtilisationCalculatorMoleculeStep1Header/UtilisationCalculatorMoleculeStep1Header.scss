@@ -1,0 +1,12 @@
+.utilisation-calculator-molecule-step1-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  row-gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.utilisation-calculator-molecule-step1-header-title {
+  display: var(--display-flex);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-xs);
+}

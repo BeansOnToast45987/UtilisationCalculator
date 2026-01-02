@@ -1,0 +1,23 @@
+.utilisation-calculator-molecule-step4-utilisation-summary-card {
+  width: var(--width-full);
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: var(--border-width-md) solid var(--color-dark-grey);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-light-grey);
+  box-sizing: var(--box-sizing-border-box);
+}
+
+.utilisation-calculator-molecule-step4-utilisation-summary-card-row {
+  display: var(--display-flex);
+  justify-content: var(--justify-content-space-between);
+  gap: var(--spacing-md);
+}
+
+.utilisation-calculator-molecule-step4-utilisation-summary-card-item {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  gap: var(--spacing-xs);
+}

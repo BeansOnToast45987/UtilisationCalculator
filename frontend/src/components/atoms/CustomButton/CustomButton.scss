@@ -1,0 +1,43 @@
+.custom-button-one.MuiButton-root {
+  color: var(--color-white);
+
+  &.custom-button-one--primary {
+    background-color: var(--color-blue-darkest);
+  }
+
+  &.custom-button-one--secondary {
+    background-color: var(--color-error);
+  }
+
+  &:disabled {
+    opacity: var(--opacity-disabled);
+    cursor: var(--cursor-not-allowed);
+  }
+}
+
+.custom-button-two.MuiButton-root {
+  background-color: var(--color-white);
+  color: var(--color-blue-darkest);
+  border-color: var(--color-blue-darkest);
+  border-width: var(--border-width-md);
+
+  .MuiSvgIcon-root {
+    color: var(--color-blue-darkest);
+  }
+}
+
+.custom-button-three.MuiIconButton-root {
+  color: var(--color-error);
+
+  .MuiSvgIcon-root {
+    color: var(--color-error);
+  }
+}
+
+.custom-button-four.MuiIconButton-root {
+  color: var(--color-error);
+
+  .MuiSvgIcon-root {
+    color: var(--color-error);
+  }
+}

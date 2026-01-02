@@ -1,0 +1,58 @@
+.custom-textfield {
+  width: var(--width-full);
+}
+
+.custom-textfield .custom-textfield-input-root .custom-textfield-input-notched {
+  border-color: var(--color-blue-darkest);
+  border-width: var(--border-width-md);
+}
+
+.custom-textfield
+  .custom-textfield-input-root:hover
+  .custom-textfield-input-notched {
+  border-color: var(--color-blue-medium);
+}
+
+.custom-textfield
+  .custom-textfield-input-root.Mui-focused
+  .custom-textfield-input-notched {
+  border-color: var(--color-blue-lightest);
+}
+
+.custom-textfield
+  .custom-textfield-input-root.Mui-error
+  .custom-textfield-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-textfield
+  .custom-textfield-input-root.Mui-error:hover
+  .custom-textfield-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-textfield
+  .custom-textfield-input-root.Mui-error.Mui-focused
+  .custom-textfield-input-notched {
+  border-color: var(--color-error);
+}
+
+.custom-textfield .custom-textfield-input-root .MuiInputBase-input {
+  color: var(--color-black);
+}
+
+.custom-textfield .MuiInputLabel-root {
+  color: var(--color-black);
+}
+
+.custom-textfield .MuiInputLabel-root.Mui-focused {
+  color: var(--color-blue-lightest);
+}
+
+.custom-textfield .MuiInputLabel-root.Mui-error {
+  color: var(--color-error);
+}
+
+.custom-textfield .MuiInputLabel-root.Mui-error.Mui-focused {
+  color: var(--color-error);
+}

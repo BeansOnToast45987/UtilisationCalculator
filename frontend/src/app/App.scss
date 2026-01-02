@@ -1,0 +1,13 @@
+.app-container {
+  display: var(--display-flex);
+  justify-content: var(--justify-content-center);
+  align-items: var(--align-items-center);
+  min-height: var(--min-height-viewport);
+}
+
+.app-layout {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-sm);
+}

@@ -1,0 +1,10 @@
+.utilisation-history-molecule-step1-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+}
+
+.utilisation-history-molecule-step1-header-title {
+  display: var(--display-flex);
+  align-items: var(--align-items-center);
+  gap: var(--spacing-xs);
+}

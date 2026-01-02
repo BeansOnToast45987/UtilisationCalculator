@@ -1,0 +1,37 @@
+.custom-pagination.MuiPagination-root {
+  .MuiPaginationItem-root {
+    color: var(--color-blue-darkest);
+    border-color: var(--color-blue-darkest);
+
+    &.Mui-selected {
+      background-color: var(--color-blue-darkest);
+      color: var(--color-white);
+
+      &:hover {
+        background-color: var(--color-blue-dark);
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-light-grey);
+    }
+
+    &.MuiPaginationItem-firstLast,
+    &.MuiPaginationItem-previousNext {
+      color: var(--color-dark-grey);
+      border-color: var(--color-dark-grey);
+
+      .MuiSvgIcon-root {
+        color: var(--color-dark-grey);
+      }
+
+      &:hover {
+        background-color: var(--color-light-grey);
+      }
+
+      &.Mui-disabled {
+        opacity: var(--opacity-disabled);
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.utilisation-calculator-organism-container {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  width: var(--width-full);
+  height: var(--height-full);
+}
+
+.utilisation-calculator-organism-form {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  height: var(--height-full);
+  justify-content: var(--justify-content-space-between);
+}
+
+.utilisation-calculator-organism-fields {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  gap: var(--spacing-md);
+}
+
+.utilisation-calculator-organism-result-container {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  height: var(--height-full);
+  justify-content: var(--justify-content-center);
+}
+
+.utilisation-calculator-organism-result-content {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  justify-content: var(--justify-content-center);
+  align-items: var(--align-items-center);
+  row-gap: var(--spacing-md);
+  height: var(--height-full);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}

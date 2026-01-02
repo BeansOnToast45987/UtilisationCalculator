@@ -1,0 +1,20 @@
+.utilisation-calculator-molecule-step3-error {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  height: var(--height-full);
+}
+
+.utilisation-calculator-molecule-step3-error-header {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-row);
+  justify-content: var(--justify-content-space-between);
+  align-items: var(--align-items-center);
+}
+
+.utilisation-calculator-molecule-step3-error-content {
+  display: var(--display-flex);
+  flex-direction: var(--flex-direction-column);
+  justify-content: var(--justify-content-center);
+  align-items: var(--align-items-center);
+  flex: var(--flex-1);
+}

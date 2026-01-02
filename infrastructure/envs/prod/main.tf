@@ -61,13 +61,13 @@ resource "google_project_service" "required_apis" {
 # =============================================================================
 
 resource "google_service_account" "runtime" {
-  account_id   = "utilisation-calculator-runtime-${local.environment}"
+  account_id   = "uc-runtime-${local.environment}"
   display_name = "Utilisation Calculator Runtime (${local.environment})"
   project      = var.project_id
 }
 
 resource "google_service_account" "deploy" {
-  account_id   = "utilisation-calculator-deploy-${local.environment}"
+  account_id   = "uc-deploy-${local.environment}"
   display_name = "Utilisation Calculator Deploy (${local.environment})"
   project      = var.project_id
 }

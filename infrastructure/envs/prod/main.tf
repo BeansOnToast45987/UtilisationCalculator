@@ -132,6 +132,8 @@ resource "google_iam_workload_identity_pool_provider" "github" {
     "attribute.actor"      = "assertion.actor"
     "attribute.repository" = "assertion.repository"
   }
+
+  attribute_condition = "attribute.repository == 'BeansOnToast45987/UtilisationCalculator'"
 }
 
 resource "google_service_account_iam_binding" "github_workload_identity" {

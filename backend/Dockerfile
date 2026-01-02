@@ -6,6 +6,9 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+# Copy prisma directory first (needed for prisma generate during npm ci)
+COPY prisma ./prisma
+
 # Install all dependencies
 RUN npm ci
 
@@ -26,14 +29,14 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+# Copy required runtime assets
+COPY --from=builder /app/prisma ./prisma
+
 # Install only production dependencies
 RUN npm ci --omit=dev && npm cache clean --force
 
 # Copy compiled application from the build stage
 COPY --from=builder /app/dist ./dist
-
-# Copy required runtime assets
-COPY --from=builder /app/prisma ./prisma
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \

@@ -16,6 +16,7 @@ jobs:
   deploy-frontend:
     name: Build & Deploy Frontend
     runs-on: ubuntu-latest
+    environment: prod
     permissions:
       contents: read
       id-token: write

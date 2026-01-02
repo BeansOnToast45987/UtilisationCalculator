@@ -19,6 +19,7 @@ jobs:
   deploy-backend:
     name: Build & Deploy Backend
     runs-on: ubuntu-latest
+    environment: prod
     permissions:
       contents: read
       id-token: write

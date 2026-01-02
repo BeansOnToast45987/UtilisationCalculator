@@ -1,5 +1,7 @@
 import { Button, IconButton } from "@mui/material";
-import { AutoFixHigh, Cancel, Delete } from "@mui/icons-material";
+import AutoFixHigh from "@mui/icons-material/AutoFixHigh";
+import Cancel from "@mui/icons-material/Cancel";
+import Delete from "@mui/icons-material/Delete";
 import { CustomButtonProps } from "./CustomButton.types";
 import "./CustomButton.scss";
 

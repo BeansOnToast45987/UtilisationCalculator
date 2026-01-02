@@ -1,5 +1,10 @@
 # TECHNOTES
 
+## 02-01-2026 - UC-16: Remove "package-lock.json" from .gitignore
+
+- Removed "package-lock.json" from .gitignore
+- Changed MUI icon imports to be default imports not named imports
+
 ## 26-12-2025 - UC-13: App Structure Set Up with Internationalisation and User Initialization
 
 - Added i18next dependencies and configured internationalization with English/French support

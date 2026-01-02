@@ -40,8 +40,13 @@ jobs:
           workload_identity_provider: ${{ vars.WIF_PROVIDER }}
           service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
 
-      - name: Install Dependencies
+      - name: Install Root Dependencies
         run: npm ci
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm ci
 
       - name: Build Frontend
         run: npm run build:frontend

@@ -4,7 +4,7 @@ const config: Config = {
   preset: "ts-jest",
   testEnvironment: "node",
   rootDir: "./src",
-  testMatch: ["<rootDir>/**/?(*.)+(spec|test).ts"],
+  testMatch: ["**/?(*.)+(spec|test).ts"],
   transform: {
     "^.+\\.ts$": "ts-jest",
   },

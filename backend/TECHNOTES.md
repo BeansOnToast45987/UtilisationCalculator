@@ -1,5 +1,10 @@
 # TECHNOTES
 
+## 02-01-2026 - UC-16: Remove "package-lock.json" from .gitignore
+
+- Removed "package-lock.json" from .gitignore
+- Changed the testMatch in Jest config to fix test not running
+
 ## 19-12-2025 - UC-6: Backend Code Formatting with Prettier Integration
 
 - Added Prettier dependency to package.json for consistent code formatting across the backend

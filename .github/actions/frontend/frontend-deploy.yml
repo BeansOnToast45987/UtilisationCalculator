@@ -1,0 +1,75 @@
+name: Frontend Deploy
+
+on:
+  push:
+    branches: [main]
+    paths: ['frontend/**']
+
+concurrency:
+  group: prod-frontend
+  cancel-in-progress: false
+
+env:
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+
+jobs:
+  deploy-frontend:
+    name: Build & Deploy Frontend
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Frontend
+        run: npm run build:frontend
+        env:
+          VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.CLERK_PUBLISHABLE_KEY }}
+          VITE_BACKEND_URL: ${{ secrets.BACKEND_URL }}
+
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "frontend/dist" ]; then
+            echo "Build Output Directory not Found"
+            exit 1
+          fi
+          if [ ! -f "frontend/dist/index.html" ]; then
+            echo "index.html not Found in Build Output"
+            exit 1
+          fi
+          echo "Build Output Verified: $(ls -la frontend/dist/)"
+
+      - name: Deploy Frontend to GCS
+        run: |
+          gsutil -m rsync -r -d frontend/dist/ gs://${{ env.GCP_PROJECT_ID }}-frontend-production/
+
+      - name: Set Cache Headers
+        run: |
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/**/*.js
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/**/*.css
+          gsutil -m setmeta -h "Cache-Control:no-cache" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/index.html
+
+      - name: Frontend Deploy Complete
+        run: |
+          echo "Frontend Deployed Successfully"

@@ -72,13 +72,13 @@ jobs:
 
       - name: Deploy Frontend to GCS
         run: |
-          gsutil -m rsync -r -d frontend/dist/ gs://${{ env.GCP_PROJECT_ID }}-frontend-production/
+          gsutil -m rsync -r -d frontend/dist/ gs://app.utilisationcalculator.com/
 
       - name: Set Cache Headers
         run: |
-          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/**/*.js
-          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/**/*.css
-          gsutil -m setmeta -h "Cache-Control:no-cache" gs://${{ env.GCP_PROJECT_ID }}-frontend-production/index.html
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://app.utilisationcalculator.com/**/*.js
+          gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://app.utilisationcalculator.com/**/*.css
+          gsutil -m setmeta -h "Cache-Control:no-cache" gs://app.utilisationcalculator.com/index.html
 
       - name: Frontend Deploy Complete
         run: |

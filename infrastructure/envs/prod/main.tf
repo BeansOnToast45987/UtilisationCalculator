@@ -305,7 +305,7 @@ resource "google_cloud_run_service_iam_member" "backend_public" {
 # =============================================================================
 
 resource "google_storage_bucket" "frontend_bucket" {
-  name          = "${var.project_id}-frontend-${local.environment}"
+  name          = "app.utilisationcalculator.com"
   location      = var.region
   project       = var.project_id
   force_destroy = true

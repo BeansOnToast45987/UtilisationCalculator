@@ -10,7 +10,7 @@ output "frontend_bucket" {
 
 output "frontend_url" {
   description = "Frontend website URL"
-  value       = "https://${google_storage_bucket.frontend_bucket.name}.storage.googleapis.com"
+  value       = "https://app.utilisationcalculator.com"
 }
 
 output "artifact_registry" {

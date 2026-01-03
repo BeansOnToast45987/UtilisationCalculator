@@ -39,6 +39,9 @@ jobs:
         with:
           workload_identity_provider: ${{ vars.WIF_PROVIDER }}
           service_account: ${{ vars.WIF_SERVICE_ACCOUNT }}
+      
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
 
       - name: Install Root Dependencies
         run: npm ci

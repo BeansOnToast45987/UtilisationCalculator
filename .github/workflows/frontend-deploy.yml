@@ -56,6 +56,7 @@ jobs:
         env:
           VITE_CLERK_PUBLISHABLE_KEY: ${{ vars.CLERK_PUBLISHABLE_KEY }}
           VITE_BACKEND_URL: ${{ vars.BACKEND_URL }}
+          VITE_BASE_URL: ${{ vars.VITE_BASE_URL }}
 
       - name: Verify Build Output
         run: |

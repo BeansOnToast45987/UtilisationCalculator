@@ -67,4 +67,25 @@ describe("CustomLoader", () => {
     expect(loader).toHaveClass("custom-loader", "my-custom-class");
     expect(loader).toHaveAttribute("id", "test-loader");
   });
+
+  it("should apply custom dark blue color when color prop is inherit", () => {
+    const style = document.createElement("style");
+    style.textContent = `
+      :root { 
+      --color-blue-darkest: #00008b; 
+      }
+      .custom-loader { 
+      color: var(--color-blue-darkest); 
+      }
+    `;
+    document.head.appendChild(style);
+
+    render(<CustomLoader {...defaultProps} color="inherit" />);
+
+    const loader = screen.getByRole("progressbar");
+    expect(loader).toBeInTheDocument();
+    expect(loader).toHaveStyle("color: var(--color-blue-darkest)");
+
+    document.head.removeChild(style);
+  });
 });

@@ -13,7 +13,7 @@ export default function UtilisationCalculatorMoleculeStep2Loader() {
         </CustomTypography>
       </div>
       <div className="utilisation-calculator-molecule-step2-loader">
-        <CustomLoader size={75} />
+        <CustomLoader size={75} color="inherit" />
         <CustomTypography variant="body1" color="black">
           {t("app.loading")}
         </CustomTypography>

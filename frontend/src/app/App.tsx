@@ -15,7 +15,7 @@ const App: React.FC = () => {
     return (
       <div className="app-container">
         <div className="app-layout">
-          <CustomLoader size={75} />
+          <CustomLoader size={75} color="inherit" />
           <CustomTypography variant="body1" color="black">
             {t("app.loading")}
           </CustomTypography>

@@ -1,15 +1,21 @@
 # TECHNOTES
 
-## 02-01-2026 - UC-17: Removing default FE README to trigger Workflow Run
+## 04-01-2026 - Bug/UC-1: CustomLoader Not Inheriting Colour Property Correctly
+
+- Fixed CustomLoader component not applying `--color-blue-darkest` (#00008b) as prop `color="inherit"` was not being set
+- Implemented TDD approach: wrote test first to verify color inheritance behavior
+- Test sets up CSS custom property in test environment and validates component applies `var(--color-blue-darkest)`
+
+## 02-01-2026 - Feature/UC-17: Removing default FE README to trigger Workflow Run
 
 - Doing what it says on the Tin. Removing default Frontend README to trigger Workflow Run once develop is merged into main
 
-## 02-01-2026 - UC-16: Remove "package-lock.json" from .gitignore
+## 02-01-2026 - Feature/UC-16: Remove "package-lock.json" from .gitignore
 
 - Removed "package-lock.json" from .gitignore
 - Changed MUI icon imports to be default imports not named imports
 
-## 26-12-2025 - UC-13: App Structure Set Up with Internationalisation and User Initialization
+## 26-12-2025 - Feature/UC-13: App Structure Set Up with Internationalisation and User Initialization
 
 - Added i18next dependencies and configured internationalization with English/French support
 - Created complete App structure with React Router DOM and authentication-based routing
@@ -21,7 +27,7 @@
 - Created utility functions for country mapping and Clerk localizations
 - Removed default Vite boilerplate and established application foundation
 
-## 25-12-2025 - UC-12: Frontend Templates and Pages Implementation
+## 25-12-2025 - Feature/UC-12: Frontend Templates and Pages Implementation
 
 - Implemented template layer components following atomic design pattern:
   - HomeTemplate - Main application template with responsive layout handling
@@ -46,7 +52,7 @@
 - Added fullscreen layout management with viewport-minus-nav height calculations
 - Integrated Clerk authentication components with custom routing configuration
 
-## 24-12-2025 - UC-11: Frontend Organism Implementation
+## 24-12-2025 - Feature/UC-11: Frontend Organism Implementation
 
 - Added Formik and Yup dependencies for form management and validation
 - Implemented organism-level components combining molecules into complete functional units:
@@ -63,7 +69,7 @@
   - History: Loading → Error/No Data/Results with delete operations
 - Integrated organisms with existing molecular and atomic components
 
-## 22-12-2025 - UC-10: Frontend Molecules Implementation
+## 22-12-2025 - Feature/UC-10: Frontend Molecules Implementation
 
 - Added Clerk authentication and react-i18next dependencies
 - Implemented molecular components composing atoms into functional UI units:
@@ -81,7 +87,7 @@
 - Established 4-step wizard pattern for calculator and history workflows
 - Integrated TypeScript interfaces and CSS custom properties for consistent theming
 
-## 21-12-2025 - UC-9: Frontend Atoms Implementation
+## 21-12-2025 - Feature/UC-9: Frontend Atoms Implementation
 
 - Added Material-UI dependencies
 - Implemented atomic components with custom styling and TypeScript interfaces:
@@ -97,7 +103,7 @@
 - Created comprehensive SCSS styling using CSS custom properties for theming
 - Established atomic design system foundation for component composition
 
-## 21-12-2025 - UC-8: Frontend GraphQL Client and Hooks Implementation
+## 21-12-2025 - Feature/UC-8: Frontend GraphQL Client and Hooks Implementation
 
 - Added Apollo Client and GraphQL dependencies
 - Created GraphQL client with Clerk authentication integration
@@ -110,7 +116,7 @@
 - Set up Apollo Client with authentication middleware for Clerk token handling
 - Added environment template for configuration variables
 
-## 20-12-2025 - UC-7: Frontend Infrastructure Setup and Initialization
+## 20-12-2025 - Feature/UC-7: Frontend Infrastructure Setup and Initialization
 
 - Initialized React + TypeScript + Vite project using "npm create vite@latest"
 - Selected React framework with TypeScript + React Compiler template

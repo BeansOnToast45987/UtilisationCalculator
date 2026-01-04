@@ -14,7 +14,7 @@ export default function UtilisationHistoryMoleculeStep2Loader() {
       </div>
       <div className="utilisation-history-molecule-step2-loader">
         <div className="utilisation-history-molecule-step2-loader-content">
-          <CustomLoader size={75} />
+          <CustomLoader size={75} color="inherit" />
           <CustomTypography variant="body1" color="black">
             {t("app.loading")}
           </CustomTypography>

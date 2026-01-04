@@ -1,17 +1,17 @@
 # TECHNOTES
 
-## 02-01-2026 - UC-16: Remove "package-lock.json" from .gitignore
+## 02-01-2026 - Feature/UC-16: Remove "package-lock.json" from .gitignore
 
 - Removed "package-lock.json" from .gitignore
 - Changed the testMatch in Jest config to fix test not running
 
-## 19-12-2025 - UC-6: Backend Code Formatting with Prettier Integration
+## 19-12-2025 - Feature/UC-6: Backend Code Formatting with Prettier Integration
 
 - Added Prettier dependency to package.json for consistent code formatting across the backend
 - Created format:backend npm script command using "prettier --write ." for automated code formatting
 - Executed format:backend command to standardize code formatting across all backend files
 
-## 19-12-2025 - UC-5: Delete Utilisation Mutation Implementation
+## 19-12-2025 - Feature/UC-5: Delete Utilisation Mutation Implementation
 
 - Created DeleteUtilisation GraphQL mutation with schema definition and resolver
 - Implemented deleteUtilisationRequest service with secure calculation deletion
@@ -24,7 +24,7 @@
 - Added detailed error handling for not found and unauthorized scenarios
 - Updated GraphQL schema and service exports for DeleteUtilisation integration
 
-## 19-12-2025 - UC-4: Get Utilisation Query Implementation
+## 19-12-2025 - Feature/UC-4: Get Utilisation Query Implementation
 
 - Created GetUtilisation GraphQL query with schema definition and resolver
 - Implemented getUtilisationRequest service to fetch user's utilisation calculations from database
@@ -37,7 +37,7 @@
 - Updated GraphQL schema and service exports for GetUtilisation integration
 - Added support for fetching historical utilisation calculations sorted by creation date
 
-## 18-12-2025 - UC-3: Calculate Utilisation Mutation Implementation
+## 18-12-2025 - Feature/UC-3: Calculate Utilisation Mutation Implementation
 
 - Created CalculateUtilisation GraphQL mutation with schema definition and resolver
 - Implemented utilisation calculation logic with precision rounding (billableHours / totalHours \* 100)
@@ -50,7 +50,7 @@
 - Added calculation persistence to database with proper date handling and result formatting
 - Implemented error handling for edge cases (zero division, invalid numbers, user not found)
 
-## 17-12-2025 - UC-2: Initialize User Mutation Implementation
+## 17-12-2025 - Feature/UC-2: Initialize User Mutation Implementation
 
 - Created InitializeUser GraphQL mutation with full schema definition
 - Implemented InitializeUser resolver with authentication and validation
@@ -60,7 +60,7 @@
 - Integrated GraphQL schema and resolvers into main application architecture
 - Added Jest types to TypeScript configuration to resolve test compilation issues
 
-## 17-12-2025 - UC-1: Backend Infrastructure Setup and Initialization
+## 17-12-2025 - Feature/UC-1: Backend Infrastructure Setup and Initialization
 
 - Created Express server with Apollo GraphQL integration
 - Configured Prisma database schema with User and UtilisationCalculation models for MongoDB

@@ -22,7 +22,7 @@ The purpose of my project is to address a gap in utilisation tracking within my 
 
 ### Project Requirements
 
-Project requirements define the criteria necessary for a project to be delivered successfully. For this project, I identified and documented requirements across functional, non-functional, and security categories to clearly define system behaviour, quality constraints, and protection mechanisms. This structured approach helped ensure the project scope was well understood and provided a clear foundation for planning, development, and prioritisation.
+For this project, I identified and documented requirements across functional, non-functional, and security categories to clearly define system behaviour, quality constraints, and protection mechanisms. This structured approach helped me ensure the project scope was well understood and provided a clear foundation for planning, development, and prioritisation.
 
 #### Functional Requirements
 
@@ -117,7 +117,7 @@ To support a clear understanding of the defined project requirements, I have cre
 
 ### Project Stakeholders
 
-Project stakeholders are individuals or organisations that are involved in a project or whose interests may be affected by its execution or completion. To ensure relevant perspectives were considered throughout development, I identified the key stakeholders involved in this project and clearly defined their roles and responsibilities. This helped to clarify ownership, support effective decision-making, and ensure the solution aligned with both technical goals and end-user needs.
+To ensure relevant perspectives were considered throughout development, I identified the key stakeholders involved in this project and clearly defined their roles and responsibilities. This helped to clarify ownership, support effective decision-making, and ensure the solution aligned with both technical goals and end-user needs.
 
 | Role                  | Responsibility                                                      | Explanation                                                                                                             |
 | --------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -127,7 +127,7 @@ Project stakeholders are individuals or organisations that are involved in a pro
 
 ### Project Risks
 
-A project risk matrix is a visual assessment tool used to identify and prioritise risks based on their likelihood of occurrence and potential impact. To ensure project risks were actively considered throughout development, I created a risk matrix outlining potential risks, their likelihood, impact, and mitigation strategies. This approach enabled me to proactively manage risks and reduce the likelihood of significant issues arising during the development process.
+To ensure project risks were actively considered throughout development, I created a risk matrix outlining potential risks, their likelihood, impact, and mitigation strategies. This approach enabled me to proactively manage risks and reduce the likelihood of significant issues arising during the development process.
 
 | Risk ID | Risk Description                                                             | Risk Category         | Impact | Likelihood | Risk Level | Mitigation Strategy                                                                                                                           | Owner             |
 | ------- | ---------------------------------------------------------------------------- | --------------------- | ------ | ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -141,7 +141,7 @@ A project risk matrix is a visual assessment tool used to identify and prioritis
 
 ### Project Management Tool
 
-To organise and manage development tasks, I used GitHub Projects to create a Kanban board tailored to the needs of my project. As this was a solo project, the workflow was intentionally kept simple and focused on the stages most relevant to my development process.
+To organise and manage development tasks, I used GitHub Projects to create a Kanban board tailored to the needs of my project. As this was a solo project, I intentionally kept the workflow simple and focused on the stages most relevant to my development process.
 
 #### Figure 2 - Utilisation Calculator Project Management Tool
 
@@ -149,15 +149,15 @@ To organise and manage development tasks, I used GitHub Projects to create a Kan
 
 Figure 2 shows that the board consisted of the following columns:
 
-- **To Do:** Tasks that had been created and were ready to be worked on. I followed the project roadmap to guide when tickets were created, meaning any task added to this column was already sufficiently defined and unblocked for development.
+- **To Do:** Tasks that had been created and were ready to be worked on. I followed the project roadmap to guide me when tickets were created, meaning any task added to this column was already sufficiently defined and unblocked for development.
 
 - **In Progress:** Tasks that were actively being developed, including both new features and bug fixes.
 
 - **Done:** Tasks that had been completed and merged into the main branch, indicating that the associated functionality had been fully implemented and validated.
 
-I did not include a separate **Review** column, as there were no external reviewers involved in this project. Instead, I reviewed my own changes during the pull request process before merging to ensure code quality, test coverage, and alignment with project requirements. Similarly, a dedicated **Ready** or **Backlog** column was not required, as tasks were only created or moved into the To Do column once they were ready to be worked on.
+I did not include a separate Review column, as there were no external reviewers involved in this project. Instead, I reviewed my own changes during the pull request process before merging to ensure code quality, test coverage, and alignment with project requirements. Similarly, a dedicated Ready or Backlog column was not required, as tasks were only created or moved into the To Do column once they were ready to be worked on.
 
-Using GitHub Projects alongside GitHub Issues provided a clear and centralised way to track progress throughout the development process. The Kanban board made it easy to see the current state of each task at a glance, helping me understand what was outstanding, what was actively being worked on, and what had already been completed. This visibility supported better task prioritisation and helped prevent context switching by allowing me to focus on a small number of active tasks at any given time. In addition, combining project boards with issue metadata such as labels and story points made it easier to assess remaining effort and plan development work efficiently, ensuring steady progress aligned with the project roadmap.
+Using GitHub Projects alongside GitHub Issues provided a clear and centralised way for me to track progress throughout the development process. The Kanban board made it easy to see the current state of each task at a glance, helping me understand what was outstanding, what was actively being worked on, and what had already been completed. This visibility supported better task prioritisation and helped prevent context switching by allowing me to focus on a small number of active tasks at any given time. In addition, combining project boards with issue metadata such as labels and story points made it easier for me to assess remaining effort and plan development work efficiently, ensuring steady progress aligned with the project roadmap.
 
 ### Project Management Constraints
 
@@ -181,9 +181,9 @@ For this project, however, I introduced a set of custom GitHub labels to help pr
 
 #### GitHub Issue Story Points
 
-To support consistent and realistic estimation throughout the project, I introduced custom story point labels within GitHub and assigned each issue a size based on the relative effort required to complete the work. These estimates considered factors such as task complexity, the level of uncertainty involved, and the potential impact of the change, rather than focusing on exact time estimates. I chose to use a Fibonacci-based scale for story points, as it provides a simple and repeatable method for comparing work items while naturally accounting for increasing uncertainty as task size grows.
+To support consistent and realistic estimation throughout the project, I introduced custom story point labels within GitHub and assigned each issue a size based on the relative effort required to complete the work. The story points considered factors such as task complexity, the level of uncertainty involved, and the potential impact of the change, rather than focusing on exact time estimates. I chose to use a Fibonacci-based scale for story points, as it provides a simple and repeatable method for comparing work items while naturally accounting for increasing uncertainty as task size grows.
 
-To ensure estimates were applied consistently, I used the following table guide when assigning story points to each ticket. This allowed me to size tasks relative to one another based on my understanding of the system, the scope of the change, and my own technical knowledge at the time of estimation.
+To ensure I applied estimates consistently, I used the following table guide when assigning story points to each ticket. This allowed me to size tasks relative to one another based on my understanding of the system, the scope of the change, and my own technical knowledge at the time of estimation.
 
 | Story Points | Description                                                                          |
 | ------------ | ------------------------------------------------------------------------------------ |
@@ -197,11 +197,11 @@ To ensure estimates were applied consistently, I used the following table guide 
 
 #### GitHub Issue and Pull Request Templates
 
-One of the initial stages of the project involved setting up issue and pull request templates to standardise the way work items were created and managed. These templates ensured that each issue and pull request followed a consistent structure by prompting predefined sections and key questions at the appropriate stages of development. To keep the templates relevant and focused, I created separate issue templates for feature requests and bug reports, as well as a dedicated pull request template to support consistent code review, validation, and traceability between changes and their associated issues.
+One of the initial stages of the project involved me setting up issue and pull request templates to standardise the way work items were created and managed. These templates ensured that each issue and pull request followed a consistent structure by prompting me to fill out predefined sections and key questions at the appropriate stages of development. To keep the templates relevant and focused, I created separate issue templates for feature requests and bug reports, as well as a dedicated pull request template to support consistent code review, validation, and traceability between changes and their associated issues.
 
 ##### Feature Template
 
-Figure 4 shows the blank feature issue template before any details are entered. I designed this template to provide a consistent structure for documenting new features by including predefined sections such as Requirement ID, User Story, Description, Design Reference, Acceptance Criteria, Technical Notes, Tests, and Definition of Done. These sections reduce the effort required to create well-defined feature tickets by guiding the author to consider all relevant aspects of a feature upfront. The template helps ensure that each feature is clearly linked to project requirements, follows a consistent user story format, and includes clear acceptance criteria to support development and testing.
+Figure 4 shows the blank feature issue template before any details are entered. I designed this template to provide a consistent structure for documenting new features by including predefined sections such as Requirement ID, User Story, Description, Design Reference, Acceptance Criteria, Technical Notes, Tests, and Definition of Done. These sections reduce the effort required to create well-defined feature tickets by guiding me to consider all relevant aspects of a feature upfront. The template helps ensure that each feature is clearly linked to project requirements, follows a consistent user story format, and includes clear acceptance criteria to support development and testing.
 
 ###### Figure 4 - Feature Issue Template
 
@@ -209,7 +209,7 @@ Figure 4 shows the blank feature issue template before any details are entered. 
 
 ##### Bug Template
 
-Figure 5 shows the blank bug issue template before any details are entered. I created this template to capture all information necessary for efficient bug identification and resolution, including sections such as Bug ID, Description, Steps to Reproduce, Expected Behaviour, Actual Behaviour, Impact, Evidence, Tests, and Definition of Done. By prompting structured input, the template encourages clear reproduction steps and comparison of expected versus actual behaviour, making it easier to understand, prioritise, and resolve defects while reducing investigation time.
+Figure 5 shows the blank bug issue template before any details are entered. I created this template to capture all information necessary for efficient bug identification and resolution, including sections such as Bug ID, Description, Steps to Reproduce, Expected Behaviour, Actual Behaviour, Impact, Evidence, Tests, and Definition of Done. By prompting structured input, the template encourages clear reproduction steps and comparison of expected versus actual behaviour, making it easier for me to understand, prioritise, and resolve defects while reducing investigation time.
 
 ###### Figure 5 - Bug Issue Template
 
@@ -217,7 +217,7 @@ Figure 5 shows the blank bug issue template before any details are entered. I cr
 
 ##### Pull Request Template
 
-Figure 6 shows the blank pull request template before any details are entered. I developed this template to maintain consistency when creating pull requests and ensure that all necessary information is captured before code review and merge. The template includes key sections such as Linked Issue, Summary, Design Reference, Screenshots, Acceptance Criteria, Testing, and Documentation. These predefined sections guide contributors to clearly describe their changes, link work back to relevant issues, and confirm that testing and documentation requirements are met.
+Figure 6 shows the blank pull request template before any details are entered. I developed this template to maintain consistency when creating pull requests and ensure that all necessary information is captured before code review and merge. The template includes key sections such as Linked Issue, Summary, Design Reference, Screenshots, Acceptance Criteria, Testing, and Documentation. These predefined sections guide me to clearly describe my changes, link work back to relevant issues, and confirm that testing and documentation requirements are met.
 
 ###### Figure 6 - Pull Request Template
 
@@ -237,7 +237,7 @@ For the Utilisation Calculator interface, I adopted the Atomic Design methodolog
 
 ##### CustomButton
 
-The CustomButton design establishes the foundation for all interactive button elements throughout the Utilisation Calculator interface. This atomic component is designed to provide consistent styling, hover states, and click behaviours while supporting multiple visual variants to create clear interaction hierarchies (see Figure 7). The design addresses primary actions like calculate operations, secondary actions like form resets, and navigation actions throughout the application, ensuring a unified user experience across all button interactions.
+I designed CustomButton as the standard button component used across the Utilisation Calculator interface. It enforces consistent styling and interaction behaviour while providing a small set of visual variants to clearly distinguish between different user actions (see Figure 7).
 
 ###### Figure 7 - CustomButton Figma Design
 
@@ -251,7 +251,7 @@ The CustomButton design establishes the foundation for all interactive button el
 
 ##### CustomDatePicker
 
-The CustomDatePicker design provides users with an intuitive interface for selecting start and end dates for their utilisation calculations (see Figure 8). The design builds upon Material-UI's DatePicker foundation with custom styling to align with the application's design system, incorporating date validation, locale-specific formatting, and accessible keyboard navigation. The design ensures consistent date input across the application while preventing invalid date ranges that could compromise calculation accuracy.
+I designed CustomDatePicker to handle start and end date selection for utilisation calculations in a consistent and accessible way. It extends Material-UI’s DatePicker with custom styling, validation, and keyboard support to ensure reliable and user-friendly date input (see Figure 8).
 
 ###### Figure 8 - CustomDatePicker Figma Design
 
@@ -259,7 +259,7 @@ The CustomDatePicker design provides users with an intuitive interface for selec
 
 ##### CustomDivider
 
-The CustomDivider design provides visual separation between different sections of the interface, helping to organise content and improve readability (see Figure 9). This simple yet essential atomic element is designed to maintain consistent spacing and styling throughout the application, supporting both horizontal and vertical orientations as needed. The design plays a crucial role in establishing visual hierarchy and content organisation within forms, results displays, and historical data sections.
+I designed CustomDivider to provide consistent visual separation between sections of the interface. It helps organise content and maintain a clear visual hierarchy across forms, results, and historical data views (see Figure 9).
 
 ###### Figure 9 - CustomDivider Figma Design
 
@@ -267,7 +267,7 @@ The CustomDivider design provides visual separation between different sections o
 
 ##### CustomTypography
 
-The CustomTypography design establishes consistent text styling and hierarchy throughout the Utilisation Calculator interface (see Figure 10). This foundational design element defines standardised font families, sizes, weights, and colours for headings, body text, labels, and captions. By centralising typography rules in the design system, this element ensures readable and accessible text presentation while maintaining visual consistency across all areas of the application, from form labels to calculation results.
+I designed CustomTypography to standardise text styling across the application. It defines consistent font sizes, weights, and colours to ensure readability, accessibility, and ease of maintenance (see Figure 10).
 
 ###### Figure 10 - CustomTypography Figma Design
 
@@ -275,7 +275,7 @@ The CustomTypography design establishes consistent text styling and hierarchy th
 
 ##### CustomPagination
 
-The CustomPagination design enables users to navigate through large sets of historical utilisation data efficiently (see Figure 11). This design provides intuitive page navigation controls with clear indicators for current page position, total pages, and navigation options. The design incorporates accessibility features like keyboard navigation and screen reader compatibility, ensuring all users can effectively browse through their utilisation calculation history regardless of dataset size.
+I designed CustomPagination to support navigation through larger sets of historical utilisation data. It provides clear page controls with keyboard and screen reader support to ensure accessibility and usability (see Figure 11).
 
 ###### Figure 11 - CustomPagination Figma Design
 
@@ -283,7 +283,7 @@ The CustomPagination design enables users to navigate through large sets of hist
 
 ##### CustomProgressBar
 
-The CustomProgressBar design provides visual representation of utilisation percentages and target achievement status within calculation results (see Figure 12). This design dynamically displays progress levels with colour-coded indicators to quickly communicate whether targets have been met, exceeded, or fallen short. The design includes smooth animations and clear percentage labels, making it easy for users to understand their utilisation performance at a glance.
+I designed CustomProgressBar to visually represent utilisation percentages and progress toward targets. It uses colour-coded indicators to communicate status clearly and at a glance (see Figure 12).
 
 ###### Figure 12 - CustomProgressBar Figma Design
 
@@ -291,7 +291,7 @@ The CustomProgressBar design provides visual representation of utilisation perce
 
 ##### CustomTextField
 
-The CustomTextField design serves as the primary input element for collecting numerical data such as total hours, billable hours, and target utilisation percentages (see Figure 13). The design incorporates comprehensive validation, error handling, and accessibility features to ensure data integrity while providing clear feedback for invalid inputs. The design supports different input types, placeholder text, and helper text to guide users through the data entry process effectively.
+I designed CustomTextField as the standard input component for capturing numerical utilisation data. It includes validation and error handling to prevent invalid input and provide clear feedback to users (see Figure 13).
 
 ###### Figure 13 - CustomTextField Figma Design
 
@@ -299,7 +299,7 @@ The CustomTextField design serves as the primary input element for collecting nu
 
 ##### CustomTooltip
 
-The CustomTooltip design provides contextual help and additional information throughout the application interface (see Figure 14). This design displays helpful hints, field descriptions, and calculation explanations when users hover over or focus on specific elements. The design enhances user experience by offering guidance without cluttering the interface, particularly useful for explaining utilisation calculation concepts and input requirements to new users.
+I designed CustomTooltip to provide contextual assistance through an information icon. It displays explanatory text on hover to clarify utilisation-related inputs and calculations without cluttering the interface (see Figure 14).
 
 ###### Figure 14 - CustomTooltip Figma Design
 
@@ -307,7 +307,7 @@ The CustomTooltip design provides contextual help and additional information thr
 
 ##### CustomLoader
 
-The CustomLoader design provides visual feedback during asynchronous operations such as user authentication, data processing, and calculation execution (see Figure 15). This design displays an animated spinner with consistent styling and timing to indicate that the system is actively working. The design includes optional text labels to provide context about the current operation, helping users understand that their request is being processed and maintain confidence in the application's responsiveness.
+I designed CustomLoader to provide visual feedback during asynchronous operations such as data loading and calculations. It displays an animated progress indicator to clearly communicate that a request is in progress (see Figure 15).
 
 ###### Figure 15 - CustomLoader Figma Design
 
@@ -317,7 +317,7 @@ The CustomLoader design provides visual feedback during asynchronous operations 
 
 ##### CustomToolbar
 
-The CustomToolbar design combines CustomTypography and CustomButton atoms to create a cohesive navigation header that provides users with clear application branding and navigation options (see Figure 16). This molecule integrates multiple atomic elements to establish consistent spacing, typography hierarchy, and interactive elements that guide users through the application's primary functions. The design serves as a foundational navigation element that appears across all application views, ensuring users always have access to core functionality.
+I designed CustomToolbar as the primary navigation header for the application. It combines CustomTypography for branding and context with a Clerk sign-out action, and is displayed consistently across all views to provide a clear and familiar navigation point (see Figure 16).
 
 ###### Figure 16 - CustomToolbar Figma Design
 
@@ -325,7 +325,7 @@ The CustomToolbar design combines CustomTypography and CustomButton atoms to cre
 
 ##### UtilisationCalculatorMoleculeStep1Header
 
-The UtilisationCalculatorMoleculeStep1Header design combines CustomTypography atoms with CustomDivider elements to create a clear, informative section header for the utilisation input form (see Figure 17). This molecule establishes visual hierarchy by combining different typography weights and sizes with strategic spacing elements, helping users understand they are beginning the calculation input process. The design provides contextual information and visual separation that guides users through the multi-step utilisation calculation workflow.
+I designed UtilisationCalculatorMoleculeStep1Header to introduce the first step of the utilisation input process. It combines CustomTypography with CustomTooltip to explain how user input is used before data entry begins (see Figure 17).
 
 ###### Figure 17 - UtilisationCalculatorMoleculeStep1Header Figma Design
 
@@ -333,7 +333,7 @@ The UtilisationCalculatorMoleculeStep1Header design combines CustomTypography at
 
 ##### UtilisationCalculatorMoleculeStep1StartDate
 
-The UtilisationCalculatorMoleculeStep1StartDate design combines CustomTypography labels, CustomDatePicker input, and CustomTooltip guidance atoms to create a comprehensive date selection interface for calculation periods (see Figure 18). This molecule integrates validation feedback, accessibility features, and contextual help to ensure users can accurately select their calculation start date. The design combines multiple atomic elements to provide clear labeling, intuitive date selection, and helpful guidance for users unfamiliar with utilisation calculation requirements.
+I designed UtilisationCalculatorMoleculeStep1StartDate to capture the start date for utilisation calculations. It combines CustomTypography with CustomDatePicker and includes validation to ensure valid date selection (see Figure 18).
 
 ###### Figure 18 - UtilisationCalculatorMoleculeStep1StartDate Figma Design
 
@@ -341,7 +341,7 @@ The UtilisationCalculatorMoleculeStep1StartDate design combines CustomTypography
 
 ##### UtilisationCalculatorMoleculeStep1EndDate
 
-The UtilisationCalculatorMoleculeStep1EndDate design combines CustomTypography labels, CustomDatePicker input, and CustomTooltip guidance atoms to create the complementary date selection interface for calculation period completion (see Figure 19). This molecule works in conjunction with the start date molecule to ensure proper date range validation and user guidance. The design integrates validation logic that prevents invalid date ranges while providing clear visual feedback and contextual help to guide users through accurate period selection.
+I designed UtilisationCalculatorMoleculeStep1EndDate to capture the end date for the calculation period. It combines CustomTypography with CustomDatePicker and includes validation to prevent invalid date ranges (see Figure 19).
 
 ###### Figure 19 - UtilisationCalculatorMoleculeStep1EndDate Figma Design
 
@@ -349,7 +349,7 @@ The UtilisationCalculatorMoleculeStep1EndDate design combines CustomTypography l
 
 ##### UtilisationCalculatorMoleculeStep1TotalHours
 
-The UtilisationCalculatorMoleculeStep1TotalHours design combines CustomTypography labels, CustomTextField input, and CustomTooltip guidance atoms to create a comprehensive numerical input interface for total working hours (see Figure 20). This molecule integrates input validation, error handling, and contextual explanations to ensure users understand and accurately enter their total available working hours. The design combines clear labeling, intuitive input controls, and helpful guidance to support users in providing accurate data for utilisation calculations.
+I designed UtilisationCalculatorMoleculeStep1TotalHours to capture total working hours for the selected period. It combines CustomTypography with CustomTextField and includes validation to ensure numerical input (see Figure 20).
 
 ###### Figure 20 - UtilisationCalculatorMoleculeStep1TotalHours Figma Design
 
@@ -357,7 +357,7 @@ The UtilisationCalculatorMoleculeStep1TotalHours design combines CustomTypograph
 
 ##### UtilisationCalculatorMoleculeStep1BillableHours
 
-The UtilisationCalculatorMoleculeStep1BillableHours design combines CustomTypography labels, CustomTextField input, and CustomTooltip guidance atoms to create a focused numerical input interface for billable working hours (see Figure 21). This molecule includes sophisticated validation logic that ensures billable hours cannot exceed total hours, while providing clear feedback and guidance to users. The design integrates contextual help that explains the relationship between billable and total hours, supporting accurate data entry crucial for meaningful utilisation calculations.
+I designed UtilisationCalculatorMoleculeStep1BillableHours to capture billable working hours. It combines CustomTypography with CustomTextField and includes validation to ensure numerical input (see Figure 21).
 
 ###### Figure 21 - UtilisationCalculatorMoleculeStep1BillableHours Figma Design
 
@@ -365,7 +365,7 @@ The UtilisationCalculatorMoleculeStep1BillableHours design combines CustomTypogr
 
 ##### UtilisationCalculatorMoleculeStep1TargetUtilisation
 
-The UtilisationCalculatorMoleculeStep1TargetUtilisation design combines CustomTypography labels, CustomTextField input, and CustomTooltip guidance atoms to create an interface for setting utilisation performance targets (see Figure 22). This molecule integrates percentage-based input validation with contextual explanations about typical utilisation targets across different industries and roles. The design provides guidance on realistic target setting while ensuring data integrity through comprehensive validation and user-friendly error messaging.
+I designed UtilisationCalculatorMoleculeStep1TargetUtilisation to capture the target utilisation percentage. It combines CustomTypography with CustomTextField and includes validation to prevent invalid percentage values (see Figure 22).
 
 ###### Figure 22 - UtilisationCalculatorMoleculeStep1TargetUtilisation Figma Design
 
@@ -373,7 +373,7 @@ The UtilisationCalculatorMoleculeStep1TargetUtilisation design combines CustomTy
 
 ##### UtilisationCalculatorMoleculeStep1Buttons
 
-The UtilisationCalculatorMoleculeStep1Buttons design combines multiple CustomButton atoms with strategic spacing and hierarchy to create a clear action interface for form submission and navigation (see Figure 23). This molecule integrates primary and secondary button styling with consistent spacing and alignment, providing users with clear options for progressing through the calculation workflow or clearing their input data. The design ensures proper visual hierarchy and accessibility while maintaining consistent button behavior across the application.
+I designed UtilisationCalculatorMoleculeStep1Buttons to group the primary form actions for utilisation input. It combines two CustomButton atoms for submission and reset, using consistent spacing and styling to clearly communicate available actions (see Figure 23).
 
 ###### Figure 23 - UtilisationCalculatorMoleculeStep1Buttons Figma Design
 
@@ -381,23 +381,23 @@ The UtilisationCalculatorMoleculeStep1Buttons design combines multiple CustomBut
 
 ##### UtilisationCalculatorMoleculeStep4Header
 
-The UtilisationCalculatorMoleculeStep4Header design combines CustomTypography atoms with CustomDivider elements to create an informative section header for the calculation results display (see Figure 24). This molecule establishes clear visual separation between the input and results phases of the user journey, using typography hierarchy and spacing to signal the transition to calculation outcomes. The design provides contextual information that helps users understand they are viewing their utilisation calculation results and performance analysis.
+I designed UtilisationCalculatorMoleculeStep4Header to introduce the calculation results section. It uses CustomTypography for the section heading and a CustomButton to allow users to dismiss the results view (see Figure 24).
 
 ###### Figure 24 - UtilisationCalculatorMoleculeStep4Header Figma Design
 
 ![alt text](<assets/Project Design/molecules/UtilisationCalculatorMoleculeStep4Header Figma Design.png>)
 
-##### UtilisationCalculatorMoleculeStep4LabelledProgressBar
+##### UtilisationCalculatorMoleculeStep4LabeledProgressBar
 
-The UtilisationCalculatorMoleculeStep4LabelledProgressBar design combines CustomTypography labels, CustomProgressBar visualization, and percentage indicators to create a comprehensive utilisation performance display (see Figure 25). This molecule integrates visual progress representation with textual context, showing both current utilisation percentage and target comparison in an immediately understandable format. The design uses color coding and clear labeling to help users quickly assess their performance relative to their stated targets.
+I designed UtilisationCalculatorMoleculeStep4LabeledProgressBar to visualise utilisation performance against the target value. It combines CustomProgressBar with CustomTypography to display result text and percentage labels at fixed and dynamic positions (see Figure 25).
 
-###### Figure 25 - UtilisationCalculatorMoleculeStep4LabelledProgressBar Figma Design
+###### Figure 25 - UtilisationCalculatorMoleculeStep4LabeledProgressBar Figma Design
 
-![alt text](<assets/Project Design/molecules/UtilisationCalculatorMoleculeStep4LabelledProgressBar Figma Design.png>)
+![alt text](<assets/Project Design/molecules/UtilisationCalculatorMoleculeStep4LabeledProgressBar Figma Design.png>)
 
 ##### UtilisationCalculatorMoleculeStep4UtilisationSummaryCard
 
-The UtilisationCalculatorMoleculeStep4UtilisationSummaryCard design combines CustomTypography elements, CustomDivider separators, and structured layout atoms to create a comprehensive results summary interface (see Figure 26). This molecule integrates multiple data points including calculated utilisation percentage, target comparison, and period details into a cohesive, scannable card format. The design uses visual hierarchy and strategic spacing to present complex calculation results in an accessible, professional format that users can easily understand and reference.
+I designed UtilisationCalculatorMoleculeStep4UtilisationSummaryCard to present key calculation results in a single summary view. It uses CustomTypography for data presentation and CustomDivider to visually separate content sections (see Figure 26).
 
 ###### Figure 26 - UtilisationCalculatorMoleculeStep4UtilisationSummaryCard Figma Design
 
@@ -405,7 +405,7 @@ The UtilisationCalculatorMoleculeStep4UtilisationSummaryCard design combines Cus
 
 ##### UtilisationHistoryMoleculeStep1Header
 
-The UtilisationHistoryMoleculeStep1Header design combines CustomTypography atoms with CustomDivider elements to create a clear section header for the utilisation history interface (see Figure 27). This molecule establishes visual hierarchy that helps users understand they are transitioning to historical data review, using typography weight and spacing to differentiate the history section from active calculation areas. The design provides contextual framing that prepares users to browse and analyze their previous utilisation calculations.
+I designed UtilisationHistoryMoleculeStep1Header to introduce the utilisation history section. It combines CustomTypography with CustomTooltip to explain available history actions such as viewing and deleting records (see Figure 27).
 
 ###### Figure 27- UtilisationHistoryMoleculeStep1Header Figma Design
 
@@ -413,7 +413,7 @@ The UtilisationHistoryMoleculeStep1Header design combines CustomTypography atoms
 
 ##### UtilisationHistoryMoleculeStep1HistoryCard
 
-The UtilisationHistoryMoleculeStep1HistoryCard design combines CustomTypography elements, CustomProgressBar visualizations, and CustomButton actions to create a comprehensive historical record interface (see Figure 28). This molecule integrates multiple atomic components to display calculation date, utilisation percentage, target comparison, and available actions within a structured card format. The design enables users to quickly scan their calculation history while providing clear options for reviewing details or removing outdated records.
+I designed UtilisationHistoryMoleculeStep1HistoryCard to display individual historical utilisation records. It uses CustomTypography for record details and includes a CustomButton to allow deletion of saved history entries (see Figure 28).
 
 ###### Figure 28 - UtilisationHistoryMoleculeStep1HistoryCard Figma Design
 
@@ -423,7 +423,7 @@ The UtilisationHistoryMoleculeStep1HistoryCard design combines CustomTypography 
 
 ##### CustomAppBar
 
-The CustomAppBar design combines the CustomToolbar molecule with application-wide navigation and branding elements to create a comprehensive header that spans the entire application interface (see Figure 29). This organism integrates multiple molecular components including navigation controls, user account indicators, and application branding to establish a consistent top-level interface that provides users with orientation and access to primary application functions. The design ensures users always understand their current location within the application while providing seamless navigation between calculation input, results review, and historical data sections.
+I designed CustomAppBar to act as the top-level header across the application. It uses the CustomToolbar molecule to provide consistent branding and access to key actions across all application views (see Figure 29).
 
 ###### Figure 29 - CustomAppBar Figma Design
 
@@ -431,7 +431,7 @@ The CustomAppBar design combines the CustomToolbar molecule with application-wid
 
 ##### UtilisationCalculatorOrganism (Input)
 
-The UtilisationCalculatorOrganism (Input) design combines multiple Step1 molecules including header, date selection, hours input, target setting, and action button groups to create a comprehensive utilisation calculation input interface (see Figure 30). This organism orchestrates the complete data collection workflow by integrating UtilisationCalculatorMoleculeStep1Header, date selection molecules, numerical input molecules, and button control molecules into a cohesive form experience. The design manages the complex relationships between input validation, user guidance, and workflow progression to ensure users can accurately and efficiently provide all necessary data for utilisation calculations.
+I designed UtilisationCalculatorOrganism (Input) to form the complete utilisation calculation input interface by composing the Step 1 molecules into a single, structured workflow. It combines UtilisationCalculatorMoleculeStep1Header, UtilisationCalculatorMoleculeStep1StartDate, UtilisationCalculatorMoleculeStep1EndDate, UtilisationCalculatorMoleculeStep1TotalHours, UtilisationCalculatorMoleculeStep1BillableHours, UtilisationCalculatorMoleculeStep1TargetUtilisation, and UtilisationCalculatorMoleculeStep1Buttons to guide users through data entry in a clear and validated sequence (see Figure 30).
 
 ###### Figure 30 - UtilisationCalculatorOrganism (Input) Figma Design
 
@@ -439,7 +439,7 @@ The UtilisationCalculatorOrganism (Input) design combines multiple Step1 molecul
 
 ##### UtilisationCalculatorOrganism (Result)
 
-The UtilisationCalculatorOrganism (Result) design combines Step4 molecules including results header, labeled progress bars, and utilisation summary cards to create a comprehensive calculation results display interface (see Figure 31). This organism integrates UtilisationCalculatorMoleculeStep4Header, progress visualization molecules, and summary card molecules to present complex calculation outcomes in an accessible, actionable format. The design orchestrates multiple data visualizations and textual summaries to help users immediately understand their utilisation performance, target achievement status, and actionable insights for improvement.
+I designed UtilisationCalculatorOrganism (Result) to present utilisation calculation outcomes by composing the Step 4 molecules into a single results view. It combines UtilisationCalculatorMoleculeStep4Header, UtilisationCalculatorMoleculeStep4LabeledProgressBar, and UtilisationCalculatorMoleculeStep4UtilisationSummaryCard to display utilisation performance, target comparison, and supporting calculation details in a clear and structured format (see Figure 31).
 
 ###### Figure 31 - UtilisationCalculatorOrganism (Result) Figma Design
 
@@ -447,7 +447,7 @@ The UtilisationCalculatorOrganism (Result) design combines Step4 molecules inclu
 
 ##### UtilisationHistoryOrganism
 
-The UtilisationHistoryOrganism design combines UtilisationHistoryMoleculeStep1Header, history card molecules, and pagination controls to create a comprehensive historical data browsing and management interface (see Figure 32). This organism integrates header molecules, individual history card molecules, and pagination molecules to enable users to efficiently browse, review, and manage their utilisation calculation history. The design orchestrates complex data presentation including chronological ordering, performance comparisons, and record management actions within a scalable interface that maintains usability regardless of historical data volume.
+I designed UtilisationHistoryOrganism to present historical utilisation calculations in a structured and navigable view. It combines UtilisationHistoryMoleculeStep1Header and UtilisationHistoryMoleculeStep1HistoryCard to allow users to review and manage previously saved utilisation records in a clear and consistent format (see Figure 32).
 
 ###### Figure 32 - UtilisationHistoryOrganism Figma Design
 
@@ -508,3 +508,122 @@ Across all breakpoints, I use the same components consistently, with layout and 
 #### Figure 42 - Utilisation Calculator (Result) Small Phone Device Media Screen Final Figma Design
 
 ![alt text](<assets/Project Design/mediaScreens/result/Utilisation Calculator (Result) Small Phone Device Media Screen Final Figma Design.png>)
+
+## Project Development
+
+### Development Overview
+
+Once project planning, management, and designs were complete, I began developing the utilisation calculator application. I initialised the project by setting up the backend folder, consisting of a GraphQL API built with Node.js and TypeScript, connected to a MongoDB database via the Prisma ORM. This backend folder served as the foundational part of the application and established a structured approach that was later replicated for the frontend and infrastructure folders. I chose this methodical approach to ensure a clear separation of concerns between folders within the codebase, enable independent development and testing, and simplify debugging and long-term maintenance by isolating functionality into distinct and manageable folders.
+
+#### Project Timeline
+
+##### Figure 43 - Utilisation Calculator Project Timeline
+
+![alt text](<assets/Project Development/Utilisation Calculator Project Timeline.png>)
+
+Figure 43 is a high-level representation of the project development timeline I followed, showing the 10-stage progression from initial project governance and backend infrastructure setup, through frontend development and CI/CD pipeline implementation, to final production deployment and stabilisation.
+
+- **1. Project & Workflow Initialisation:** During this stage I established the initial project governance by introducing standardised GitHub issue and pull request templates. This stage defined how work was proposed and tracked throughout the project lifecycle, ensuring consistent documentation from the start.
+
+- **2. Backend Infrastructure Setup:** During this stage I created the backend folder with its core infrastructure, project structure, and development tooling. This included setting up Express with Apollo GraphQL, Prisma for database modeling, TypeScript configuration, and Prettier for code formatting to ensure consistency and maintainability across the backend folder. This stage fulfilled **FR-08** (Utilisation Records Management) and **SR-05** (CORS Configuration).
+
+- **3. Backend Business Logic Implementation:** During this stage I implemented core backend functionality through GraphQL mutations and queries. This included user initialisation, utilisation calculation with precision handling and validation, historical calculation retrieval, and deletion operations, forming the complete backbone of the application's business logic with error handling and authentication checks. This stage fulfilled **FR-01** (User Initialisation), **FR-06** (Delete Functionality), **FR-07** (User Profiles), **FR-09** (Utilisation Calculation), **FR-10** (Target Comparison), **NFR-03** (Data Integrity), **NFR-05** (Input and Business Rule Validation), **NFR-06** (Database Error Handling), **NFR-07** (Validation Error Handling), **NFR-08** (GraphQL Error Handling), **NFR-10** (Input Sanitisation), **SR-02** (Authorisation and Access Control), and **SR-03** (Token Validation).
+
+- **4. Frontend Infrastructure & Data Layer Setup:** During this stage I initialised the frontend application using React, TypeScript, and Vite, then connected it to the backend by configuring the Apollo GraphQL client with Clerk authentication middleware. I implemented reusable hooks for all backend operations, enabling the frontend to consume backend data and mutations reliably with full type safety. This stage fulfilled **NFR-09** (Authentication Error Feedback) and **SR-01** (Authentication Integration).
+
+- **5. UI Component Development:** During this stage I developed user interface components incrementally using an ATOMIC design approach. I created basic atoms (buttons, inputs, loaders) first, followed by more complex molecules (toolbars, form sections, cards) and organisms (calculator interface, history section, navigation), with each layer built on the previous to compose meaningful UI sections with consistent Material-UI theming. This stage fulfilled **FR-02** (Utilisation Input Fields), **FR-03** (Calculate Action), **FR-05** (Historical Data View), and **NFR-01** (Responsive Design).
+
+- **6. Page Assembly & Application Structure:** During this stage I assembled reusable UI components into complete application pages and templates. I finalised global application structure, including routing configuration, internationalisation support with English translations, Material-UI date localisation, and automatic user initialisation with country detection on sign-in. This stage fulfilled **FR-01** (User Initialisation) and **FR-04** (Results Display).
+
+- **7. CI/CD Pipeline Implementation:** During this stage I introduced automated workflows to build, test, and deploy both frontend and backend services to Google Cloud Platform (GCP). This included GitHub Actions configuration for continuous integration, Dockerising the backend, defining infrastructure as code with Terraform, and setting up secure Workload Identity authentication between GitHub and GCP. This stage fulfilled **SR-04** (Environment Security).
+
+- **8. Workflow & Dependency Refinement:** During this stage I adjusted repository configuration and dependency management to ensure CI/CD workflows triggered correctly and ran reliably. This included restoring package lock files to version control for consistent dependency installation, cleaning up unused dependencies, and making incremental changes to trigger and validate automated builds across different environments.
+
+- **9. Deployment Configuration & Domain Setup:** During this stage I finalised the frontend deployment by configuring a custom domain (https://utilisationcalculator.com), completing the transition from development to a production-ready application. I updated infrastructure configuration and deployment workflows to consistently reference the custom domain instead of environment-based bucket names.
+
+- **10. Production Deployment & Stabilisation:** During this stage I executed multiple deployment cycles to release the application to production, identifying and resolving deployment-specific issues along the way. This included fixing missing dependency installation steps in workflows, resolving Google Cloud CLI setup issues, correcting frontend asset base path configuration, and addressing component styling inheritance bugs to ensure a stable production environment.
+
+### CI/CD Pipeline
+
+To ensure reliable deployments, I established a set of continuous integration and deployment pipelines utilising GitHub Actions. This automated the deployment of both frontend and backend services to GCP while enabling automated code quality assurance throughout the development lifecycle. I implemented a multi-workflow approach consisting of three distinct pipelines:
+
+#### Main CI Pipeline for Code Analysis and Testing
+
+Figure 44 shows the Main CI Pipeline for Code Analysis and Testing that triggers on pull requests to the main branch. This workflow automates code quality checks, build validation, and unit testing for both frontend and backend components before considering deployment.
+
+##### Figure 44 - Main CI Pipeline for Code Analysis and Testing (`pipeline.yml`)
+
+![alt text](<assets/Project Development/Main CI Pipeline for Code Analysis and Testing.png>)
+
+#### Backend Deployment Pipeline
+
+Figure 45 shows the Backend Deployment Pipeline that handles deployment of the Node.js and TypeScript GraphQL API to GCP when backend changes are pushed to the main branch. This workflow orchestrates Docker containerisation of the backend services, executes Prisma database migrations, and implements secure Workload Identity authentication.
+
+##### Figure 45 - Backend Deployment Pipeline (`backend-deploy.yml`)
+
+![alt text](<assets/Project Development/Backend Deployment Pipeline.png>)
+
+#### Frontend Deployment Pipeline
+
+Figure 46 shows the Frontend Deployment Pipeline that manages React and TypeScript frontend deployment to GCP when frontend changes are pushed to the main branch. This workflow handles build optimisation through Vite bundling, generates static assets for production distribution and manages custom domain configuration.
+
+##### Figure 46 - Frontend Deployment Pipeline (`frontend-deploy.yml`)
+
+![alt text](<assets/Project Development/Frontend Deployment Pipeline.png>)
+
+### Test Driven Development
+
+I applied Test-Driven Development (TDD) during development where appropriate. I wrote unit tests before implementing functionality, which helped clarify requirements early and provided me immediate feedback by identifying code that did not behave as expected. This section fulfilled **NFR-03** (Data Integrity).
+
+#### Figure 47 - CustomLoader Unit Test TDD Approach
+
+![alt text](<assets/Project Development/CustomLoader Unit Test TDD Approach.png>)
+
+An example of this TDD approach is shown in Figure 47, where I fixed a bug in the CustomLoader component that prevented the color prop from being applied correctly. I first wrote a unit test (see commit "aaeea79") to confirm that the component correctly inherits CSS custom properties when the color prop is set to "inherit". The test creates a mock CSS environment with custom variables to validate that CustomLoader applies the expected styling. Writing the test first helped define the intended behaviour before changing the implementation, and provided immediate validation once the bug was resolved. I implemented the fix and merged it in [PR #62](https://github.com/BeansOnToast45987/UtilisationCalculator/pull/62).
+
+### Usability & Accessibility
+
+To evaluate the overall quality of the application beyond core functionality, I carried out usability and accessibility assessments using Google Lighthouse, which is an automated auditing tool available within Chrome DevTools. Lighthouse generates scores across four categories; Best Practices, Accessibility, SEO and Performance which provides me with quantitative results about my application.
+
+#### Application Best Practices Audit
+
+Figure 48 demonstrates that the application achieved a **100/100** score in the Best Practices category. This indicates that I successfully followed modern development and security recommendations. Lighthouse identified one minor improvement area: missing source maps for some large JavaScript files. This does not affect users directly, however, adding source maps would make it easier for me to debug issues and maintain the application in the production environment.
+
+##### Figure 48 – Application Best Practices Audit Results
+
+![alt text](<assets/Project Development/Application Best Practices Audit Results.png>)
+
+---
+
+#### Application Accessibility Audit
+
+Figure 49 demonstrates that the application achieved a **94/100** score in the Accessibility category. This indicates that I successfully achieved a high level of compliance with automated accessibility checks. However, Lighthouse identified two primary areas for improvement:
+
+- **1.** Insufficient colour contrast between foreground and background elements.
+- **2.** Absence of a defined main landmark within the document structure.
+
+Fixing these issues would involve adjusting colour choices so that text is easier to read and adding a clearer page structure to help users who rely on assistive technologies navigate the application more easily. Despite these minor issues, the application passed most accessibility checks, including those related to clear labelling, adaptable layouts, and screen reader support. This section fulfilled **NFR-04** (Accessibility).
+
+##### Figure 49 – Application Accessibility Audit Results
+
+![alt text](<assets/Project Development/Application Accessibility Audit Results.png>)
+
+---
+
+#### Application SEO Audit
+
+Figure 50 demonstrates that the application achieved a **91/100** score in the Search Engine Optimisation (SEO) category. This indicates that I successfully implemented most SEO best practices, although SEO is not a primary concern for this internal application. Lighthouse identified that adding a meta description would further improve how the application appears in search results.
+
+##### Figure 50 – Application SEO Audit Results
+
+![alt text](<assets/Project Development/Application SEO Audit Results.png>)
+
+---
+
+#### Application Performance Audit
+
+Figure 51 demonstrates that the application achieved an **84/100** score in the Performance category. This indicates that I successfully ensured the interface loads quickly, remains visually stable during rendering, and responds efficiently to user interactions. Lighthouse identified that initial asset loading and JavaScript bundle size could be further optimised to improve overall performance. This section fulfilled **NFR-02** (Performance).
+
+##### Figure 51 – Application Performance Audit Results
+
+![alt text](<assets/Project Development/Application Performance Audit Results.png>)

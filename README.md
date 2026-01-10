@@ -215,7 +215,7 @@ Figure 2 shows that the board consisted of the following columns:
 
 - **In Progress:** Tasks that were actively being developed, including both new features and bug fixes.
 
-- **Done:** Tasks that had been completed and merged into the main branch, indicating that the associated functionality had been fully implemented and validated.
+- **Done:** Tasks that had been completed and merged into the develop branch, indicating that the associated functionality had been fully implemented and validated.
 
 I did not include a separate Review column, as there were no external reviewers involved in this project. Instead, I reviewed my own changes during the pull request process before merging to ensure code quality, test coverage, and alignment with project requirements. Similarly, a dedicated Ready or Backlog column was not required, as tasks were only created or moved into the To Do column once they were ready to be worked on.
 
@@ -599,7 +599,7 @@ Figure 43 is a high-level representation of the project development timeline I f
 
 - **7. CI/CD Pipeline Implementation:** During this stage I introduced automated workflows to build, test, and deploy both frontend and backend services to Google Cloud Platform (GCP). This included GitHub Actions configuration for continuous integration, Dockerising the backend, defining infrastructure as code with Terraform, and setting up secure Workload Identity authentication between GitHub and GCP.
 
-- **8. Workflow & Dependency Refinement:** During this stage I adjusted repository configuration and dependency management to ensure CI/CD workflows triggered correctly and ran reliably. This included restoring package lock files to version control for consistent dependency installation, cleaning up unused dependencies, and making incremental changes to trigger and validate automated builds across different environments.
+- **8. Workflow & Dependency Refinement:** During this stage I adjusted repository configuration and dependency management to ensure CI/CD workflows triggered correctly and ran reliably. This included restoring package lock files to version control for consistent dependency installation, cleaning up unused dependencies, and making incremental changes to trigger and validate automated builds across the production environment.
 
 - **9. Deployment Configuration & Domain Setup:** During this stage I finalised the frontend deployment by configuring a custom domain (https://utilisationcalculator.com), completing the transition from development to a production-ready application. I updated infrastructure configuration and deployment workflows to consistently reference the custom domain instead of environment-based bucket names.
 

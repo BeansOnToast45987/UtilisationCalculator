@@ -68,17 +68,6 @@ Security requirements define the measures and controls that must be implemented 
 | SR-04  | Environment Security             | The system shall securely manage environment variables, including secret keys and API credentials.                           |
 | SR-05  | CORS Configuration               | The system shall enforce Cross-Origin Resource Sharing (CORS) policies to restrict access from unauthorised domains.         |
 
-### MoSCoW (Must Have, Should Have, Could Have, Won't Have) Prioritisation
-
-After defining and validating the system requirements outlined above, I have prioritised them using the MoSCoW prioritisation technique. I have chosen this approach because it clearly communicates development priorities and supports effective planning by distinguishing between essential and non-essential functionality for the application.
-
-| Priority    | Explanation of MoSCoW Priority                                                                                                                              | Requirement IDs                                                                                                              | Justification                                                                                                                                                                                               |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Must Have   | Must have requirements are essential for the system to function and meet its core purpose. Without these requirements, the application would not be usable. | FR-01, FR-02, FR-03, FR-04, FR-07, FR-09, FR-10, SR-01, SR-02, SR-03, NFR-05, NFR-06, NFR-07, NFR-08                         | These requirements are necessary to deliver the core functionality of the utilisation calculator, enabling user management, calculation logic, authentication, and essential validation and error handling. |
-| Should Have | Should have requirements improve reliability and usability but are not critical for basic system operation.                                                 | FR-05, FR-08, NFR-02, NFR-03, SR-04, SR-05                                                                                   | These requirements enhance system reliability, performance, and security by adding features such as historical data tracking, data persistence, performance optimisation, and additional security controls. |
-| Could Have  | Could have requirements are optional features that enhance user experience but are not essential to core functionality.                                     | FR-06, NFR-01, NFR-04, NFR-09, NFR-10                                                                                        | These requirements improve overall usability and accessibility through quality-of-life enhancements such as record deletion, responsive design, accessibility support, and improved feedback messages.      |
-| Won't Have  | Won’t have requirements are features that are out of scope for the current project.                                                                         | No Requirement IDs - Advanced reporting, bulk operations, third-party integrations, audit logging, data export functionality | These requirements are excluded from the current scope due to time and project constraints, but may be considered in future iterations.                                                                     |
-
 ## Project User Stories
 
 To support a clear understanding of the defined project requirements, I have created a set of user stories that represent the planned system functionality. These user stories describe what the system should do and why, typically expressed in terms of a user’s role, need, and goal. They help guide development by clarifying the intended features and the value they deliver, while also reducing the risk of scope creep and supporting the creation of well-defined development tasks.
@@ -112,28 +101,6 @@ To support a clear understanding of the defined project requirements, I have cre
 **As a** consultant  
 **I want** to delete individual utilisation records that contain errors  
 **So that** my historical performance data remains clean and reflects my true utilisation performance.
-
-## Project Stakeholders
-
-To ensure relevant perspectives were considered throughout development, I identified the key stakeholders involved in this project and clearly defined their roles and responsibilities. This helped to clarify ownership, support effective decision-making, and ensure the solution aligned with both technical goals and end-user needs.
-
-| Role                  | Responsibility                                                      | Explanation                                                                                                             |
-| --------------------- | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Project Manager       | Project planning, scope management, timeline coordination           | Since this is a solo project, I take on the role of project manager to oversee all aspects of development               |
-| Software Engineer     | Full-stack development, testing, documentation, deployment          | Since this is a solo project, I take on the role of software engineer to handle all technical implementation            |
-| Workplace Consultants | End-user feedback, requirements validation, user acceptance testing | Technical consultants who are the target users and provide real-world context for the utilisation tracking requirements |
-
-## Project Risks
-
-To ensure project risks were actively considered throughout development, I created a risk matrix outlining potential risks, their likelihood, impact, and mitigation strategies. This approach enabled me to proactively manage risks and reduce the likelihood of significant issues arising during the development process.
-
-| Risk ID | Risk Description                                                             | Risk Category         | Impact | Likelihood | Risk Level | Mitigation Strategy                                                                                                                           | Owner             |
-| ------- | ---------------------------------------------------------------------------- | --------------------- | ------ | ---------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| R-01    | Third-party service dependency failure (Clerk authentication service outage) | External Dependencies | High   | Medium     | High       | Implement error handling in authentication flows, display user-friendly error messages when service is unavailable                            | Software Engineer |
-| R-02    | Database connection failures or MongoDB Atlas service interruption           | Infrastructure        | High   | Medium     | High       | Handle database errors in GraphQL resolvers, provide meaningful error messages to users, test error handling using invalid connection strings | Software Engineer |
-| R-03    | GraphQL API vulnerabilities or injection attacks through user input          | Security              | High   | Medium     | High       | Use existing validation functions for all user inputs, sanitise data before database operations, validate on both client and server           | Software Engineer |
-| R-04    | Environment variable misconfiguration or exposure of sensitive credentials   | Security              | High   | Low        | Medium     | Keep environment variables out of version control, use environment templates, validate required env vars on app startup                       | Software Engineer |
-| R-05    | Frontend-backend API compatibility issues during independent development     | Integration           | Medium | Medium     | Medium     | Keep TypeScript interfaces consistent between frontend and backend, test API calls during development                                         | Software Engineer |
 
 # Project Management
 
@@ -523,17 +490,17 @@ Figure 43 is a high-level representation of the project development timeline I f
 
 - **1. Project & Workflow Initialisation:** During this stage I established the initial project governance by introducing standardised GitHub issue and pull request templates. This stage defined how work was proposed and tracked throughout the project lifecycle, ensuring consistent documentation from the start.
 
-- **2. Backend Infrastructure Setup:** During this stage I created the backend folder with its core infrastructure, project structure, and development tooling. This included setting up Express with Apollo GraphQL, Prisma for database modeling, TypeScript configuration, and Prettier for code formatting to ensure consistency and maintainability across the backend folder. This stage fulfilled **FR-08** (Utilisation Records Management) and **SR-05** (CORS Configuration).
+- **2. Backend Infrastructure Setup:** During this stage I created the backend folder with its core infrastructure, project structure, and development tooling. This included setting up Express with Apollo GraphQL, Prisma for database modeling, TypeScript configuration, and Prettier for code formatting to ensure consistency and maintainability across the backend folder.
 
-- **3. Backend Business Logic Implementation:** During this stage I implemented core backend functionality through GraphQL mutations and queries. This included user initialisation, utilisation calculation with precision handling and validation, historical calculation retrieval, and deletion operations, forming the complete backbone of the application's business logic with error handling and authentication checks. This stage fulfilled **FR-01** (User Initialisation), **FR-06** (Delete Functionality), **FR-07** (User Profiles), **FR-09** (Utilisation Calculation), **FR-10** (Target Comparison), **NFR-03** (Data Integrity), **NFR-05** (Input and Business Rule Validation), **NFR-06** (Database Error Handling), **NFR-07** (Validation Error Handling), **NFR-08** (GraphQL Error Handling), **NFR-10** (Input Sanitisation), **SR-02** (Authorisation and Access Control), and **SR-03** (Token Validation).
+- **3. Backend Business Logic Implementation:** During this stage I implemented core backend functionality through GraphQL mutations and queries. This included user initialisation, utilisation calculation with precision handling and validation, historical calculation retrieval, and deletion operations, forming the complete backbone of the application's business logic with error handling and authentication checks.
 
-- **4. Frontend Infrastructure & Data Layer Setup:** During this stage I initialised the frontend application using React, TypeScript, and Vite, then connected it to the backend by configuring the Apollo GraphQL client with Clerk authentication middleware. I implemented reusable hooks for all backend operations, enabling the frontend to consume backend data and mutations reliably with full type safety. This stage fulfilled **NFR-09** (Authentication Error Feedback) and **SR-01** (Authentication Integration).
+- **4. Frontend Infrastructure & Data Layer Setup:** During this stage I initialised the frontend application using React, TypeScript, and Vite, then connected it to the backend by configuring the Apollo GraphQL client with Clerk authentication middleware. I implemented reusable hooks for all backend operations, enabling the frontend to consume backend data and mutations reliably with full type safety.
 
-- **5. UI Component Development:** During this stage I developed user interface components incrementally using an ATOMIC design approach. I created basic atoms (buttons, inputs, loaders) first, followed by more complex molecules (toolbars, form sections, cards) and organisms (calculator interface, history section, navigation), with each layer built on the previous to compose meaningful UI sections with consistent Material-UI theming. This stage fulfilled **FR-02** (Utilisation Input Fields), **FR-03** (Calculate Action), **FR-05** (Historical Data View), and **NFR-01** (Responsive Design).
+- **5. UI Component Development:** During this stage I developed user interface components incrementally using an ATOMIC design approach. I created basic atoms (buttons, inputs, loaders) first, followed by more complex molecules (toolbars, form sections, cards) and organisms (calculator interface, history section, navigation), with each layer built on the previous to compose meaningful UI sections with consistent Material-UI theming.
 
-- **6. Page Assembly & Application Structure:** During this stage I assembled reusable UI components into complete application pages and templates. I finalised global application structure, including routing configuration, internationalisation support with English translations, Material-UI date localisation, and automatic user initialisation with country detection on sign-in. This stage fulfilled **FR-01** (User Initialisation) and **FR-04** (Results Display).
+- **6. Page Assembly & Application Structure:** During this stage I assembled reusable UI components into complete application pages and templates. I finalised global application structure, including routing configuration, internationalisation support with English translations, Material-UI date localisation, and automatic user initialisation with country detection on sign-in.
 
-- **7. CI/CD Pipeline Implementation:** During this stage I introduced automated workflows to build, test, and deploy both frontend and backend services to Google Cloud Platform (GCP). This included GitHub Actions configuration for continuous integration, Dockerising the backend, defining infrastructure as code with Terraform, and setting up secure Workload Identity authentication between GitHub and GCP. This stage fulfilled **SR-04** (Environment Security).
+- **7. CI/CD Pipeline Implementation:** During this stage I introduced automated workflows to build, test, and deploy both frontend and backend services to Google Cloud Platform (GCP). This included GitHub Actions configuration for continuous integration, Dockerising the backend, defining infrastructure as code with Terraform, and setting up secure Workload Identity authentication between GitHub and GCP.
 
 - **8. Workflow & Dependency Refinement:** During this stage I adjusted repository configuration and dependency management to ensure CI/CD workflows triggered correctly and ran reliably. This included restoring package lock files to version control for consistent dependency installation, cleaning up unused dependencies, and making incremental changes to trigger and validate automated builds across different environments.
 
@@ -571,7 +538,7 @@ Figure 46 shows the Frontend Deployment Pipeline that manages React and TypeScri
 
 ## Test Driven Development
 
-I applied Test-Driven Development (TDD) during development where appropriate. I wrote unit tests before implementing functionality, which helped clarify requirements early and provided me immediate feedback by identifying code that did not behave as expected. This section fulfilled **NFR-03** (Data Integrity).
+I applied Test-Driven Development (TDD) during development where appropriate. I wrote unit tests before implementing functionality, which helped clarify requirements early and provided me immediate feedback by identifying code that did not behave as expected.
 
 ### Figure 47 - CustomLoader Unit Test TDD Approach
 
@@ -600,7 +567,7 @@ Figure 49 demonstrates that the application achieved a **94/100** score in the A
 - **1.** Insufficient colour contrast between foreground and background elements.
 - **2.** Absence of a defined main landmark within the document structure.
 
-Fixing these issues would involve adjusting colour choices so that text is easier to read and adding a clearer page structure to help users who rely on assistive technologies navigate the application more easily. Despite these minor issues, the application passed most accessibility checks, including those related to clear labelling, adaptable layouts, and screen reader support. This section fulfilled **NFR-04** (Accessibility).
+Fixing these issues would involve adjusting colour choices so that text is easier to read and adding a clearer page structure to help users who rely on assistive technologies navigate the application more easily. Despite these minor issues, the application passed most accessibility checks, including those related to clear labelling, adaptable layouts, and screen reader support.
 
 #### Figure 49 – Application Accessibility Audit Results
 
@@ -620,7 +587,7 @@ Figure 50 demonstrates that the application achieved a **91/100** score in the S
 
 ### Application Performance Audit
 
-Figure 51 demonstrates that the application achieved an **84/100** score in the Performance category. This indicates that I successfully ensured the interface loads quickly, remains visually stable during rendering, and responds efficiently to user interactions. Lighthouse identified that initial asset loading and JavaScript bundle size could be further optimised to improve overall performance. This section fulfilled **NFR-02** (Performance).
+Figure 51 demonstrates that the application achieved an **84/100** score in the Performance category. This indicates that I successfully ensured the interface loads quickly, remains visually stable during rendering, and responds efficiently to user interactions. Lighthouse identified that initial asset loading and JavaScript bundle size could be further optimised to improve overall performance.
 
 #### Figure 51 – Application Performance Audit Results
 

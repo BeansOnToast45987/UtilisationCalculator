@@ -68,39 +68,136 @@ Security requirements define the measures and controls that must be implemented 
 | SR-04  | Environment Security             | The system shall securely manage environment variables, including secret keys and API credentials.                           |
 | SR-05  | CORS Configuration               | The system shall enforce Cross-Origin Resource Sharing (CORS) policies to restrict access from unauthorised domains.         |
 
-## Project User Stories
+## Project User Personas
 
-To support a clear understanding of the defined project requirements, I have created a set of user stories that represent the planned system functionality. These user stories describe what the system should do and why, typically expressed in terms of a user’s role, need, and goal. They help guide development by clarifying the intended features and the value they deliver, while also reducing the risk of scope creep and supporting the creation of well-defined development tasks.
+To support a clear understanding of the defined project requirements, I have created a set of user personas that represent the intended users of the system. These personas describe who the users are, what they are trying to achieve, and the key needs the application must support. They help guide development by keeping the design and functionality aligned to real user goals, while also reducing the risk of scope creep and supporting prioritisation of features.
 
-### User Story 1: User Profile Initialisation
+### User Persona 1: Consultant (Primary User)
 
-**As a** consultant  
-**I want** to initialise my profile with my name and country details  
-**So that** I can securely access the utilisation calculator with my data properly organised and authenticated.
+**Role:** Technical Consultant  
+**Goal:** Track and improve billable utilisation during the quarter.  
+**Key needs:**
 
-### User Story 2: Calculate Utilisation Performance
+- Create or initialise a profile to store utilisation data securely.
+- Enter a date range, total hours, billable hours, and a target percentage to calculate utilisation.
+- Receive clear results showing utilisation percentage, target status, and timestamp.
 
-**As a** consultant  
-**I want** to input my date range, total hours, billable hours, and target percentage, then calculate my utilisation  
-**So that** I can see my actual utilisation percentage, whether I've met my target, and when the calculation was performed.
+### User Persona 2: Consultant Tracking Performance Trends (Returning User)
 
-### User Story 3: Track Historical Performance Trends
+**Role:** Senior Management Consultant  
+**Goal:** Monitor utilisation patterns over time to understand performance trends.  
+**Key needs:**
 
-**As a** consultant  
-**I want** to view all my previous utilisation calculations in a structured list  
-**So that** I can analyse my performance trends over time and identify patterns in my billable utilisation.
+- View previous utilisation calculations in a structured list.
+- Maintain accurate history by removing incorrect or outdated records when needed.
 
-### User Story 4: Receive Clear Data Validation Feedback
+### User Persona 3: Consultant Needing Validation Support (Occasional User)
 
-**As a** consultant  
-**I want** to receive immediate, clear error messages when I enter invalid data  
-**So that** I can quickly correct my input and ensure my utilisation calculations are accurate.
+**Role:** Junior Management Consultant  
+**Goal:** Complete calculations correctly without confusion or incorrect inputs.  
+**Key needs:**
 
-### User Story 5: Remove Inaccurate Records
+- Receive immediate and clear validation feedback when input is invalid.
+- Understand what needs to be corrected (e.g., date ranges, positive numeric values, billable hours not exceeding total hours).
 
-**As a** consultant  
-**I want** to delete individual utilisation records that contain errors  
-**So that** my historical performance data remains clean and reflects my true utilisation performance.
+## Project Empathy Diagrams
+
+### Primary Person: Technical Consultant (Kathy Theodora)
+
+**Background**
+
+- **Name:** Kathy Theodora
+- **Role:** Senior Technical Consultant
+- **Experience:** 5 years
+- **Challenge:** Tracking utilisation via spreadsheets
+
+#### Empathy Diagram
+
+**SAYS**
+
+- “I don’t know if I’m on target until the quarterly report”.
+- “I’m worried my spreadsheet calculations are wrong”.
+- “I want to track progress during the quarter”.
+
+**THINKS**
+
+- “Am I calculating this correctly?”
+- “I need a better way than Excel”.
+- “If I track earlier, I can adjust sooner”.
+
+**DOES**
+
+- Updates Excel regularly.
+- Manually calculates utilisation.
+- Double-checks formulas.
+- Waits for quarterly reporting.
+
+**FEELS**
+
+- Frustrated with admin work.
+- Uncertain about performance.
+- Anxious about errors.
+- Relieved when results confirm she’s on track.
+
+**PAIN POINTS**
+
+- No mid-quarter visibility.
+- Spreadsheet errors and inconsistency.
+- Time-consuming manual tracking.
+
+**GOALS**
+
+- Quick, accurate utilisation calculation.
+- Mid-quarter performance insight.
+- Track trends over time.
+
+### Secondary Person: Consulting Manager (Robbin Stanford)
+
+**Background**
+
+- **Name:** Robbin Stanford
+- **Role:** Practice Manager
+- **Experience:** 8 years
+- **Challenge:** Supporting team utilisation without real-time visibility
+
+#### Empathy Diagram
+
+**SAYS**
+
+- “Quarterly reports are too late”.
+- “Consultants need an easier way to track utilisation”.
+- “We should be proactive, not reactive.”
+
+**THINKS**
+
+- “My team needs self-service tools”.
+- “Spreadsheets don’t scale”.
+- “Consistency would reduce confusion”.
+
+**DOES**
+
+- Reviews quarterly reports.
+- Discusses utilisation in 1:1s.
+- Shares spreadsheet templates.
+- Responds when issues appear.
+
+**FEELS**
+
+- Responsible for team outcomes.
+- Frustrated by limited visibility.
+- Supportive but restricted by tooling.
+
+**PAIN POINTS**
+
+- Late insight into performance issues.
+- Inconsistent calculation methods across the team.
+- Manual processes don’t scale.
+
+**GOALS**
+
+- Enable consultants to self-monitor.
+- Earlier identification of utilisation risk.
+- Standardised tracking approach.
 
 # Project Management
 
